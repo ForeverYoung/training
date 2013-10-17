@@ -1,0 +1,64 @@
+﻿@model OrenairTraining.Models.user
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>user</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.login)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.login)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.password)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.password)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PasswordConfirm)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PasswordConfirm)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.firstname)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.firstname)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.surname)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.surname)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.patronymic)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.patronymic)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.birthdate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.birthdate)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.user_id }) |
+    @Html.ActionLink("Вернуться к списку", "Index")
+</p>

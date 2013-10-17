@@ -1,0 +1,76 @@
+﻿@model OrenairTraining.Models.container
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Создание темы/папки</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>container</legend>
+
+        @*<div class="editor-label">
+            @Html.LabelFor(model => model.container_id)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.container_id)
+            @Html.ValidationMessageFor(model => model.container_id)
+        </div>*@
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.container_name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.container_name)
+            @Html.ValidationMessageFor(model => model.container_name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ancestor_id)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.ancestor_id, ViewBag.Ancestors as SelectList)
+            @Html.ValidationMessageFor(model => model.ancestor_id)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.department_id)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.department_id, ViewBag.Departments as SelectList)
+            @Html.ValidationMessageFor(model => model.department_id)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.type_id)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.type_id, ViewBag.ContainerTypes as SelectList)
+            @Html.ValidationMessageFor(model => model.type_id)
+        </div>
+
+        @*<div class="editor-label">
+            @Html.LabelFor(model => model.deleted)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.deleted)
+            @Html.ValidationMessageFor(model => model.deleted)
+        </div>*@
+
+        <p>
+            <input type="submit" value="Добавить" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Вернуться к списку", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

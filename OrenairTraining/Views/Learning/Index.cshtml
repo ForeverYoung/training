@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "Обучение";
+}
+
+<h2>Обучение</h2>
+
+@Scripts.Render("~/bundles/treeview")
+
+<table width="100%" border="1" cellpadding="10">
+    <thead></thead>
+    <tr valign="top">
+        <td width="30%">
+            <ul id="browser" class="filetree">
+                @using OrenairTraining.My_Classes
+                @CustomHtmlHelper.RenderTreeView(Html, Ajax ,ViewBag.TreeList, "Learning", "NoEdit")
+	        </ul>
+
+        </td>
+        <td>
+            <div id="data">
+
+            </div>
+        </td>
+    </tr>
+</table>

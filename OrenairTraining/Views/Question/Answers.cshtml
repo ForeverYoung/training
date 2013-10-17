@@ -1,0 +1,49 @@
+﻿@model OrenairTraining.Models.question
+
+<script src="~/Scripts/jquery-1.8.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+<script>
+$(document).ready(function(){
+
+
+	var i = 3;
+	
+	$('#add').click(function() {
+	    $('<div class="field"><label>Вариант ' + i + '<input type="text" name="answers"/></label><input type="radio" name="ichecked" value='+i+' /></div>').fadeIn('slow').appendTo('.inputs');
+		i++;
+	});
+	
+	$('#remove').click(function() {
+	if(i > 3) {
+	    $('.field:last').remove();
+		i--; 
+	}
+	});
+	
+	$('#reset').click(function() {
+	while(i > 3) {
+	    $('.field:last').remove();
+		i--;
+	}
+	});
+});
+</script>
+
+    <fieldset>
+        <legend>Ответы</legend>
+
+        <div id="container">
+        <div class="dynamic-form">
+            <a href="#" id="add">Добавить</a> | <a href="#" id="remove">Удалить</a>  | <a href="#" id="reset">Сбросить</a>
+            <form>
+                <div class="inputs">
+                    <div class="field"><label>Вариант 1<input type="text" name="answers"></label><input type="radio" name="ichecked" value="1" checked="checked"/></div>
+                    <div class="field"><label>Вариант 2<input type="text" name="answers"></label><input type="radio" name="ichecked" value="2"/></div>
+                </div>
+            </form>
+        </div>
+        </div>
+    </fieldset>
+

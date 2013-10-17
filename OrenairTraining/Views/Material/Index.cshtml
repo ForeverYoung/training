@@ -1,0 +1,65 @@
+﻿@model IEnumerable<OrenairTraining.Models.material>
+
+@{
+    ViewBag.Title = "Материалы";
+}
+
+<h2>Материалы</h2>
+
+<script>
+    $(document).ready(function () {
+
+        $(".thumpimage").click(function () {
+            var attchmtId = $("#attachmtId").val();
+            alert(attchmtId);
+            $.post('/Material/OpenFile', { attchId: attchmtId });
+        });
+    });
+</script>
+
+<p>
+    @Html.ActionLink("Добавить новый", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.material_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.material_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.container_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.deleted)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.material_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.material_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.container_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.deleted)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.material_id },  new { @class="edit" }) |
+            @Html.ActionLink("Details", "Details", new {  id=item.material_id },  new { @class="details" }) |
+            @Html.ActionLink("Delete", "Delete", new {  id=item.material_id  },  new { @class="delete" })
+
+            @Html.ActionLink("Open", "OpenFile", new { id=item.material_id }, new { @class="open" })
+                <span>@item.file_name</span>
+        </td>
+    </tr>
+}
+
+</table>

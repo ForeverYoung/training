@@ -1,0 +1,193 @@
+﻿body {
+    font-size: 1em;
+    font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
+    color: #232323;
+    background-color: #fff;
+}
+
+header, footer, nav, section {
+    display: block;
+}
+
+.mytable
+{
+    border-width: 1px;
+}
+
+.mytd
+{
+    vertical-align:top;
+}
+
+/* Styles for basic forms
+-----------------------------------------------------------*/
+fieldset {
+    border: 1px solid #ddd;
+    padding: 0 1.4em 1.4em 1.4em;
+    margin: 0 0 1.5em 0;
+}
+
+legend {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+textarea {
+    min-height: 75px;
+}
+
+.editor-label {
+    margin: 1em 0 0 0;
+}
+
+.editor-field {
+    margin: 0.5em 0 0 0;
+}
+
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error {
+    color: #f00;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+.input-validation-error {
+    border: 1px solid #f00;
+    background-color: #fee;
+}
+
+.validation-summary-errors {
+    font-weight: bold;
+    color: #f00;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+/*--------------------------------------------------------------*/
+.center { margin-left: auto; margin-right: auto; clear: both; overflow: scroll; padding: 0 5px; width: 70%;}
+
+.loginout
+{    
+    float: right
+}
+
+.login
+{
+    background: url(../Images/Logos/sign-in.png) no-repeat left;
+    background-size:cover;
+    display: block;
+    width: 40px;
+    height: 40px;
+    text-indent: -9999px;
+}
+
+.logout
+{
+    background: url(../Images/Logos/sign-out.png) no-repeat left;
+    background-size:cover;
+    display: block;
+    width: 40px;
+    height: 40px;
+    text-indent: -9999px;
+}
+
+div.margin
+{
+    margin-bottom:10px;
+    margin-top:10px;
+}
+
+h1.title
+{
+    margin:auto;
+    margin-right:11px;
+    color: #F26A00;
+    font-family: Arial;
+    font-style:italic;
+    font-stretch:expanded;
+    font-size:medium;
+    text-align:right;
+}
+
+img.tclass
+{
+    width: 80px;
+    height: 80px;
+}
+
+.container{overflow:hidden}
+.box{white-space:nowrap}
+.box div{display:inline-block;/*border:1px solid black*/}
+
+a
+{
+    color: #0061AE;
+}
+
+.edit
+{
+    background: url(../Images/Logos/edit.png) no-repeat;
+    background-size:cover;
+    display: inline-block;
+    margin-left:10px;
+    width: 20px;
+    height: 20px;
+    text-indent: -9999px;
+    float:left;
+}
+
+.details
+{
+    margin-left: 10px;
+    background: url(../Images/Logos/attibutes.png) no-repeat;
+    background-size:cover;
+    display: block;
+    width: 20px;
+    height: 20px;
+    text-indent: -9999px;
+    float:left;
+}
+
+.delete
+{
+    margin-left: 10px;
+    background: url(../Images/Logos/delete.png) no-repeat;
+    background-size:cover;
+    display: block;
+    width: 20px;
+    height: 20px;
+    text-indent: -9999px;
+    float:left;
+}
+
+.open
+{
+    margin-left: 10px;
+    margin-right:10px;
+    background: url(../Images/Logos/folder.png) no-repeat;
+    background-size:cover;
+    display: block;
+    width: 20px;
+    height: 20px;
+    text-indent: -9999px;
+    float:left;
+}
+
+.starttest
+{
+    margin-left: 10px;
+    margin-right:10px;
+    background: url(../Images/Logos/brainstorming.png) no-repeat;
+    background-size:cover;
+    display: block;
+    width: 20px;
+    height: 20px;
+    text-indent: -9999px;
+    float:left;
+}
+/*--------------------------------------------------------------*/

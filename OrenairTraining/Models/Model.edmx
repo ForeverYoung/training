@@ -1,0 +1,491 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Хранилище OrenairTrainingModel" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="Хранилище OrenairTrainingModelContainer">
+          <EntitySet Name="answer" EntityType="Хранилище OrenairTrainingModel.answer" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="container" EntityType="Хранилище OrenairTrainingModel.container" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="containertype" EntityType="Хранилище OrenairTrainingModel.containertype" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="department" EntityType="Хранилище OrenairTrainingModel.department" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ipaddress" EntityType="Хранилище OrenairTrainingModel.ipaddress" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="material" EntityType="Хранилище OrenairTrainingModel.material" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="question" EntityType="Хранилище OrenairTrainingModel.question" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="questiontype" EntityType="Хранилище OrenairTrainingModel.questiontype" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="role" EntityType="Хранилище OrenairTrainingModel.role" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="session" EntityType="Хранилище OrenairTrainingModel.session" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sysdiagrams" EntityType="Хранилище OrenairTrainingModel.sysdiagrams" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="testconfig" EntityType="Хранилище OrenairTrainingModel.testconfig" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="user" EntityType="Хранилище OrenairTrainingModel.user" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="answer">
+          <Key>
+            <PropertyRef Name="session_id" />
+          </Key>
+          <Property Name="session_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="question_id" Type="int" Nullable="false" />
+          <Property Name="useranswer" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="container">
+          <Key>
+            <PropertyRef Name="container_id" />
+          </Key>
+          <Property Name="container_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="container_name" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="ancestor_id" Type="int" />
+          <Property Name="type_id" Type="int" Nullable="false" />
+          <Property Name="deleted" Type="bit" />
+          <Property Name="department_id" Type="int" />
+        </EntityType>
+        <EntityType Name="containertype">
+          <Key>
+            <PropertyRef Name="containertype_id" />
+          </Key>
+          <Property Name="containertype_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="containertype_name" Type="nvarchar" Nullable="false" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="department">
+          <Key>
+            <PropertyRef Name="department_id" />
+          </Key>
+          <Property Name="department_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="department_name" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="deleted" Type="bit" />
+        </EntityType>
+        <EntityType Name="ipaddress">
+          <Key>
+            <PropertyRef Name="ipaddress_id" />
+          </Key>
+          <Property Name="ipaddress_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ipaddress_name" Type="nchar" Nullable="false" MaxLength="10" />
+          <Property Name="deleted" Type="bit" />
+        </EntityType>
+        <EntityType Name="material">
+          <Key>
+            <PropertyRef Name="material_id" />
+          </Key>
+          <Property Name="material_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="material_name" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="container_id" Type="int" Nullable="false" />
+          <Property Name="deleted" Type="bit" />
+          <Property Name="material_content" Type="varbinary(max)" Nullable="false" />
+          <Property Name="file_name" Type="nvarchar" MaxLength="255" />
+          <Property Name="file_size" Type="float" />
+        </EntityType>
+        <EntityType Name="question">
+          <Key>
+            <PropertyRef Name="question_id" />
+          </Key>
+          <Property Name="question_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="text" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="image" Type="varbinary(max)" />
+          <Property Name="answer" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="type_id" Type="int" Nullable="false" />
+          <Property Name="container_id" Type="int" Nullable="false" />
+          <Property Name="material_id" Type="int" />
+          <Property Name="time" Type="time" />
+          <Property Name="deleted" Type="bit" />
+        </EntityType>
+        <EntityType Name="questiontype">
+          <Key>
+            <PropertyRef Name="questiontype_id" />
+          </Key>
+          <Property Name="questiontype_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="questiontype_name" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="deleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="role">
+          <Key>
+            <PropertyRef Name="role_id" />
+          </Key>
+          <Property Name="role_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="role_name" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="deleted" Type="bit" />
+        </EntityType>
+        <EntityType Name="session">
+          <Key>
+            <PropertyRef Name="session_id" />
+          </Key>
+          <Property Name="session_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="datetime" Type="datetime" Nullable="false" />
+          <Property Name="user_id" Type="int" Nullable="false" />
+          <Property Name="testconfig_id" Type="int" Nullable="false" />
+          <Property Name="ipaddress" Type="nvarchar" MaxLength="255" />
+          <Property Name="deleted" Type="bit" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="testconfig">
+          <Key>
+            <PropertyRef Name="testconf_id" />
+          </Key>
+          <Property Name="testconf_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="testconf_name" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="time" Type="time" />
+          <Property Name="deleted" Type="bit" />
+          <Property Name="themes" Type="nvarchar" MaxLength="255" />
+          <Property Name="questions" Type="nvarchar(max)" />
+          <Property Name="department_id" Type="int" />
+        </EntityType>
+        <EntityType Name="user">
+          <Key>
+            <PropertyRef Name="user_id" />
+          </Key>
+          <Property Name="user_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="user_name" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="tab_num" Type="int" />
+          <Property Name="password" Type="nvarchar" MaxLength="255" />
+          <Property Name="firstname" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="surname" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="patronymic" Type="nvarchar" MaxLength="255" />
+          <Property Name="birthdate" Type="date" />
+          <Property Name="department_id" Type="int" />
+          <Property Name="regdate" Type="date" />
+          <Property Name="loggedon" Type="bit" />
+          <Property Name="deleted" Type="bit" />
+          <Property Name="last_activity_date" Type="date" />
+          <Property Name="role_id" Type="int" Nullable="false" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="OrenairTrainingModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="OrenairTrainingEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="answer" EntityType="OrenairTrainingModel.answer" />
+          <EntitySet Name="department" EntityType="OrenairTrainingModel.department" />
+          <EntitySet Name="ipaddress" EntityType="OrenairTrainingModel.ipaddress" />
+          <EntitySet Name="material" EntityType="OrenairTrainingModel.material" />
+          <EntitySet Name="question" EntityType="OrenairTrainingModel.question" />
+          <EntitySet Name="questiontype" EntityType="OrenairTrainingModel.questiontype" />
+          <EntitySet Name="role" EntityType="OrenairTrainingModel.role" />
+          <EntitySet Name="session" EntityType="OrenairTrainingModel.session" />
+          <EntitySet Name="sysdiagrams" EntityType="OrenairTrainingModel.sysdiagrams" />
+          <EntitySet Name="testconfig" EntityType="OrenairTrainingModel.testconfig" />
+          <EntitySet Name="user" EntityType="OrenairTrainingModel.user" />
+          <EntitySet Name="container" EntityType="OrenairTrainingModel.container" />
+          <EntitySet Name="containertype" EntityType="OrenairTrainingModel.containertype" />
+        </EntityContainer>
+        <EntityType Name="answer">
+          <Key>
+            <PropertyRef Name="session_id" />
+          </Key>
+          <Property Name="session_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="question_id" Type="Int32" Nullable="false" />
+          <Property Name="useranswer" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="department">
+          <Key>
+            <PropertyRef Name="department_id" />
+          </Key>
+          <Property Name="department_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="department_name" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="deleted" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="ipaddress">
+          <Key>
+            <PropertyRef Name="ipaddress_id" />
+          </Key>
+          <Property Name="ipaddress_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="ipaddress_name" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="deleted" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="material">
+          <Key>
+            <PropertyRef Name="material_id" />
+          </Key>
+          <Property Name="material_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="material_name" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="deleted" Type="Boolean" />
+          <Property Type="Binary" Name="material_content" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Type="Int32" Name="container_id" Nullable="false" />
+          <Property Type="String" Name="file_name" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="Double" Name="file_size" />
+        </EntityType>
+        <EntityType Name="question">
+          <Key>
+            <PropertyRef Name="question_id" />
+          </Key>
+          <Property Name="question_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="text" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="image" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="answer" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="type_id" Type="Int32" Nullable="false" />
+          <Property Name="material_id" Type="Int32" />
+          <Property Name="deleted" Type="Boolean" />
+          <Property Type="Time" Name="time" Precision="7" />
+          <Property Type="Int32" Name="container_id" Nullable="false" />
+        </EntityType>
+        <EntityType Name="questiontype">
+          <Key>
+            <PropertyRef Name="questiontype_id" />
+          </Key>
+          <Property Name="questiontype_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="questiontype_name" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="deleted" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="role">
+          <Key>
+            <PropertyRef Name="role_id" />
+          </Key>
+          <Property Name="role_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="role_name" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="deleted" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="session">
+          <Key>
+            <PropertyRef Name="session_id" />
+          </Key>
+          <Property Name="session_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="datetime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="user_id" Type="Int32" Nullable="false" />
+          <Property Name="testconfig_id" Type="Int32" Nullable="false" />
+          <Property Name="ipaddress" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="deleted" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="testconfig">
+          <Key>
+            <PropertyRef Name="testconf_id" />
+          </Key>
+          <Property Name="testconf_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="testconf_name" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="time" Type="Time" Precision="7" />
+          <Property Name="deleted" Type="Boolean" />
+          <Property Type="String" Name="themes" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="questions" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="department_id" />
+        </EntityType>
+        <EntityType Name="user">
+          <Key>
+            <PropertyRef Name="user_id" />
+          </Key>
+          <Property Name="user_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="password" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="firstname" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="surname" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="patronymic" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="birthdate" Type="DateTime" Precision="0" />
+          <Property Name="department_id" Type="Int32" />
+          <Property Name="regdate" Type="DateTime" Precision="0" />
+          <Property Name="loggedon" Type="Boolean" />
+          <Property Name="deleted" Type="Boolean" />
+          <Property Type="Int32" Name="tab_num" />
+          <Property Type="String" Name="user_name" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="last_activity_date" Precision="0" />
+          <Property Type="Int32" Name="role_id" Nullable="false" />
+        </EntityType>
+        <EntityType Name="container">
+          <Key>
+            <PropertyRef Name="container_id" />
+          </Key>
+          <Property Type="Int32" Name="container_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="container_name" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="ancestor_id" Nullable="true" />
+          <Property Type="Boolean" Name="deleted" />
+          <Property Type="Int32" Name="type_id" Nullable="false" />
+          <Property Type="Int32" Name="department_id" />
+        </EntityType>
+        <EntityType Name="containertype">
+          <Key>
+            <PropertyRef Name="containertype_id" />
+          </Key>
+          <Property Type="Int32" Name="containertype_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="containertype_name" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище OrenairTrainingModelContainer" CdmEntityContainer="OrenairTrainingEntities">
+          <EntitySetMapping Name="answer">
+            <EntityTypeMapping TypeName="OrenairTrainingModel.answer">
+              <MappingFragment StoreEntitySet="answer">
+                <ScalarProperty Name="session_id" ColumnName="session_id" />
+                <ScalarProperty Name="question_id" ColumnName="question_id" />
+                <ScalarProperty Name="useranswer" ColumnName="useranswer" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="department">
+            <EntityTypeMapping TypeName="OrenairTrainingModel.department">
+              <MappingFragment StoreEntitySet="department">
+                <ScalarProperty Name="department_id" ColumnName="department_id" />
+                <ScalarProperty Name="department_name" ColumnName="department_name" />
+                <ScalarProperty Name="deleted" ColumnName="deleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ipaddress">
+            <EntityTypeMapping TypeName="OrenairTrainingModel.ipaddress">
+              <MappingFragment StoreEntitySet="ipaddress">
+                <ScalarProperty Name="ipaddress_id" ColumnName="ipaddress_id" />
+                <ScalarProperty Name="ipaddress_name" ColumnName="ipaddress_name" />
+                <ScalarProperty Name="deleted" ColumnName="deleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="material">
+            <EntityTypeMapping TypeName="OrenairTrainingModel.material">
+              <MappingFragment StoreEntitySet="material">
+                <ScalarProperty Name="file_size" ColumnName="file_size" />
+                <ScalarProperty Name="file_name" ColumnName="file_name" />
+                <ScalarProperty Name="container_id" ColumnName="container_id" />
+                <ScalarProperty Name="material_content" ColumnName="material_content" />
+                <ScalarProperty Name="material_id" ColumnName="material_id" />
+                <ScalarProperty Name="material_name" ColumnName="material_name" />
+                <ScalarProperty Name="deleted" ColumnName="deleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="question">
+            <EntityTypeMapping TypeName="OrenairTrainingModel.question">
+              <MappingFragment StoreEntitySet="question">
+                <ScalarProperty Name="container_id" ColumnName="container_id" />
+                <ScalarProperty Name="time" ColumnName="time" />
+                <ScalarProperty Name="question_id" ColumnName="question_id" />
+                <ScalarProperty Name="text" ColumnName="text" />
+                <ScalarProperty Name="image" ColumnName="image" />
+                <ScalarProperty Name="answer" ColumnName="answer" />
+                <ScalarProperty Name="type_id" ColumnName="type_id" />
+                <ScalarProperty Name="material_id" ColumnName="material_id" />
+                <ScalarProperty Name="deleted" ColumnName="deleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="questiontype">
+            <EntityTypeMapping TypeName="OrenairTrainingModel.questiontype">
+              <MappingFragment StoreEntitySet="questiontype">
+                <ScalarProperty Name="questiontype_id" ColumnName="questiontype_id" />
+                <ScalarProperty Name="questiontype_name" ColumnName="questiontype_name" />
+                <ScalarProperty Name="deleted" ColumnName="deleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="role">
+            <EntityTypeMapping TypeName="OrenairTrainingModel.role">
+              <MappingFragment StoreEntitySet="role">
+                <ScalarProperty Name="role_id" ColumnName="role_id" />
+                <ScalarProperty Name="role_name" ColumnName="role_name" />
+                <ScalarProperty Name="deleted" ColumnName="deleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="session">
+            <EntityTypeMapping TypeName="OrenairTrainingModel.session">
+              <MappingFragment StoreEntitySet="session">
+                <ScalarProperty Name="session_id" ColumnName="session_id" />
+                <ScalarProperty Name="datetime" ColumnName="datetime" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="testconfig_id" ColumnName="testconfig_id" />
+                <ScalarProperty Name="ipaddress" ColumnName="ipaddress" />
+                <ScalarProperty Name="deleted" ColumnName="deleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="OrenairTrainingModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="testconfig">
+            <EntityTypeMapping TypeName="OrenairTrainingModel.testconfig">
+              <MappingFragment StoreEntitySet="testconfig">
+                <ScalarProperty Name="department_id" ColumnName="department_id" />
+                <ScalarProperty Name="questions" ColumnName="questions" />
+                <ScalarProperty Name="themes" ColumnName="themes" />
+                <ScalarProperty Name="testconf_id" ColumnName="testconf_id" />
+                <ScalarProperty Name="testconf_name" ColumnName="testconf_name" />
+                <ScalarProperty Name="time" ColumnName="time" />
+                <ScalarProperty Name="deleted" ColumnName="deleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="user">
+            <EntityTypeMapping TypeName="OrenairTrainingModel.user">
+              <MappingFragment StoreEntitySet="user">
+                <ScalarProperty Name="role_id" ColumnName="role_id" />
+                <ScalarProperty Name="last_activity_date" ColumnName="last_activity_date" />
+                <ScalarProperty Name="user_name" ColumnName="user_name" />
+                <ScalarProperty Name="tab_num" ColumnName="tab_num" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="firstname" ColumnName="firstname" />
+                <ScalarProperty Name="surname" ColumnName="surname" />
+                <ScalarProperty Name="patronymic" ColumnName="patronymic" />
+                <ScalarProperty Name="birthdate" ColumnName="birthdate" />
+                <ScalarProperty Name="department_id" ColumnName="department_id" />
+                <ScalarProperty Name="regdate" ColumnName="regdate" />
+                <ScalarProperty Name="loggedon" ColumnName="loggedon" />
+                <ScalarProperty Name="deleted" ColumnName="deleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="container">
+            <EntityTypeMapping TypeName="OrenairTrainingModel.container">
+              <MappingFragment StoreEntitySet="container">
+                <ScalarProperty Name="department_id" ColumnName="department_id" />
+                <ScalarProperty Name="type_id" ColumnName="type_id" />
+                <ScalarProperty Name="deleted" ColumnName="deleted" />
+                <ScalarProperty Name="ancestor_id" ColumnName="ancestor_id" />
+                <ScalarProperty Name="container_name" ColumnName="container_name" />
+                <ScalarProperty Name="container_id" ColumnName="container_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="containertype">
+            <EntityTypeMapping TypeName="OrenairTrainingModel.containertype">
+              <MappingFragment StoreEntitySet="containertype">
+                <ScalarProperty Name="containertype_name" ColumnName="containertype_name" />
+                <ScalarProperty Name="containertype_id" ColumnName="containertype_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

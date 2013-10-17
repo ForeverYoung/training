@@ -1,0 +1,63 @@
+﻿@model IEnumerable<OrenairTraining.Models.container>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Темы и папки</h2>
+
+<p>
+    @Html.ActionLink("Создать", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.container_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.container_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.department_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ancestor_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.type_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.deleted)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.container_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.container_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.department_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ancestor_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.type_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.deleted)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.container_id },  new { @class="edit" })
+            @Html.ActionLink("Details", "Details", new { id=item.container_id },  new { @class="details" })
+            @Html.ActionLink("Delete", "Delete", new { id=item.container_id },  new { @class="delete" })
+        </td>
+    </tr>
+}
+
+</table>

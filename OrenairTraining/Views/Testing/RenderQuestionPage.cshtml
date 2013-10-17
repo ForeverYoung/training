@@ -1,0 +1,35 @@
+﻿@model OrenairTraining.Models.MQuestion
+
+@{
+    ViewBag.Title = "RenderQuestionPage";
+    Layout = "~/Views/Shared/TestLayout.cshtml";
+}
+
+<h2>RenderQuestionPage</h2>
+
+
+
+<div id="ribbon">
+    @foreach (var mq in Session["mQuestions"] as List<OrenairTraining.Models.MQuestion>)
+    {
+        @Ajax.ActionLink((mq.IndexInTest + 1).ToString(), "GoTo", new { questionIndex = mq.IndexInTest }, new AjaxOptions { UpdateTargetId = "questionfield" }) 
+    }
+</div>
+
+@if (Model!=null)
+{
+    <fieldset>
+        <legend>Вопрос</legend>
+
+        <div id="questionfield">
+            @Html.Partial("QuestionContent", Model)
+        </div>
+    </fieldset>    
+}
+else
+{
+    <h3>Вопросов не найдено</h3>
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
