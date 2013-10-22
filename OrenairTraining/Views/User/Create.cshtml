@@ -1,0 +1,140 @@
+﻿@model OrenairTraining.Models.user
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>user</legend>
+
+        @*<div class="editor-label">
+            @Html.LabelFor(model => model.user_id)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.user_id)
+            @Html.ValidationMessageFor(model => model.user_id)
+        </div>*@
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.user_name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.user_name)
+            @Html.ValidationMessageFor(model => model.user_name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.password)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.password)
+            @Html.ValidationMessageFor(model => model.password)
+        </div>        
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.firstname)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.firstname)
+            @Html.ValidationMessageFor(model => model.firstname)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.surname)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.surname)
+            @Html.ValidationMessageFor(model => model.surname)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.patronymic)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.patronymic)
+            @Html.ValidationMessageFor(model => model.patronymic)
+        </div>        
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.birthdate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.birthdate)
+            @Html.ValidationMessageFor(model => model.birthdate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.department_id)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.department_id, ViewBag.Departments as SelectList)
+            @Html.ValidationMessageFor(model => model.department_id)
+        </div>
+
+        @*<div class="editor-label">
+            @Html.LabelFor(model => model.regdate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.regdate)
+            @Html.ValidationMessageFor(model => model.regdate)
+        </div>*@
+
+        @*<div class="editor-label">
+            @Html.LabelFor(model => model.loggedon)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.loggedon)
+            @Html.ValidationMessageFor(model => model.loggedon)
+        </div>*@
+
+        @*<div class="editor-label">
+            @Html.LabelFor(model => model.deleted)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.deleted)
+            @Html.ValidationMessageFor(model => model.deleted)
+        </div>*@
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.tab_num)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.tab_num)
+            @Html.ValidationMessageFor(model => model.tab_num)
+        </div>        
+
+        @*<div class="editor-label">
+            @Html.LabelFor(model => model.last_activity_date)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.last_activity_date)
+            @Html.ValidationMessageFor(model => model.last_activity_date)
+        </div>*@
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.role_id)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.role_id,ViewBag.Roles as SelectList)
+            @Html.ValidationMessageFor(model => model.role_id)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

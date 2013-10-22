@@ -26,14 +26,16 @@ namespace OrenairTraining.Controllers
         [Authorize]
         public ActionResult StartTest(int config_id)
         {
+            Session["configId"] = config_id;
             Session["questions"] = FillTestFromConfig(config_id);
             Session["mQuestions"] = new List<MQuestion>();
-            Session["sessionData"] = new session() {    datetime = DateTime.Now, 
+            Session["sessionData"] = new session() {datetime = DateTime.Now, 
                                                     ipaddress = HttpContext.Request.UserHostAddress, 
                                                     deleted = false, 
                                                     testconfig_id = config_id,
-                                                    user_id = db.user.First(u => u.user_name == User.Identity.Name).user_id };
-            
+                                                    user_id = db.user.First(u => u.user_name == User.Identity.Name).user_id
+            };
+                  
             var model = db.testconfig.Find(config_id);
             return View(model);
         }
@@ -45,6 +47,12 @@ namespace OrenairTraining.Controllers
         public ActionResult RenderQuestionPage()
         {
             int i=0;
+            //"June 7, 2087 15:03:25"
+            var months = new string[] { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
+            var date = DateTime.Now.Add(TimeSpan.Parse(db.testconfig.Find(Session["configId"]).time.ToString()));
+            var countdownTime = months[date.Month - 1] + " " + date.Day + ", " + date.Year + " " + date.Hour + ":" + date.Minute + ":" + date.Second;
+            ViewBag.CountdownTime = countdownTime;
+            //time formatting ending
             foreach (var qnum in Session["questions"] as List<int>)
             {
                 var q = db.question.Find(qnum);

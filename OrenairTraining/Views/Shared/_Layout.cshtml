@@ -19,9 +19,9 @@
                     <img src="~/Images/logo.png" alt="Логотип ORENAIR"/>
                     <h1 class="title">TRAINING</h1>                 
                 </div>
-                <div style="float:left">
+                @*<div style="float:left">
                     <img src="~/Images/Logos/T.png" class="tclass" alt="Логотип Training"/>
-                </div>
+                </div>*@
                 <div class="loginout">
                     @if (User.Identity.IsAuthenticated)
                     {   <h3>@User.Identity.Name @Html.ActionLink("Выйти", "Logoff", "Account", routeValues: null, htmlAttributes: new { @class="logout" })</h3>}

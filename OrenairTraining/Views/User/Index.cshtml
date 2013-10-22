@@ -14,9 +14,9 @@
         <th>
             @Html.DisplayNameFor(model => model.user_id)
         </th>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.password)
-        </th>
+        </th>*@
         <th>
             @Html.DisplayNameFor(model => model.firstname)
         </th>
@@ -38,9 +38,9 @@
         <th>
             @Html.DisplayNameFor(model => model.loggedon)
         </th>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.deleted)
-        </th>
+        </th>*@
         <th>
             @Html.DisplayNameFor(model => model.tab_num)
         </th>
@@ -55,9 +55,9 @@
         <td>
             @Html.DisplayFor(modelItem => item.user_id)
         </td>
-        <td>
+        @*<td>
             @Html.DisplayFor(modelItem => item.password)
-        </td>
+        </td>*@
         <td>
             @Html.DisplayFor(modelItem => item.firstname)
         </td>
@@ -79,9 +79,9 @@
         <td>
             @Html.DisplayFor(modelItem => item.loggedon)
         </td>
-        <td>
+        @*<td>
             @Html.DisplayFor(modelItem => item.deleted)
-        </td>
+        </td>*@
         <td>
             @Html.DisplayFor(modelItem => item.tab_num)
         </td>
@@ -89,8 +89,8 @@
             @Html.DisplayFor(modelItem => item.user_name)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ },  new { @class="edit" })
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ },  new { @class="details" })
+            @Html.ActionLink("Edit", "Edit", new { /*id=item.user_id*/ },  new { @class="edit" })
+            @Html.ActionLink("Details", "Details", new { /*id=item.user_id*/},  new { @class="details" })
             @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ },  new { @class="delete" })
         </td>
     </tr>

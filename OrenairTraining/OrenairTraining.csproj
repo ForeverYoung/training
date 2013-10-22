@@ -212,6 +212,7 @@
   <ItemGroup>
     <Content Include="Content\jquery.treeview.css" />
     <Content Include="Content\MenuStyle.css" />
+    <Content Include="Content\countdownstyle.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -328,6 +329,7 @@
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery-ui-1.8.24.js" />
     <Content Include="Scripts\jquery-ui-1.8.24.min.js" />
+    <Content Include="Scripts\jquery.countdown.js" />
     <Content Include="Scripts\jquery.treeview.async.js" />
     <Content Include="Scripts\jquery.treeview.edit.js" />
     <Content Include="Scripts\jquery.treeview.js" />
@@ -342,7 +344,9 @@
     <Content Include="Scripts\knockout-2.2.0.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -398,6 +402,7 @@
     <Content Include="Views\Testing\RenderQuestionPage.cshtml" />
     <Content Include="Views\Testing\QuestionContent.cshtml" />
     <Content Include="Views\Testing\TheEnd.cshtml" />
+    <Content Include="Views\User\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
