@@ -33,18 +33,35 @@
         <div id='cssmenu'>
             <ul>
                <li><a href='~/Home/Index'><span>Домашняя</span></a></li>
-               <li>@Html.ActionLink("Обучение", "Index", "Learning", routeValues: null, htmlAttributes: new { id = "learningIndexLink" })</li>
-                <li>@Html.ActionLink("Мои тесты", "Index", "Testing", routeValues: null, htmlAttributes: new { id = "testIndexLink" })</li>
-               <li>@Html.ActionLink("Подразделения", "Index", "Department", routeValues: null, htmlAttributes: new { id = "departmentIndexLink" })</li>       
-               <li>@Html.ActionLink("Пользователи", "Index", "User", routeValues: null, htmlAttributes: new { id = "userIndexLink" })</li>
-               <li class="has-sub">@Html.ActionLink("Наполнение", "Index", "Filling", routeValues: null, htmlAttributes: new { id = "fillingIndexLink" })
-                    <ul>
-                        <li>@Html.ActionLink("Материалы", "Index", "Material", routeValues: null, htmlAttributes: new { id = "materialIndexLink" })</li>
-                        <li>@Html.ActionLink("Вопросы", "Index", "Question", routeValues: null, htmlAttributes: new { id = "questionIndexLink" })</li>
-                        <li>@Html.ActionLink("Контейнеры", "Index", "Container", routeValues: null, htmlAttributes: new { id = "containerIndexLink" })</li>
-                    </ul>
-               </li> 
-               <li>@Html.ActionLink("Конструктор", "Index", "Configuration", routeValues: null, htmlAttributes: new { id = "configIndexLink" })
+                             
+                @if (User.IsInRole("user") || User.IsInRole("moderator") || User.IsInRole("admin"))
+                {
+                    <li>@Html.ActionLink("Обучение", "Index", "Learning", routeValues: null, htmlAttributes: new { id = "learningIndexLink" })</li>
+                    <li>@Html.ActionLink("Мои тесты", "Index", "Testing", routeValues: null, htmlAttributes: new { id = "testIndexLink" })</li>
+                }
+
+                @if (User.IsInRole("moderator") || User.IsInRole("admin"))
+                {
+                    <li class="has-sub">@Html.ActionLink("Наполнение", "Index", "Filling", routeValues: null, htmlAttributes: new { id = "fillingIndexLink" })
+                        <ul>
+                            <li>@Html.ActionLink("Материалы", "Index", "Material", routeValues: null, htmlAttributes: new { id = "materialIndexLink" })</li>
+                            <li>@Html.ActionLink("Вопросы", "Index", "Question", routeValues: null, htmlAttributes: new { id = "questionIndexLink" })</li>
+                            <li>@Html.ActionLink("Контейнеры", "Index", "Container", routeValues: null, htmlAttributes: new { id = "containerIndexLink" })</li>
+                        </ul>
+                    </li>
+                    <li>@Html.ActionLink("Конструктор", "Index", "Configuration", routeValues: null, htmlAttributes: new { id = "configIndexLink" })</li>
+                }                              
+               
+               @if (User.IsInRole("admin"))
+               {
+                   <li class="has-sub">@Html.ActionLink("Администрирование", "#", "#", routeValues: null, htmlAttributes: new { id = "adminLink" })
+                       <ul>
+                           <li>@Html.ActionLink("Пользователи", "Index", "User", routeValues: null, htmlAttributes: new { id = "userIndexLink" })</li>
+                           <li>@Html.ActionLink("Подразделения", "Index", "Department", routeValues: null, htmlAttributes: new { id = "departmentIndexLink" })</li>
+                           <li>@Html.ActionLink("Журнал", "Index", "Log", routeValues: null, htmlAttributes: new { id = "userIndexLink" })</li>
+                       </ul>
+                   </li>
+               }
             </ul>
         </div>
         <script type="text/javascript">

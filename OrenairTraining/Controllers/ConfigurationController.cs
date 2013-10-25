@@ -16,7 +16,7 @@ namespace OrenairTraining.Controllers
         //
         // GET: /Configuration/
 
-        [Authorize(Roles="admin")]
+        [Authorize(Roles="moderator")]
         public ActionResult Index()
         {
             var tests = db.testconfig.Where(c => c.deleted == false).ToList();

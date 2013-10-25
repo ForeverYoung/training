@@ -14,7 +14,6 @@ namespace OrenairTraining.Controllers
 
         public ActionResult Login()
         {
-
             return View();
         }
 
@@ -26,18 +25,9 @@ namespace OrenairTraining.Controllers
                 if(My_Classes.MyMembership.ValidateUser(model.UserName,model.Password)) //if (Membership.ValidateUser(model.user_name, model.Password))
                 {
                     FormsAuthentication.SetAuthCookie(model.UserName, model.RememberMe);
-                    using (OrenairTrainingEntities _db = new OrenairTrainingEntities()) {
-                        _db.log.Add(new log
-                        {
-                            datetime = DateTime.Now,
-                            user_id = _db.user.FirstOrDefault(u => u.user_name == model.UserName).user_id,
-                            ip = HttpContext.Request.UserHostAddress,
-                            operation_code = "login",
-                            objectcode_id = null, object_id = null
-                        });
-                        _db.SaveChanges();
-                        //!!!!!!!!!!!!!!!!!!!
-                    }                    
+                    //log "log in" in log.dbo
+                    My_Classes.MyMembership.LogAction(model.UserName, "log in", null, null, HttpContext.Request.UserHostAddress);
+                    //end of log
                     if (Url.IsLocalUrl(returnUrl))
                     {
                         return Redirect(returnUrl);                        
@@ -49,6 +39,7 @@ namespace OrenairTraining.Controllers
                 }
                 else
                 {
+                    My_Classes.MyMembership.LogAction("anonymus", "log in failed", null, null, HttpContext.Request.UserHostAddress);
                     ModelState.AddModelError("", "Неправильный пароль или логин");
                 }
             }
@@ -57,7 +48,8 @@ namespace OrenairTraining.Controllers
 
         public ActionResult LogOff()
         {
-            FormsAuthentication.SignOut();
+            My_Classes.MyMembership.LogAction(User.Identity.Name, "log off", null, null, HttpContext.Request.UserHostAddress);
+            FormsAuthentication.SignOut();            
             return RedirectToAction("Login", "Account");
         }
 

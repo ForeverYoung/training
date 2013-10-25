@@ -56,15 +56,10 @@ namespace OrenairTraining.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(user user)
         {
-            if (ModelState.IsValid)
+
+            if (ModelState.IsValid)//!!!
             {
-                if (db.user.First(u => u.user_name == user.user_name) == null)
-                {
-                    user.regdate = DateTime.Now;
-                    db.user.Add(user);
-                    db.SaveChanges();
-                    return View(user);
-                }                
+                bool success = My_Classes.MyMembership.CreateUser(user.user_name, user.password, user.firstname, user.surname, isApproved: true, providerUserKey: null);               
             }
             return RedirectToAction("Index");
         }

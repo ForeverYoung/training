@@ -138,6 +138,7 @@
     <Compile Include="Controllers\FillingController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LearningController.cs" />
+    <Compile Include="Controllers\LogController.cs" />
     <Compile Include="Controllers\MaterialController.cs" />
     <Compile Include="Controllers\QuestionController.cs" />
     <Compile Include="Controllers\TestingController.cs" />
@@ -418,6 +419,11 @@
     <Content Include="Views\Testing\QuestionContent.cshtml" />
     <Content Include="Views\Testing\TheEnd.cshtml" />
     <Content Include="Views\User\Create.cshtml" />
+    <Content Include="Views\Log\Index.cshtml" />
+    <Content Include="Views\Log\Details.cshtml" />
+    <Content Include="Views\Log\Create.cshtml" />
+    <Content Include="Views\Log\Edit.cshtml" />
+    <Content Include="Views\Log\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

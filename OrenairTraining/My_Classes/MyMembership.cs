@@ -33,7 +33,7 @@ namespace OrenairTraining.My_Classes
                 try
                 {
                     var f = _db.usert.Any(u => String.Compare(u.user_name, username) == 0);
-                    if (f)
+                    if (!f)
                     {
                         _db.usert.Add(new usert
                         {
@@ -72,6 +72,35 @@ namespace OrenairTraining.My_Classes
                 }
             }            
             return false;
+        }
+
+        /// <summary>
+        /// Осуществляет запись действия пользователя в журнал бд
+        /// </summary>
+        /// <param name="operationCode"></param>
+        /// <param name="objectCode"></param>
+        /// <param name="objectId"></param>
+        /// <param name="writeIp"></param>
+        public static void LogAction(string userName, string operationCode, int? objectCode, int? objectId, string ipAddress)
+        {
+            using (OrenairTrainingEntities _db = new OrenairTrainingEntities())
+            {
+                try
+                {
+                    _db.log.Add(new log
+                    {
+                        datetime = DateTime.Now,
+                        user_id = _db.user.FirstOrDefault(u => u.user_name == userName).user_id,
+                        ip = ipAddress,
+                        operation_code = operationCode,
+                        objectcode_id = objectCode,
+                        object_id = objectId
+                    });
+                    _db.SaveChanges();
+                }
+                catch (Exception){}
+                
+            }
         }
 
     }
