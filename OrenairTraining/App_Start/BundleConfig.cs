@@ -20,7 +20,8 @@ namespace OrenairTraining
 
             bundles.Add(new ScriptBundle("~/bundles/treeview").Include(
                         "~/Scripts/jquery.treeview*",
-                        "~/Scripts/demo.js"));
+                        "~/Scripts/demo.js",
+                        "~/Scripts/jquery.cookie*"));
 
             // Используйте версию Modernizr для разработчиков, чтобы учиться работать. Когда вы будете готовы перейти к работе,
             // используйте средство построения на сайте http://modernizr.com, чтобы выбрать только нужные тесты.

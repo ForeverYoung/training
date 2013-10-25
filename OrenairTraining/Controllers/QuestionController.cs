@@ -16,6 +16,7 @@ namespace OrenairTraining.Controllers
         //
         // GET: /Question/
 
+        [Authorize(Roles = "admin,moderator")]
         public ActionResult Index()
         {
             return View(db.question.Where(q => q.deleted == false).ToList());
@@ -83,6 +84,12 @@ namespace OrenairTraining.Controllers
         public ActionResult Edit(int id = 0)
         {
             question question = db.question.Find(id);
+
+            SelectList types = new SelectList(db.questiontype, "questiontype_id", "questiontype_name", question.type_id);
+            ViewBag.Types = types;
+            SelectList themes = new SelectList(db.container.Where(c => c.type_id == 2), "container_id", "container_name", question.container_id);
+            ViewBag.Themes = themes;          
+            
             if (question == null)
             {
                 return HttpNotFound();

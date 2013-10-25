@@ -11,6 +11,7 @@ namespace OrenairTraining.Controllers
     [AllowAnonymous]
     public class AccountController : Controller
     {
+
         public ActionResult Login()
         {
 
@@ -25,6 +26,18 @@ namespace OrenairTraining.Controllers
                 if(My_Classes.MyMembership.ValidateUser(model.UserName,model.Password)) //if (Membership.ValidateUser(model.user_name, model.Password))
                 {
                     FormsAuthentication.SetAuthCookie(model.UserName, model.RememberMe);
+                    using (OrenairTrainingEntities _db = new OrenairTrainingEntities()) {
+                        _db.log.Add(new log
+                        {
+                            datetime = DateTime.Now,
+                            user_id = _db.user.FirstOrDefault(u => u.user_name == model.UserName).user_id,
+                            ip = HttpContext.Request.UserHostAddress,
+                            operation_code = "login",
+                            objectcode_id = null, object_id = null
+                        });
+                        _db.SaveChanges();
+                        //!!!!!!!!!!!!!!!!!!!
+                    }                    
                     if (Url.IsLocalUrl(returnUrl))
                     {
                         return Redirect(returnUrl);                        
@@ -68,7 +81,7 @@ namespace OrenairTraining.Controllers
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Ошибка при регистрации");
+                    ModelState.AddModelError("", "Ошибка при регистрации. Возможно такой пользователь уже существует");
                 }
             }
 

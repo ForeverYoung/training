@@ -17,8 +17,7 @@ namespace OrenairTraining.Models
         public int container_id { get; set; }
         public string container_name { get; set; }
         public Nullable<int> ancestor_id { get; set; }
-        public Nullable<bool> deleted { get; set; }
         public int type_id { get; set; }
-        public Nullable<int> department_id { get; set; }
+        public Nullable<bool> deleted { get; set; }
     }
 }

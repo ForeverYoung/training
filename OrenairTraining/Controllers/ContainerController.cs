@@ -16,6 +16,7 @@ namespace OrenairTraining.Controllers
         //
         // GET: /Container/
 
+        [Authorize(Roles = "admin,moderator")]
         public ActionResult Index()
         {
             return View(db.container.ToList());

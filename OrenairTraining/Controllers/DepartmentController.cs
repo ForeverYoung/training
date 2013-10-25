@@ -16,7 +16,7 @@ namespace OrenairTraining.Controllers
         //
         // GET: /Department/
 
-        //[Authorize (Roles="admin")]
+        [Authorize (Roles="admin")]
         public ActionResult Index()
         {
             return View(db.department.ToList());

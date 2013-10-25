@@ -13,13 +13,13 @@
     <fieldset>
         <legend>user</legend>
 
-        @*<div class="editor-label">
-            @Html.LabelFor(model => model.user_id)
+        <div class="editor-label">
+            @Html.HiddenFor(model => model.user_id)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.user_id)
+            @Html.HiddenFor(model => model.user_id)
             @Html.ValidationMessageFor(model => model.user_id)
-        </div>*@
+        </div>
 
         <div class="editor-label">
             @Html.LabelFor(model => model.user_name)
@@ -77,29 +77,29 @@
             @Html.ValidationMessageFor(model => model.department_id)
         </div>
 
-        @*<div class="editor-label">
-            @Html.LabelFor(model => model.regdate)
+        <div class="editor-label">
+            @Html.HiddenFor(model => model.regdate)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.regdate)
+            @Html.HiddenFor(model => model.regdate)
             @Html.ValidationMessageFor(model => model.regdate)
-        </div>*@
+        </div>
 
-        @*<div class="editor-label">
-            @Html.LabelFor(model => model.loggedon)
+        <div class="editor-label">
+            @Html.HiddenFor(model => model.loggedon)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.loggedon)
+            @Html.HiddenFor(model => model.loggedon)
             @Html.ValidationMessageFor(model => model.loggedon)
-        </div>*@
+        </div>
 
-        @*<div class="editor-label">
-            @Html.LabelFor(model => model.deleted)
+        <div class="editor-label">
+            @Html.HiddenFor(model => model.deleted)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.deleted)
+            @Html.HiddenFor(model => model.deleted)
             @Html.ValidationMessageFor(model => model.deleted)
-        </div>*@
+        </div>
 
         <div class="editor-label">
             @Html.LabelFor(model => model.tab_num)
@@ -109,13 +109,13 @@
             @Html.ValidationMessageFor(model => model.tab_num)
         </div>        
 
-        @*<div class="editor-label">
-            @Html.LabelFor(model => model.last_activity_date)
+        <div class="editor-label">
+            @Html.HiddenFor(model => model.last_activity_date)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.last_activity_date)
+            @Html.HiddenFor(model => model.last_activity_date)
             @Html.ValidationMessageFor(model => model.last_activity_date)
-        </div>*@
+        </div>
 
         <div class="editor-label">
             @Html.LabelFor(model => model.role_id)

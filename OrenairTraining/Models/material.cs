@@ -16,9 +16,9 @@ namespace OrenairTraining.Models
     {
         public int material_id { get; set; }
         public string material_name { get; set; }
+        public int container_id { get; set; }
         public Nullable<bool> deleted { get; set; }
         public byte[] material_content { get; set; }
-        public int container_id { get; set; }
         public string file_name { get; set; }
         public Nullable<double> file_size { get; set; }
     }

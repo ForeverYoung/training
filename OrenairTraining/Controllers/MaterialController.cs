@@ -20,6 +20,7 @@ namespace OrenairTraining.Controllers
         //
         // GET: /Material/
 
+        [Authorize(Roles="admin,moderator")]
         public ActionResult Index()
         {
             return View(db.material.ToList());

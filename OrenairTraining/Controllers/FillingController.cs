@@ -13,6 +13,7 @@ namespace OrenairTraining.Controllers
         //
         // GET: /Filling/
 
+        [Authorize(Roles="admin, moderator")]
         public ActionResult Index(int? id)
         {
             ViewBag.TreeList = My_Classes.TreeStructure.GenerateTreeToList();

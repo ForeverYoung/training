@@ -14,10 +14,11 @@ namespace OrenairTraining.Controllers
         //
         // GET: /Testing/
 
-        [Authorize]
+        [Authorize(Roles="admin")]
         public ActionResult Index()
         {
-            return View(db.testconfig.Where(c => c.deleted == false).ToList());
+            var tests = db.testconfig.Where(c => c.deleted == false).ToList();
+            return View(tests);
         }
 
         //

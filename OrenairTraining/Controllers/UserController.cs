@@ -16,8 +16,10 @@ namespace OrenairTraining.Controllers
         //
         // GET: /User/
 
+        [Authorize(Roles="admin")]
         public ActionResult Index()
         {
+            ViewBag.Roles = db.role.ToList();
             return View(db.user.ToList());
         }
 
@@ -37,6 +39,7 @@ namespace OrenairTraining.Controllers
         //
         // GET: /User/Create
 
+        //[Authorize(Roles = "admin")]
         public ActionResult Create()
         {
             SelectList roles = new SelectList(db.role, "role_id", "role_name");
@@ -55,18 +58,20 @@ namespace OrenairTraining.Controllers
         {
             if (ModelState.IsValid)
             {
-                user.regdate = DateTime.Now;
-                db.user.Add(user);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                if (db.user.First(u => u.user_name == user.user_name) == null)
+                {
+                    user.regdate = DateTime.Now;
+                    db.user.Add(user);
+                    db.SaveChanges();
+                    return View(user);
+                }                
             }
-
-            return View(user);
+            return RedirectToAction("Index");
         }
 
         //
         // GET: /User/Edit/5
-
+        [Authorize(Roles = "admin")]
         public ActionResult Edit(int id)
         {
             user user = db.user.Find(id);
@@ -95,7 +100,7 @@ namespace OrenairTraining.Controllers
 
         //
         // GET: /User/Delete/5
-
+        [Authorize(Roles = "admin")]
         public ActionResult Delete(int id = 0)
         {
             user user = db.user.Find(id);

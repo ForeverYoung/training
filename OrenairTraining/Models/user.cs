@@ -15,6 +15,8 @@ namespace OrenairTraining.Models
     public partial class user
     {
         public int user_id { get; set; }
+        public string user_name { get; set; }
+        public Nullable<int> tab_num { get; set; }
         public string password { get; set; }
         public string firstname { get; set; }
         public string surname { get; set; }
@@ -24,8 +26,6 @@ namespace OrenairTraining.Models
         public Nullable<System.DateTime> regdate { get; set; }
         public Nullable<bool> loggedon { get; set; }
         public Nullable<bool> deleted { get; set; }
-        public Nullable<int> tab_num { get; set; }
-        public string user_name { get; set; }
         public Nullable<System.DateTime> last_activity_date { get; set; }
         public int role_id { get; set; }
     }

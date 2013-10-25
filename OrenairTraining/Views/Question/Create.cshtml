@@ -33,13 +33,13 @@
             @Html.Partial("Answers")
         </div>
 
-        <div class="editor-label">
+        @*<div class="editor-label">
             @Html.LabelFor(model => model.material_id)
         </div>
         <div class="editor-field">
             @Html.DropDownListFor(model=>model.material_id,ViewBag.Materials as SelectList)
             @Html.ValidationMessageFor(model => model.material_id)
-        </div>
+        </div>*@
 
         <div class="editor-label">
             @Html.LabelFor(model => model.time)

@@ -20,6 +20,5 @@ namespace OrenairTraining.Models
         public Nullable<bool> deleted { get; set; }
         public string themes { get; set; }
         public string questions { get; set; }
-        public Nullable<int> department_id { get; set; }
     }
 }

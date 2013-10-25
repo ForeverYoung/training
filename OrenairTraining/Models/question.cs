@@ -19,9 +19,9 @@ namespace OrenairTraining.Models
         public byte[] image { get; set; }
         public string answer { get; set; }
         public int type_id { get; set; }
-        public Nullable<int> material_id { get; set; }
-        public Nullable<bool> deleted { get; set; }
-        public Nullable<System.TimeSpan> time { get; set; }
         public int container_id { get; set; }
+        public Nullable<int> material_id { get; set; }
+        public Nullable<System.TimeSpan> time { get; set; }
+        public Nullable<bool> deleted { get; set; }
     }
 }

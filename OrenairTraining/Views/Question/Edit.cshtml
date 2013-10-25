@@ -14,10 +14,10 @@
         <legend>вопрос</legend>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.question_id)
+            @Html.HiddenFor(model => model.question_id)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.question_id)
+            @Html.HiddenFor(model => model.question_id)
             @Html.ValidationMessageFor(model => model.question_id)
         </div>
 
@@ -41,23 +41,23 @@
             @Html.LabelFor(model => model.type_id)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.type_id)
+            @Html.DropDownListFor(model => model.type_id, ViewBag.Types as SelectList)
             @Html.ValidationMessageFor(model => model.type_id)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.material_id)
+            @Html.HiddenFor(model => model.material_id)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.material_id)
+            @Html.HiddenFor(model => model.material_id)
             @Html.ValidationMessageFor(model => model.material_id)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.deleted)
+            @Html.HiddenFor(model => model.deleted)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.deleted)
+            @Html.HiddenFor(model => model.deleted)
             @Html.ValidationMessageFor(model => model.deleted)
         </div>
 
@@ -73,7 +73,7 @@
             @Html.LabelFor(model => model.container_id)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.container_id)
+            @Html.DropDownListFor(model => model.type_id, ViewBag.Themes as SelectList)
             @Html.ValidationMessageFor(model => model.container_id)
         </div>
 

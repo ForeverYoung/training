@@ -32,11 +32,25 @@ namespace OrenairTraining.My_Classes
             {
                 try
                 {
-                    _db.user.Add(new user { user_name = username, password = password, surname = lastname, firstname = firstname });
-                    _db.SaveChanges();
-                    return true;
+                    var f = _db.usert.Any(u => String.Compare(u.user_name, username) == 0);
+                    if (f)
+                    {
+                        _db.usert.Add(new usert
+                        {
+                            user_name = username,
+                            password = password,
+                            surname = lastname,
+                            firstname = firstname,
+                            regdate = DateTime.Now,
+                            deleted = false
+                        });
+                        _db.SaveChanges();
+                        return true;
+                    }
                 }
-                catch (Exception) { }                
+                catch (Exception ex) {
+                    string s = ex.Message;
+                }
             }
             return false;
         }
@@ -51,7 +65,7 @@ namespace OrenairTraining.My_Classes
         {
             using (OrenairTrainingEntities _db=new OrenairTrainingEntities())
             {
-                var user = (from u in _db.user where u.user_name == username select u).FirstOrDefault();
+                var user = _db.user.FirstOrDefault(u => u.user_name == username);// (from u in _db.user where u.user_name == username select u).FirstOrDefault();
                 if (user != null && user.password==password)
                 {
                     return true;
