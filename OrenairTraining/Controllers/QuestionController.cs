@@ -60,13 +60,15 @@ namespace OrenairTraining.Controllers
             question.answer = "";
             int i = 0;
             if (answers.Count > 1)
+            {
                 foreach (var answer in answers)
                 {
                     question.answer += Convert.ToInt32(ichecked[0]) == i + 1 ? "@" : "";
                     question.answer += answer + "|";
                     i++;
                 }
-            question.answer.TrimEnd(new char[]{'|'});
+                question.answer = question.answer.TrimEnd(new[] { '|'});
+            }
             if (ModelState.IsValid)
             {
                 question.deleted = false;

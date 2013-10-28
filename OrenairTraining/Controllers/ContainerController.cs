@@ -19,7 +19,7 @@ namespace OrenairTraining.Controllers
         [Authorize(Roles = "admin,moderator")]
         public ActionResult Index()
         {
-            return View(db.container.ToList());
+            return View(db.container.Where(c=>c.deleted!=true).ToList());
         }
 
         //

@@ -33,14 +33,18 @@
         @helper PrintConfig(List<string> themes, List<string> questions, int length){
             for (int i = 0; i < length; i++)
             {
+                <div>                    
+                    Тема: @themes[i]
+                </div>
                 <div>
-                    @Html.Label("Тема")            
-                    @Html.DropDownList("themes", ViewBag.SThemes as SelectList, (ViewBag.SThemes as SelectList).First(t => t.Text == themes[i]))   
-            
-                    @Html.Label("Вопросы")
+                    Вопросы
                     @Html.TextBox("questions", questions[i])
                     @Html.ValidationMessageFor(model => model.questions)
                 </div>
+                <div>
+                    сменить на @Html.DropDownList("themes", ViewBag.SThemes as SelectList)                    
+                </div>
+                <br />
             }
         }
 

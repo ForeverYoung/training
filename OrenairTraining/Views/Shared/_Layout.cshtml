@@ -6,8 +6,6 @@
     <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-    <link rel="stylesheet" type="text/css" href="~/Content/MenuStyle.css">
-
 </head>
 <body class="center">
 
@@ -79,6 +77,7 @@
     </header>
 
     @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
     @RenderSection("scripts", required: false)
     @RenderBody()
 

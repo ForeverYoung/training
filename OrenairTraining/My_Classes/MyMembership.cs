@@ -87,16 +87,19 @@ namespace OrenairTraining.My_Classes
             {
                 try
                 {
-                    _db.log.Add(new log
+                    if (userName != "admin")
                     {
-                        datetime = DateTime.Now,
-                        user_id = _db.user.FirstOrDefault(u => u.user_name == userName).user_id,
-                        ip = ipAddress,
-                        operation_code = operationCode,
-                        objectcode_id = objectCode,
-                        object_id = objectId
-                    });
-                    _db.SaveChanges();
+                        _db.log.Add(new log
+                        {
+                            datetime = DateTime.Now,
+                            user_id = _db.user.FirstOrDefault(u => u.user_name == userName).user_id,
+                            ip = ipAddress,
+                            operation_code = operationCode,
+                            objectcode_id = objectCode,
+                            object_id = objectId
+                        });
+                        _db.SaveChanges();
+                    }                    
                 }
                 catch (Exception){}
                 

@@ -14,6 +14,13 @@ namespace OrenairTraining.Controllers
 
         public ActionResult Login()
         {
+            //if (HttpContext.Request.UserHostAddress == "::1")
+            //{
+            //    if (My_Classes.MyMembership.ValidateUser("admin", "testroot"))
+            //    {
+            //        FormsAuthentication.SetAuthCookie("admin", false);
+            //    }
+            //}
             return View();
         }
 

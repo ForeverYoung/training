@@ -73,7 +73,7 @@
             @Html.LabelFor(model => model.container_id)
         </div>
         <div class="editor-field">
-            @Html.DropDownListFor(model => model.type_id, ViewBag.Themes as SelectList)
+            @Html.DropDownListFor(model => model.container_id, ViewBag.Themes as SelectList)
             @Html.ValidationMessageFor(model => model.container_id)
         </div>
 
