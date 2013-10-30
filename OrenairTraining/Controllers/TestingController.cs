@@ -14,7 +14,7 @@ namespace OrenairTraining.Controllers
         //
         // GET: /Testing/
 
-        [Authorize(Roles="admin")]
+        [Authorize(Roles="admin,user")]
         public ActionResult Index()
         {
             var tests = db.testconfig.Where(c => c.deleted == false).ToList();
@@ -37,7 +37,7 @@ namespace OrenairTraining.Controllers
                                                     user_id = db.user.First(u => u.user_name == User.Identity.Name).user_id
             };
                   
-            var model = db.testconfig.Find(config_id);
+            var model = db.testconfig.Find(config_id);            
             return View(model);
         }
 
@@ -45,6 +45,7 @@ namespace OrenairTraining.Controllers
         /// Рендеринг страницы тестирования
         /// </summary>
         /// <returns></returns>
+        [Authorize]
         public ActionResult RenderQuestionPage()
         {
             int i=0;
@@ -54,6 +55,7 @@ namespace OrenairTraining.Controllers
             var countdownTime = months[date.Month - 1] + " " + date.Day + ", " + date.Year + " " + date.Hour + ":" + date.Minute + ":" + date.Second;
             ViewBag.CountdownTime = countdownTime;
             //time formatting ending
+            
             foreach (var qnum in Session["questions"] as List<int>)
             {
                 var q = db.question.Find(qnum);
@@ -70,11 +72,13 @@ namespace OrenairTraining.Controllers
                     (Session["mQuestions"] as List<MQuestion>)[i].CorrectAnswers += (variant.StartsWith("@") ? variant + "|" : "");
                 i++;
             }
+
             if (i > 0)
             {
-                ViewBag.Variants = (Session["mQuestions"] as List<MQuestion>)[0].Variants;
+                ViewBag.IsTesting = true;
                 return View((Session["mQuestions"] as List<MQuestion>)[0]);
             }
+
             return PartialView();
         }
 
@@ -85,25 +89,75 @@ namespace OrenairTraining.Controllers
         /// <returns></returns>
         public ActionResult AnswerOnQuestion(MQuestion mq, string[] answers)
         {
-            int newIndex = mq.IndexInTest + 1;
-            foreach (var a in answers)
+            #region if not one answer
+            //foreach (var a in answers)
+            //{
+            //    (Session["mQuestions"] as List<MQuestion>)[mq.IndexInTest].UserAnswers += 
+            //        (Session["mQuestions"] as List<MQuestion>)[mq.IndexInTest].Variants[Convert.ToInt32(a)] + "|";
+            //}
+            #endregion
+
+            if (answers != null)
             {
-                (Session["mQuestions"] as List<MQuestion>)[mq.IndexInTest].UserAnswers += 
-                    (Session["mQuestions"] as List<MQuestion>)[mq.IndexInTest].Variants[Convert.ToInt32(a)] + "|";
+                (Session["mQuestions"] as List<MQuestion>)[mq.IndexInTest].UserAnswers = (Session["mQuestions"] as List<MQuestion>)[mq.IndexInTest].Variants[Convert.ToInt32(answers[0])];
+                (Session["mQuestions"] as List<MQuestion>)[mq.IndexInTest].IsAnswered = true;
             }
-            if (newIndex < (Session["mQuestions"] as List<MQuestion>).Count)
+
+            var newIndex = (Session["mQuestions"] as List<MQuestion>).FindIndex(mq.IndexInTest + 1, q => q.IsAnswered != true);
+            if (newIndex == -1)
             {
-                ViewBag.Variants = (Session["mQuestions"] as List<MQuestion>)[newIndex].Variants;
+                newIndex = (Session["mQuestions"] as List<MQuestion>).FindIndex(0, q => q.IsAnswered != true);
+            }
+
+            #region oldmethod
+            //var newIndex = (mq.IndexInTest < (Session["mQuestions"] as List<MQuestion>).Count - 1) ?
+            //    mq.IndexInTest + 1 :
+            //        (!(Session["mQuestions"] as List<MQuestion>).Any(q => q.IsAnswered != true)) ? -1 :
+            //            (Session["mQuestions"] as List<MQuestion>).FirstOrDefault(q => q.IsAnswered != true).IndexInTest;
+            #endregion
+
+            if (newIndex != -1)
                 return PartialView("QuestionContent", (Session["mQuestions"] as List<MQuestion>)[newIndex]);
-            }
             else
+            {
+                EndTest(db);
+                ViewBag.IsTesting = false;
                 return PartialView("TheEnd");
+            }
         }
 
-        public ActionResult GoTo(int questionIndex)
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="questionIndex"></param>
+        /// <returns></returns>
+        public ActionResult GoTo(int questionIndex, string[] answers)
         {
-            ViewBag.Variants = (Session["mQuestions"] as List<MQuestion>)[questionIndex].Variants;
             return PartialView("QuestionContent", (Session["mQuestions"] as List<MQuestion>)[questionIndex]);
+        }
+
+        /// <summary>
+        /// Переход к следующему вопросу теста
+        /// </summary>
+        /// <param name="mq"></param>
+        /// <returns></returns>
+        public ActionResult GoNext(MQuestion mq)
+        {
+            var newIndex = (Session["mQuestions"] as List<MQuestion>).FindIndex(mq.IndexInTest + 1, q => q.IsAnswered != true);
+            if (newIndex == -1)
+            {
+                newIndex = (Session["mQuestions"] as List<MQuestion>).FindIndex(0, q => q.IsAnswered != true);
+            }
+
+            //if (newIndex != -1)
+                return PartialView("QuestionContent", (Session["mQuestions"] as List<MQuestion>)[newIndex]);
+            //else
+            //{
+            //    EndTest(db);
+            //    ViewBag.IsTesting = false;
+            //    return PartialView("TheEnd");
+            //}
         }
 
         /// <summary>
@@ -137,6 +191,29 @@ namespace OrenairTraining.Controllers
                 }
             }
             return allQuestionsInTest;
+        }
+
+        /// <summary>
+        /// Завершение сессии тестирования и сохранение в БД
+        /// </summary>
+        /// <param name="Db">EDM</param>
+        void EndTest(OrenairTrainingEntities Db)
+        {
+
+            Db.session.Add(Session["sessionData"] as session);
+            Db.SaveChanges();
+            
+            var session_id = Db.session.Where(s => s.ipaddress == HttpContext.Request.UserHostAddress).ToList().Last().session_id;
+            foreach (var item in Session["mQuestions"] as List<MQuestion>)
+            {
+                db.answer.Add(new answer
+                {
+                    question_id = item.GlobalId,
+                    session_id = session_id,
+                    useranswer = item.UserAnswers
+                });
+            }
+            Db.SaveChanges();
         }
     }
 }

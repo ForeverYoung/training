@@ -20,5 +20,6 @@ namespace OrenairTraining.Models
         public Nullable<bool> deleted { get; set; }
         public string themes { get; set; }
         public string questions { get; set; }
+        public Nullable<int> criterion { get; set; }
     }
 }

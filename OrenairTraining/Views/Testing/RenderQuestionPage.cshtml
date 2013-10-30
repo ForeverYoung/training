@@ -2,22 +2,34 @@
 
 @{
     ViewBag.Title = "RenderQuestionPage";
-    Layout = "~/Views/Shared/TestLayout.cshtml";
 }
 
-<link rel="stylesheet" type="text/css" href="~/Content/countdownstyle.css" media="screen">
 <script type="text/javascript" src="~/Scripts/jquery.countdown.js"></script>
+<link rel="stylesheet" type="text/css" href="~/Content/countdownstyle.css" media="screen">
+<script type="text/javascript">
+    $(function () {
+          var endDate = new Date($("#mydate").html());
+
+          $('.countdown.styled').countdown({
+          date: endDate,
+          render: function(data) {
+            $(this.el).html("<div>" + this.leadingZeros(data.hours, 2) + " <span>hrs</span></div><div>" + this.leadingZeros(data.min, 2) + " <span>min</span></div><div>" + this.leadingZeros(data.sec, 2) + " <span>sec</span></div>");
+          },
+              //<div>" + this.leadingZeros(data.years, 4) + " <span>years</span></div><div>" + this.leadingZeros(data.days, 3) + " <span>days</span></div>
+          onEnd: function() {
+            $(this.el).addClass('ended');
+          }
+        });
+      });
+</script>
 
 <h2>RenderQuestionPage</h2>
 
-<div id="ribbon">
-    <div id="mydate" style="display:none">@ViewBag.CountdownTime</div>
-    @foreach (var mq in Session["mQuestions"] as List<OrenairTraining.Models.MQuestion>)
-    {
-        @Ajax.ActionLink((mq.IndexInTest + 1).ToString(), "GoTo", new { questionIndex = mq.IndexInTest }, new AjaxOptions { UpdateTargetId = "questionfield" }) 
-    }
+<div id="time">
+    <div id="mydate" style="display:none">@ViewBag.CountdownTime</div>    
     <div class="countdown styled"></div>
 </div>
+<br />
 <div>
     @if (Model!=null)
     {
@@ -34,24 +46,3 @@
         <h3>Вопросов не найдено</h3>
     }
 </div>
-
-<script type="text/javascript">
-    $(function (date) {
-          var endDate = new Date($("#mydate").html());
-
-          $('.countdown.styled').countdown({
-          date: endDate,
-          render: function(data) {
-            $(this.el).html("<div>" + this.leadingZeros(data.hours, 2) + " <span>hrs</span></div><div>" + this.leadingZeros(data.min, 2) + " <span>min</span></div><div>" + this.leadingZeros(data.sec, 2) + " <span>sec</span></div>");
-          },
-              //<div>" + this.leadingZeros(data.years, 4) + " <span>years</span></div><div>" + this.leadingZeros(data.days, 3) + " <span>days</span></div>
-          onEnd: function() {
-            $(this.el).addClass('ended');
-          }
-        });
-      });
-    </script>
-
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}

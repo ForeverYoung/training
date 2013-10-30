@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    <script type="text/javascript" src="~/Scripts/jquery-1.8.2.js"></script>
+    <script type="text/javascript" src="~/Scripts/modernizr-2.6.2.js"></script>
+    @Scripts.Render("~/bundles/jqueryval")
+    @RenderSection("scripts", required: false)
 </head>
 <body class="center">
 
@@ -22,44 +25,48 @@
                 </div>*@
                 <div class="loginout">
                     @if (User.Identity.IsAuthenticated)
-                    {   <h3>@User.Identity.Name @Html.ActionLink("Выйти", "Logoff", "Account", routeValues: null, htmlAttributes: new { @class="logout" })</h3>}
-                    else{@Html.ActionLink("Войти", "Login", "Account", routeValues: null, htmlAttributes: new { @class="login" })}
+                    {   <h3>@User.Identity.Name @Html.ActionLink("Выйти", "Logoff", "Account", routeValues: null, htmlAttributes: new { @class = "logout" })</h3>}
+                    else
+                    {@Html.ActionLink("Войти", "Login", "Account", routeValues: null, htmlAttributes: new { @class = "login" })}
                 </div>
             </div>
         </div>
         
         <div id='cssmenu'>
             <ul>
-               <li><a href='~/Home/Index'><span>Домашняя</span></a></li>
+                @if (ViewBag.IsTesting != true)
+                {
+                    <li><a href='~/Home/Index'><span>Домашняя</span></a></li>
                              
-                @if (User.IsInRole("user") || User.IsInRole("moderator") || User.IsInRole("admin"))
-                {
-                    <li>@Html.ActionLink("Обучение", "Index", "Learning", routeValues: null, htmlAttributes: new { id = "learningIndexLink" })</li>
-                    <li>@Html.ActionLink("Мои тесты", "Index", "Testing", routeValues: null, htmlAttributes: new { id = "testIndexLink" })</li>
-                }
+                    if (User.IsInRole("user") || User.IsInRole("moderator") || User.IsInRole("admin"))
+                    {
+                        <li>@Html.ActionLink("Обучение", "Index", "Learning", routeValues: null, htmlAttributes: new { id = "learningIndexLink" })</li>
+                        <li>@Html.ActionLink("Мои тесты", "Index", "Testing", routeValues: null, htmlAttributes: new { id = "testIndexLink" })</li>
+                    }
 
-                @if (User.IsInRole("moderator") || User.IsInRole("admin"))
-                {
-                    <li class="has-sub">@Html.ActionLink("Наполнение", "Index", "Filling", routeValues: null, htmlAttributes: new { id = "fillingIndexLink" })
-                        <ul>
-                            <li>@Html.ActionLink("Материалы", "Index", "Material", routeValues: null, htmlAttributes: new { id = "materialIndexLink" })</li>
-                            <li>@Html.ActionLink("Вопросы", "Index", "Question", routeValues: null, htmlAttributes: new { id = "questionIndexLink" })</li>
-                            <li>@Html.ActionLink("Контейнеры", "Index", "Container", routeValues: null, htmlAttributes: new { id = "containerIndexLink" })</li>
-                        </ul>
-                    </li>
-                    <li>@Html.ActionLink("Конструктор", "Index", "Configuration", routeValues: null, htmlAttributes: new { id = "configIndexLink" })</li>
-                }                              
+                    if (User.IsInRole("moderator") || User.IsInRole("admin"))
+                    {
+                        <li class="has-sub">@Html.ActionLink("Наполнение", "Index", "Filling", routeValues: null, htmlAttributes: new { id = "fillingIndexLink" })
+                            <ul>
+                                <li>@Html.ActionLink("Материалы", "Index", "Material", routeValues: null, htmlAttributes: new { id = "materialIndexLink" })</li>
+                                <li>@Html.ActionLink("Вопросы", "Index", "Question", routeValues: null, htmlAttributes: new { id = "questionIndexLink" })</li>
+                                <li>@Html.ActionLink("Контейнеры", "Index", "Container", routeValues: null, htmlAttributes: new { id = "containerIndexLink" })</li>
+                            </ul>
+                        </li>
+                        <li>@Html.ActionLink("Конструктор", "Index", "Configuration", routeValues: null, htmlAttributes: new { id = "configIndexLink" })</li>
+                    }                              
                
-               @if (User.IsInRole("admin"))
-               {
-                   <li class="has-sub">@Html.ActionLink("Администрирование", "#", "#", routeValues: null, htmlAttributes: new { id = "adminLink" })
-                       <ul>
-                           <li>@Html.ActionLink("Пользователи", "Index", "User", routeValues: null, htmlAttributes: new { id = "userIndexLink" })</li>
-                           <li>@Html.ActionLink("Подразделения", "Index", "Department", routeValues: null, htmlAttributes: new { id = "departmentIndexLink" })</li>
-                           <li>@Html.ActionLink("Журнал", "Index", "Log", routeValues: null, htmlAttributes: new { id = "userIndexLink" })</li>
-                       </ul>
-                   </li>
-               }
+                   if (User.IsInRole("admin"))
+                   {
+                       <li class="has-sub">@Html.ActionLink("Администрирование", "#", "#", routeValues: null, htmlAttributes: new { id = "adminLink" })
+                           <ul>
+                               <li>@Html.ActionLink("Пользователи", "Index", "User", routeValues: null, htmlAttributes: new { id = "userIndexLink" })</li>
+                               <li>@Html.ActionLink("Подразделения", "Index", "Department", routeValues: null, htmlAttributes: new { id = "departmentIndexLink" })</li>
+                               <li>@Html.ActionLink("Журнал", "Index", "Log", routeValues: null, htmlAttributes: new { id = "userIndexLink" })</li>
+                           </ul>
+                       </li>
+                   }
+                }               
             </ul>
         </div>
         <script type="text/javascript">
@@ -76,14 +83,11 @@
 
     </header>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/jqueryval")
-    @RenderSection("scripts", required: false)
     @RenderBody()
 
-
     <footer>
-        @if (IsSectionDefined("Footer")) {
+        @if (IsSectionDefined("Footer"))
+        {
             RenderSection("Footer");
         }
         else

@@ -32,10 +32,10 @@ namespace OrenairTraining.My_Classes
             {
                 try
                 {
-                    var f = _db.usert.Any(u => String.Compare(u.user_name, username) == 0);
+                    var f = _db.user.Any(u => String.Compare(u.user_name, username) == 0);
                     if (!f)
                     {
-                        _db.usert.Add(new usert
+                        _db.user.Add(new user
                         {
                             user_name = username,
                             password = password,

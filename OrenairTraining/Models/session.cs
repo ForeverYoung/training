@@ -20,5 +20,6 @@ namespace OrenairTraining.Models
         public int testconfig_id { get; set; }
         public string ipaddress { get; set; }
         public Nullable<bool> deleted { get; set; }
+        public Nullable<int> result { get; set; }
     }
 }

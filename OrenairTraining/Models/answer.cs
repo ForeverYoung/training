@@ -14,6 +14,7 @@ namespace OrenairTraining.Models
     
     public partial class answer
     {
+        public int answer_id { get; set; }
         public int session_id { get; set; }
         public int question_id { get; set; }
         public string useranswer { get; set; }
