@@ -142,6 +142,7 @@
     <Compile Include="Controllers\MaterialController.cs" />
     <Compile Include="Controllers\QuestionController.cs" />
     <Compile Include="Controllers\TestingController.cs" />
+    <Compile Include="Controllers\TestToUserController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -209,6 +210,7 @@
     <Compile Include="Models\testtouser.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\TestToUserModel.cs" />
     <Compile Include="Models\user.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -423,6 +425,11 @@
     <Content Include="Views\Log\Create.cshtml" />
     <Content Include="Views\Log\Edit.cshtml" />
     <Content Include="Views\Log\Delete.cshtml" />
+    <Content Include="Views\TestToUser\Index.cshtml" />
+    <Content Include="Views\TestToUser\Details.cshtml" />
+    <Content Include="Views\TestToUser\Create.cshtml" />
+    <Content Include="Views\TestToUser\Edit.cshtml" />
+    <Content Include="Views\TestToUser\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

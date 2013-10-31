@@ -17,7 +17,13 @@ namespace OrenairTraining.Controllers
         [Authorize(Roles="admin,user")]
         public ActionResult Index()
         {
-            var tests = db.testconfig.Where(c => c.deleted == false).ToList();
+            //Выбираем тесты, закрепленные за пользователем
+            var tests = (from tc in db.testconfig
+                        join ttu in db.testtouser on tc.testconf_id equals ttu.testconf_id
+                        join u in db.user on ttu.user_id equals u.user_id
+                        where u.user_name == User.Identity.Name && ttu.is_completed !=true
+                        select tc).ToList();
+                            //db.testconfig.Where(c => c.deleted == false).ToList();
             return View(tests);
         }
 
@@ -27,17 +33,20 @@ namespace OrenairTraining.Controllers
         [Authorize]
         public ActionResult StartTest(int config_id)
         {
+            var userId = db.user.First(u => u.user_name == User.Identity.Name).user_id;           
             Session["configId"] = config_id;
             Session["questions"] = FillTestFromConfig(config_id);
             Session["mQuestions"] = new List<MQuestion>();
-            Session["sessionData"] = new session() {datetime = DateTime.Now, 
-                                                    ipaddress = HttpContext.Request.UserHostAddress, 
-                                                    deleted = false, 
-                                                    testconfig_id = config_id,
-                                                    user_id = db.user.First(u => u.user_name == User.Identity.Name).user_id
+            Session["sessionData"] = new session()
+            {
+                datetime = DateTime.Now,
+                ipaddress = HttpContext.Request.UserHostAddress,
+                deleted = false,
+                testconfig_id = config_id,
+                user_id = userId
             };
-                  
-            var model = db.testconfig.Find(config_id);            
+
+            var model = db.testconfig.Find(config_id);
             return View(model);
         }
 
@@ -48,6 +57,9 @@ namespace OrenairTraining.Controllers
         [Authorize]
         public ActionResult RenderQuestionPage()
         {
+            session currentSession = Session["sessionData"] as session;
+            if (!db.testtouser.Any(t => t.testconf_id == currentSession.testconfig_id && t.user_id == currentSession.user_id && t.is_completed != true))
+                return RedirectToAction("Index", "Testing");
             int i=0;
             //"June 7, 2087 15:03:25"
             var months = new string[] { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
@@ -199,8 +211,10 @@ namespace OrenairTraining.Controllers
         /// <param name="Db">EDM</param>
         void EndTest(OrenairTrainingEntities Db)
         {
-
-            Db.session.Add(Session["sessionData"] as session);
+            session currentSession = Session["sessionData"] as session;
+            Db.session.Add(currentSession);
+            currentSession.result = (int)((double)(Session["mQuestions"] as List<MQuestion>).Count(mq => mq.UserAnswers[0] == '@'/*.StartsWith("@")*/) 
+                / (double)(Session["mQuestions"] as List<MQuestion>).Count * 100);
             Db.SaveChanges();
             
             var session_id = Db.session.Where(s => s.ipaddress == HttpContext.Request.UserHostAddress).ToList().Last().session_id;
@@ -213,6 +227,7 @@ namespace OrenairTraining.Controllers
                     useranswer = item.UserAnswers
                 });
             }
+            Db.testtouser.FirstOrDefault(t => t.user_id == currentSession.user_id && t.testconf_id == currentSession.testconfig_id && t.is_completed != true).is_completed = true;
             Db.SaveChanges();
         }
     }
