@@ -14,6 +14,11 @@ namespace OrenairTraining.Models
     
     public partial class session
     {
+        public session()
+        {
+            this.answer = new HashSet<answer>();
+        }
+    
         public int session_id { get; set; }
         public System.DateTime datetime { get; set; }
         public int user_id { get; set; }
@@ -21,5 +26,9 @@ namespace OrenairTraining.Models
         public string ipaddress { get; set; }
         public Nullable<bool> deleted { get; set; }
         public Nullable<int> result { get; set; }
+    
+        public virtual ICollection<answer> answer { get; set; }
+        public virtual testconfig testconfig { get; set; }
+        public virtual user user { get; set; }
     }
 }

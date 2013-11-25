@@ -14,7 +14,14 @@ namespace OrenairTraining.Models
     
     public partial class containertype
     {
+        public containertype()
+        {
+            this.container = new HashSet<container>();
+        }
+    
         public int containertype_id { get; set; }
         public string containertype_name { get; set; }
+    
+        public virtual ICollection<container> container { get; set; }
     }
 }

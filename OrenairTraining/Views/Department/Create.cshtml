@@ -13,16 +13,16 @@
     <fieldset>
         <legend>Подразделение</legend>
 
-        <div class="editor-label">
+        @*<div class="editor-label">
             @Html.LabelFor(model => model.department_id)
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.department_id)
             @Html.ValidationMessageFor(model => model.department_id)
-        </div>
+        </div>*@
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.department_name)
+            @Html.Label("Подразделение")
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.department_name)
@@ -30,10 +30,10 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.deleted)
+            @Html.HiddenFor(model => model.deleted)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.deleted)
+            @Html.HiddenFor(model => model.deleted)
             @Html.ValidationMessageFor(model => model.deleted)
         </div>
 

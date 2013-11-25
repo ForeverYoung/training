@@ -14,6 +14,12 @@ namespace OrenairTraining.Models
     
     public partial class testconfig
     {
+        public testconfig()
+        {
+            this.session = new HashSet<session>();
+            this.testtouser = new HashSet<testtouser>();
+        }
+    
         public int testconf_id { get; set; }
         public string testconf_name { get; set; }
         public Nullable<System.TimeSpan> time { get; set; }
@@ -21,5 +27,8 @@ namespace OrenairTraining.Models
         public string themes { get; set; }
         public string questions { get; set; }
         public Nullable<int> criterion { get; set; }
+    
+        public virtual ICollection<session> session { get; set; }
+        public virtual ICollection<testtouser> testtouser { get; set; }
     }
 }

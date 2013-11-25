@@ -14,6 +14,11 @@ namespace OrenairTraining.Models
     
     public partial class question
     {
+        public question()
+        {
+            this.answer1 = new HashSet<answer>();
+        }
+    
         public int question_id { get; set; }
         public string text { get; set; }
         public byte[] image { get; set; }
@@ -23,5 +28,10 @@ namespace OrenairTraining.Models
         public Nullable<int> material_id { get; set; }
         public Nullable<System.TimeSpan> time { get; set; }
         public Nullable<bool> deleted { get; set; }
+    
+        public virtual ICollection<answer> answer1 { get; set; }
+        public virtual container container { get; set; }
+        public virtual material material { get; set; }
+        public virtual questiontype questiontype { get; set; }
     }
 }

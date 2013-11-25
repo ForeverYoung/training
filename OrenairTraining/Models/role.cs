@@ -14,8 +14,15 @@ namespace OrenairTraining.Models
     
     public partial class role
     {
+        public role()
+        {
+            this.user = new HashSet<user>();
+        }
+    
         public int role_id { get; set; }
         public string role_name { get; set; }
         public Nullable<bool> deleted { get; set; }
+    
+        public virtual ICollection<user> user { get; set; }
     }
 }

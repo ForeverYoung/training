@@ -69,6 +69,8 @@ namespace OrenairTraining.Controllers
         [Authorize(Roles = "admin")]
         public ActionResult Edit(int id)
         {
+            ViewBag.Roles = new SelectList(db.role.Where(r=>r.deleted!=true), "role_id", "role_name");
+            ViewBag.Departments = new SelectList(db.department.Where(d=>d.deleted!=true), "department_id", "department_name");
             user user = db.user.Find(id);
             if (user == null)
             {

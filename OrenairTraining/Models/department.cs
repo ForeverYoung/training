@@ -14,8 +14,17 @@ namespace OrenairTraining.Models
     
     public partial class department
     {
+        public department()
+        {
+            this.containertodepartment = new HashSet<containertodepartment>();
+            this.user = new HashSet<user>();
+        }
+    
         public int department_id { get; set; }
         public string department_name { get; set; }
         public Nullable<bool> deleted { get; set; }
+    
+        public virtual ICollection<containertodepartment> containertodepartment { get; set; }
+        public virtual ICollection<user> user { get; set; }
     }
 }

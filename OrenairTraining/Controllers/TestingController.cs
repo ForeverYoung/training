@@ -18,11 +18,12 @@ namespace OrenairTraining.Controllers
         public ActionResult Index()
         {
             //Выбираем тесты, закрепленные за пользователем
+            //var tests = db.user.FirstOrDefault(u => u.user_name == User.Identity.Name).testtouser.Where(ttu =>ttu.is_completed != true)
             var tests = (from tc in db.testconfig
-                        join ttu in db.testtouser on tc.testconf_id equals ttu.testconf_id
-                        join u in db.user on ttu.user_id equals u.user_id
-                        where u.user_name == User.Identity.Name && ttu.is_completed !=true
-                        select tc).ToList();
+                         join ttu in db.testtouser on tc.testconf_id equals ttu.testconf_id
+                         join u in db.user on ttu.user_id equals u.user_id
+                         where u.user_name == User.Identity.Name && ttu.is_completed != true && ttu.deleted!=true
+                         select tc).ToList();
                             //db.testconfig.Where(c => c.deleted == false).ToList();
             return View(tests);
         }

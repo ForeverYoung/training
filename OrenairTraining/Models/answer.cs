@@ -18,5 +18,8 @@ namespace OrenairTraining.Models
         public int session_id { get; set; }
         public int question_id { get; set; }
         public string useranswer { get; set; }
+    
+        public virtual question question { get; set; }
+        public virtual session session { get; set; }
     }
 }

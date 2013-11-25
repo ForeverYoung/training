@@ -14,8 +14,15 @@ namespace OrenairTraining.Models
     
     public partial class questiontype
     {
+        public questiontype()
+        {
+            this.question = new HashSet<question>();
+        }
+    
         public int questiontype_id { get; set; }
         public string questiontype_name { get; set; }
         public bool deleted { get; set; }
+    
+        public virtual ICollection<question> question { get; set; }
     }
 }

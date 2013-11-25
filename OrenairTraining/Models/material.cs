@@ -14,6 +14,11 @@ namespace OrenairTraining.Models
     
     public partial class material
     {
+        public material()
+        {
+            this.question = new HashSet<question>();
+        }
+    
         public int material_id { get; set; }
         public string material_name { get; set; }
         public int container_id { get; set; }
@@ -21,5 +26,8 @@ namespace OrenairTraining.Models
         public byte[] material_content { get; set; }
         public string file_name { get; set; }
         public Nullable<double> file_size { get; set; }
+    
+        public virtual container container { get; set; }
+        public virtual ICollection<question> question { get; set; }
     }
 }
