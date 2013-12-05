@@ -44,7 +44,7 @@ namespace OrenairTraining.Controllers
         {
             SelectList roles = new SelectList(db.role, "role_id", "role_name");
             ViewBag.Roles = roles;
-            SelectList departments = new SelectList(db.department, "department_id", "department_name");
+            SelectList departments = new SelectList(db.department.Where(d => d.deleted!=true), "department_id", "department_name");
             ViewBag.Departments = departments;
             return View();
         }
@@ -57,10 +57,10 @@ namespace OrenairTraining.Controllers
         public ActionResult Create(user user)
         {
 
-            if (ModelState.IsValid)//!!!
-            {
-                bool success = My_Classes.MyMembership.CreateUser(user.user_name, user.password, user.firstname, user.surname, isApproved: true, providerUserKey: null);               
-            }
+            //if (ModelState.IsValid)//!!!
+            //{
+                My_Classes.MyMembership.CreateUser(user.user_name, user.password, user.firstname, user.surname, isApproved: true, providerUserKey: null);               
+            //}
             return RedirectToAction("Index");
         }
 

@@ -42,6 +42,7 @@ namespace OrenairTraining.My_Classes
                             surname = lastname,
                             firstname = firstname,
                             regdate = DateTime.Now,
+                            role_id = 3,
                             deleted = false
                         });
                         _db.SaveChanges();

@@ -35,6 +35,7 @@ namespace OrenairTraining.Models
         public Nullable<bool> deleted { get; set; }
         public Nullable<System.DateTime> last_activity_date { get; set; }
         public int role_id { get; set; }
+        public string fio { get; set; }
     
         public virtual department department { get; set; }
         public virtual ICollection<log> log { get; set; }

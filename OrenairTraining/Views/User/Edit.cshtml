@@ -89,6 +89,13 @@
             @Html.ValidationMessageFor(model => model.birthdate)
         </div>
 
+        <div class="editor-label">
+            @Html.HiddenFor(model => model.regdate)
+        </div>
+        <div class="editor-field">
+            @Html.HiddenFor(model => model.regdate)            
+        </div>
+
         <p>
             <input type="submit" value="Save" />
         </p>

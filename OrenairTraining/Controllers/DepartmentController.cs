@@ -52,6 +52,7 @@ namespace OrenairTraining.Controllers
         {
             if (ModelState.IsValid)
             {
+                department.deleted = false;
                 db.department.Add(department);
                 db.SaveChanges();
                 return RedirectToAction("Index");
