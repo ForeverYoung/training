@@ -1,0 +1,47 @@
+﻿@model OrenairTraining.Models.testconfig
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Подробно</h2>
+
+<fieldset>
+    <legend>Тест</legend>
+
+    <div class="display-label">
+         @Html.HiddenFor(model => model.testconf_id)
+    </div>
+    <div class="display-field">
+        @Html.HiddenFor(model => model.testconf_id)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.testconf_name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.testconf_name)
+    </div>
+    <br />
+    @helper PrintConfig(List<string> themes, List<string> questions, int length){
+        for (int i = 0; i < length; i++)
+        {
+            <div>
+                <h4> - @themes[i] вопросы (@questions[i])</h4>
+            </div>
+        }        
+        }
+
+    @PrintConfig(ViewBag.Themes, ViewBag.Questions, ViewBag.Themescount)
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.time)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.time)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Редактировать", "Edit", new { id=Model.testconf_id }) |
+    @Html.ActionLink("Вернуться к списку", "Index")
+</p>

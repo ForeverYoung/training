@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "Наполнение";
+}
+
+<h2>Наполнение</h2>
+
+<script src="~/Scripts/jquery.treeview.js" type="text/javascript"></script>
+<script type="text/javascript" src="~/Scripts/demo.js"></script>
+
+<table  class="mytable" width="100%" border="1" cellpadding="10" cellspacing="0">
+    <thead></thead>
+    <tr>
+        <td class="mytd" width="25%">
+            <ul id="browser" class="filetree">
+                @using OrenairTraining.My_Classes
+                @CustomHtmlHelper.RenderTreeView(Html, Ajax, ViewBag.TreeList, "Filling","Edit")
+	        </ul>
+            <br />
+            @Html.ActionLink("Добавить в корень", "Create", "Container", new { id = 0 }, htmlAttributes: null)
+        </td>
+        <td class="mytd">
+            <div id="data">
+            </div>
+        </td>
+    </tr>
+</table>

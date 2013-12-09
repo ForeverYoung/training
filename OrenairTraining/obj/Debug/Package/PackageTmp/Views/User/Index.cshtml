@@ -1,0 +1,105 @@
+﻿@model IEnumerable<OrenairTraining.Models.user>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.user_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.user_name)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.password)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.firstname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.surname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.patronymic)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.role_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.birthdate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.department_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.regdate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.loggedon)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.deleted)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.tab_num)
+        </th>        
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.user_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.user_name)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.password)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.firstname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.surname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.patronymic)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.role_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.birthdate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.department_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.regdate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.loggedon)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.deleted)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.tab_num)
+        </td>        
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /*id=item.user_id*/ },  new { @class="edit" })
+            @Html.ActionLink("Details", "Details", new { /*id=item.user_id*/},  new { @class="details" })
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ },  new { @class="delete" })
+        </td>
+    </tr>
+}
+
+</table>

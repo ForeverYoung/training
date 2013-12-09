@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище OrenairTrainingModelContainer" CdmEntityContainer="OrenairTrainingEntities">
+    <EntitySetMapping Name="answer">
+      <EntityTypeMapping TypeName="OrenairTrainingModel.answer">
+        <MappingFragment StoreEntitySet="answer">
+          <ScalarProperty Name="session_id" ColumnName="session_id" />
+          <ScalarProperty Name="question_id" ColumnName="question_id" />
+          <ScalarProperty Name="useranswer" ColumnName="useranswer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="department">
+      <EntityTypeMapping TypeName="OrenairTrainingModel.department">
+        <MappingFragment StoreEntitySet="department">
+          <ScalarProperty Name="department_id" ColumnName="department_id" />
+          <ScalarProperty Name="department_name" ColumnName="department_name" />
+          <ScalarProperty Name="deleted" ColumnName="deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="folder">
+      <EntityTypeMapping TypeName="OrenairTrainingModel.folder">
+        <MappingFragment StoreEntitySet="folder">
+          <ScalarProperty Name="folder_id" ColumnName="folder_id" />
+          <ScalarProperty Name="folder_name" ColumnName="folder_name" />
+          <ScalarProperty Name="ancestor_id" ColumnName="ancestor_id" />
+          <ScalarProperty Name="department_id" ColumnName="department_id" />
+          <ScalarProperty Name="deleted" ColumnName="deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ipaddress">
+      <EntityTypeMapping TypeName="OrenairTrainingModel.ipaddress">
+        <MappingFragment StoreEntitySet="ipaddress">
+          <ScalarProperty Name="ipaddress_id" ColumnName="ipaddress_id" />
+          <ScalarProperty Name="ipaddress1" ColumnName="ipaddress" />
+          <ScalarProperty Name="deleted" ColumnName="deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="material">
+      <EntityTypeMapping TypeName="OrenairTrainingModel.material">
+        <MappingFragment StoreEntitySet="material">
+          <ScalarProperty Name="material_id" ColumnName="material_id" />
+          <ScalarProperty Name="material_name" ColumnName="material_name" />
+          <ScalarProperty Name="theme_id" ColumnName="theme_id" />
+          <ScalarProperty Name="deleted" ColumnName="deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="question">
+      <EntityTypeMapping TypeName="OrenairTrainingModel.question">
+        <MappingFragment StoreEntitySet="question">
+          <ScalarProperty Name="question_id" ColumnName="question_id" />
+          <ScalarProperty Name="text" ColumnName="text" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="answer" ColumnName="answer" />
+          <ScalarProperty Name="type_id" ColumnName="type_id" />
+          <ScalarProperty Name="theme_id" ColumnName="theme_id" />
+          <ScalarProperty Name="material_id" ColumnName="material_id" />
+          <ScalarProperty Name="deleted" ColumnName="deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="questiontype">
+      <EntityTypeMapping TypeName="OrenairTrainingModel.questiontype">
+        <MappingFragment StoreEntitySet="questiontype">
+          <ScalarProperty Name="questiontype_id" ColumnName="questiontype_id" />
+          <ScalarProperty Name="questiontype_name" ColumnName="questiontype_name" />
+          <ScalarProperty Name="deleted" ColumnName="deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="role">
+      <EntityTypeMapping TypeName="OrenairTrainingModel.role">
+        <MappingFragment StoreEntitySet="role">
+          <ScalarProperty Name="role_id" ColumnName="role_id" />
+          <ScalarProperty Name="role_name" ColumnName="role_name" />
+          <ScalarProperty Name="deleted" ColumnName="deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="session">
+      <EntityTypeMapping TypeName="OrenairTrainingModel.session">
+        <MappingFragment StoreEntitySet="session">
+          <ScalarProperty Name="session_id" ColumnName="session_id" />
+          <ScalarProperty Name="datetime" ColumnName="datetime" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="testconfig_id" ColumnName="testconfig_id" />
+          <ScalarProperty Name="ipaddress" ColumnName="ipaddress" />
+          <ScalarProperty Name="deleted" ColumnName="deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="OrenairTrainingModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="testconfig">
+      <EntityTypeMapping TypeName="OrenairTrainingModel.testconfig">
+        <MappingFragment StoreEntitySet="testconfig">
+          <ScalarProperty Name="testconf_id" ColumnName="testconf_id" />
+          <ScalarProperty Name="testconf_name" ColumnName="testconf_name" />
+          <ScalarProperty Name="time" ColumnName="time" />
+          <ScalarProperty Name="deleted" ColumnName="deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="theme">
+      <EntityTypeMapping TypeName="OrenairTrainingModel.theme">
+        <MappingFragment StoreEntitySet="theme">
+          <ScalarProperty Name="theme_id" ColumnName="theme_id" />
+          <ScalarProperty Name="theme_name" ColumnName="theme_name" />
+          <ScalarProperty Name="folder_id" ColumnName="folder_id" />
+          <ScalarProperty Name="deleted" ColumnName="deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="themeintest">
+      <EntityTypeMapping TypeName="OrenairTrainingModel.themeintest">
+        <MappingFragment StoreEntitySet="themeintest">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="testconf_id" ColumnName="testconf_id" />
+          <ScalarProperty Name="theme_id" ColumnName="theme_id" />
+          <ScalarProperty Name="questions" ColumnName="questions" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="user">
+      <EntityTypeMapping TypeName="OrenairTrainingModel.user">
+        <MappingFragment StoreEntitySet="user">
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="login" ColumnName="login" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="firstname" ColumnName="firstname" />
+          <ScalarProperty Name="surname" ColumnName="surname" />
+          <ScalarProperty Name="patronymic" ColumnName="patronymic" />
+          <ScalarProperty Name="birthdate" ColumnName="birthdate" />
+          <ScalarProperty Name="role_id" ColumnName="role_id" />
+          <ScalarProperty Name="department_id" ColumnName="department_id" />
+          <ScalarProperty Name="regdate" ColumnName="regdate" />
+          <ScalarProperty Name="loggedon" ColumnName="loggedon" />
+          <ScalarProperty Name="deleted" ColumnName="deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

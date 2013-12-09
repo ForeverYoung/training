@@ -1,0 +1,45 @@
+﻿@model OrenairTraining.Models.material
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Добавление</h2>
+
+@using (Html.BeginForm("Create", "Material", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Документ</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.material_name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.material_name)
+            @Html.ValidationMessageFor(model => model.material_name)
+        </div>
+
+        <div class="editor-label">
+            Тема
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.container_id, ViewBag.Themes as SelectList)
+            @Html.ValidationMessageFor(model => model.container_id)
+        </div>
+        <br />
+        <input type="file" id="fileUp" name="fileUpload"/>
+
+        <input type="submit" name="Submit" value="Добавить" />
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Вернуться к списку", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

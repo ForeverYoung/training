@@ -1,0 +1,86 @@
+c:\users\4572\documents\visual studio 2012\Projects\OrenairTraining\OrenairTraining\bin\OrenairTraining.dll
+c:\users\4572\documents\visual studio 2012\Projects\OrenairTraining\OrenairTraining\bin\OrenairTraining.pdb
+c:\users\4572\documents\visual studio 2012\Projects\OrenairTraining\OrenairTraining\bin\Antlr3.Runtime.dll
+c:\users\4572\documents\visual studio 2012\Projects\OrenairTraining\OrenairTraining\bin\EntityFramework.dll
+c:\users\4572\documents\visual studio 2012\Projects\OrenairTraining\OrenairTraining\bin\Microsoft.Web.Infrastructure.dll
+c:\users\4572\documents\visual studio 2012\Projects\OrenairTraining\OrenairTraining\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+c:\users\4572\documents\visual studio 2012\Projects\OrenairTraining\OrenairTraining\bin\Newtonsoft.Json.dll
+c:\users\4572\documents\visual studio 2012\Projects\OrenairTraining\OrenairTraining\bin\System.Net.Http.Formatting.dll
+c:\users\4572\documents\visual studio 2012\Projects\OrenairTraining\OrenairTraining\bin\System.Web.Http.dll
+c:\users\4572\documents\visual studio 2012\Projects\OrenairTraining\OrenairTraining\bin\System.Web.Http.WebHost.dll
+c:\users\4572\documents\visual studio 2012\Projects\OrenairTraining\OrenairTraining\bin\System.Web.Mvc.dll
+c:\users\4572\documents\visual studio 2012\Projects\OrenairTraining\OrenairTraining\bin\System.Web.Optimization.dll
+c:\users\4572\documents\visual studio 2012\Projects\OrenairTraining\OrenairTraining\bin\System.Web.Providers.dll
+c:\users\4572\documents\visual studio 2012\Projects\OrenairTraining\OrenairTraining\bin\System.Web.Razor.dll
+c:\users\4572\documents\visual studio 2012\Projects\OrenairTraining\OrenairTraining\bin\System.Web.WebPages.Deployment.dll
+c:\users\4572\documents\visual studio 2012\Projects\OrenairTraining\OrenairTraining\bin\System.Web.WebPages.dll
+c:\users\4572\documents\visual studio 2012\Projects\OrenairTraining\OrenairTraining\bin\System.Web.WebPages.Razor.dll
+c:\users\4572\documents\visual studio 2012\Projects\OrenairTraining\OrenairTraining\bin\WebGrease.dll
+c:\users\4572\documents\visual studio 2012\Projects\OrenairTraining\OrenairTraining\bin\EntityFramework.xml
+c:\users\4572\documents\visual studio 2012\Projects\OrenairTraining\OrenairTraining\bin\Newtonsoft.Json.xml
+c:\users\4572\documents\visual studio 2012\Projects\OrenairTraining\OrenairTraining\bin\System.Net.Http.Formatting.xml
+c:\users\4572\documents\visual studio 2012\Projects\OrenairTraining\OrenairTraining\bin\System.Web.Http.xml
+c:\users\4572\documents\visual studio 2012\Projects\OrenairTraining\OrenairTraining\bin\System.Web.Http.WebHost.xml
+c:\users\4572\documents\visual studio 2012\Projects\OrenairTraining\OrenairTraining\bin\System.Web.Mvc.xml
+c:\users\4572\documents\visual studio 2012\Projects\OrenairTraining\OrenairTraining\bin\System.Web.Razor.xml
+c:\users\4572\documents\visual studio 2012\Projects\OrenairTraining\OrenairTraining\bin\System.Web.WebPages.xml
+c:\users\4572\documents\visual studio 2012\Projects\OrenairTraining\OrenairTraining\bin\System.Web.WebPages.Deployment.xml
+c:\users\4572\documents\visual studio 2012\Projects\OrenairTraining\OrenairTraining\bin\System.Web.WebPages.Razor.xml
+c:\users\4572\documents\visual studio 2012\Projects\OrenairTraining\OrenairTraining\bin\ru\EntityFramework.resources.dll
+c:\users\4572\documents\visual studio 2012\Projects\OrenairTraining\OrenairTraining\bin\ru\System.Net.Http.Formatting.resources.dll
+c:\users\4572\documents\visual studio 2012\Projects\OrenairTraining\OrenairTraining\bin\ru\System.Web.Http.resources.dll
+c:\users\4572\documents\visual studio 2012\Projects\OrenairTraining\OrenairTraining\bin\ru\System.Web.Http.WebHost.resources.dll
+c:\users\4572\documents\visual studio 2012\Projects\OrenairTraining\OrenairTraining\bin\ru\System.Web.Mvc.resources.dll
+c:\users\4572\documents\visual studio 2012\Projects\OrenairTraining\OrenairTraining\bin\ru\System.Web.Optimization.resources.dll
+c:\users\4572\documents\visual studio 2012\Projects\OrenairTraining\OrenairTraining\bin\ru\System.Web.Providers.resources.dll
+c:\users\4572\documents\visual studio 2012\Projects\OrenairTraining\OrenairTraining\bin\ru\System.Web.Razor.resources.dll
+c:\users\4572\documents\visual studio 2012\Projects\OrenairTraining\OrenairTraining\bin\ru\System.Web.WebPages.resources.dll
+c:\users\4572\documents\visual studio 2012\Projects\OrenairTraining\OrenairTraining\bin\ru\System.Web.WebPages.Deployment.resources.dll
+c:\users\4572\documents\visual studio 2012\Projects\OrenairTraining\OrenairTraining\bin\ru\System.Web.WebPages.Razor.resources.dll
+c:\users\4572\documents\visual studio 2012\Projects\OrenairTraining\OrenairTraining\obj\Debug\OrenairTraining.csprojResolveAssemblyReference.cache
+c:\users\4572\documents\visual studio 2012\Projects\OrenairTraining\OrenairTraining\obj\Debug\OrenairTraining.dll
+c:\users\4572\documents\visual studio 2012\Projects\OrenairTraining\OrenairTraining\obj\Debug\OrenairTraining.pdb
+D:\OrenairTraining\OrenairTraining\bin\OrenairTraining.dll
+D:\OrenairTraining\OrenairTraining\bin\OrenairTraining.pdb
+D:\OrenairTraining\OrenairTraining\bin\Antlr3.Runtime.dll
+D:\OrenairTraining\OrenairTraining\bin\EntityFramework.dll
+D:\OrenairTraining\OrenairTraining\bin\Microsoft.Web.Infrastructure.dll
+D:\OrenairTraining\OrenairTraining\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+D:\OrenairTraining\OrenairTraining\bin\Newtonsoft.Json.dll
+D:\OrenairTraining\OrenairTraining\bin\System.Net.Http.Formatting.dll
+D:\OrenairTraining\OrenairTraining\bin\System.Web.Http.dll
+D:\OrenairTraining\OrenairTraining\bin\System.Web.Http.WebHost.dll
+D:\OrenairTraining\OrenairTraining\bin\System.Web.Mvc.dll
+D:\OrenairTraining\OrenairTraining\bin\System.Web.Optimization.dll
+D:\OrenairTraining\OrenairTraining\bin\System.Web.Providers.dll
+D:\OrenairTraining\OrenairTraining\bin\System.Web.Razor.dll
+D:\OrenairTraining\OrenairTraining\bin\System.Web.WebPages.Deployment.dll
+D:\OrenairTraining\OrenairTraining\bin\System.Web.WebPages.dll
+D:\OrenairTraining\OrenairTraining\bin\System.Web.WebPages.Razor.dll
+D:\OrenairTraining\OrenairTraining\bin\WebGrease.dll
+D:\OrenairTraining\OrenairTraining\bin\EntityFramework.xml
+D:\OrenairTraining\OrenairTraining\bin\Newtonsoft.Json.xml
+D:\OrenairTraining\OrenairTraining\bin\System.Net.Http.Formatting.xml
+D:\OrenairTraining\OrenairTraining\bin\System.Web.Http.xml
+D:\OrenairTraining\OrenairTraining\bin\System.Web.Http.WebHost.xml
+D:\OrenairTraining\OrenairTraining\bin\System.Web.Mvc.xml
+D:\OrenairTraining\OrenairTraining\bin\System.Web.Razor.xml
+D:\OrenairTraining\OrenairTraining\bin\System.Web.WebPages.xml
+D:\OrenairTraining\OrenairTraining\bin\System.Web.WebPages.Deployment.xml
+D:\OrenairTraining\OrenairTraining\bin\System.Web.WebPages.Razor.xml
+D:\OrenairTraining\OrenairTraining\bin\ru\EntityFramework.resources.dll
+D:\OrenairTraining\OrenairTraining\bin\ru\System.Net.Http.Formatting.resources.dll
+D:\OrenairTraining\OrenairTraining\bin\ru\System.Web.Http.resources.dll
+D:\OrenairTraining\OrenairTraining\bin\ru\System.Web.Http.WebHost.resources.dll
+D:\OrenairTraining\OrenairTraining\bin\ru\System.Web.Mvc.resources.dll
+D:\OrenairTraining\OrenairTraining\bin\ru\System.Web.Optimization.resources.dll
+D:\OrenairTraining\OrenairTraining\bin\ru\System.Web.Providers.resources.dll
+D:\OrenairTraining\OrenairTraining\bin\ru\System.Web.Razor.resources.dll
+D:\OrenairTraining\OrenairTraining\bin\ru\System.Web.WebPages.resources.dll
+D:\OrenairTraining\OrenairTraining\bin\ru\System.Web.WebPages.Deployment.resources.dll
+D:\OrenairTraining\OrenairTraining\bin\ru\System.Web.WebPages.Razor.resources.dll
+D:\OrenairTraining\OrenairTraining\obj\Debug\OrenairTraining.csprojResolveAssemblyReference.cache
+D:\OrenairTraining\OrenairTraining\obj\Debug\OrenairTraining.dll
+D:\OrenairTraining\OrenairTraining\obj\Debug\OrenairTraining.pdb
+D:\OrenairTraining\OrenairTraining\bin\OrenairTraining.dll.config
+D:\OrenairTraining\OrenairTraining\bin\Elmah.dll

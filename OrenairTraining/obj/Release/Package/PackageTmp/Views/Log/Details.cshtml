@@ -1,0 +1,64 @@
+﻿@model OrenairTraining.Models.log
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>log</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.note_id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.note_id)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.datetime)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.datetime)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.operation_code)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.operation_code)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.user_id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.user_id)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.objectcode_id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.objectcode_id)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.object_id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.object_id)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ip)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ip)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

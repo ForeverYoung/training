@@ -1,0 +1,55 @@
+﻿@model OrenairTraining.Models.testconfig
+
+@{
+    ViewBag.Title = "StartTest";
+    Layout = "~/Views/Shared/TestLayout.cshtml";
+}
+
+<h2>Сведения о тесте</h2>
+
+@*@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+        *@<fieldset>
+            <legend></legend>
+
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.testconf_name)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.testconf_name)
+            </div>
+
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.time)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.time)
+            </div>
+
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.department_id)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.department_id)
+            </div>
+
+            <div class="display-label">
+                 @Html.DisplayName("Ваш ip")
+            </div>
+            <div class="display-field">
+                @Html.Display((Session["sessionData"] as OrenairTraining.Models.session).ipaddress.ToString())
+            </div>
+
+            <br />
+            <p>
+                @Html.ActionLink("Начать", "RenderQuestionPage")
+                @*<input type="submit" value="Начать" />*@
+            </p>
+        </fieldset>@*
+}*@
+<p>
+    @*@Html.ActionLink("Начать тест", "Edit", new { id=Model.user_id }) |*@
+    @Html.ActionLink("Вернуться к списку", "Index")
+</p>

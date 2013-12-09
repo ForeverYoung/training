@@ -1,0 +1,36 @@
+﻿@model OrenairTraining.Models.department
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Подробно</h2>
+
+<fieldset>
+    <legend>подразделение</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.department_id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.department_id)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.department_name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.department_name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.deleted)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.deleted)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Редактировать", "Edit", new {  id=Model.department_id }) |
+    @Html.ActionLink("Вернуться к списку", "Index")
+</p>

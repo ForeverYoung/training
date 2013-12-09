@@ -1,0 +1,37 @@
+﻿@model OrenairTraining.Models.MQuestion
+
+@using (Ajax.BeginForm("AnswerOnQuestion", Model ,new AjaxOptions { UpdateTargetId = "questionfield"}))//, InsertionMode = InsertionMode.Replace 
+{
+    <div>
+        @foreach (var mq in Session["mQuestions"] as List<OrenairTraining.Models.MQuestion>)
+        {
+            if (mq.IsAnswered!=true)
+            {
+                @Ajax.ActionLink((mq.IndexInTest + 1).ToString(), "GoTo", new { questionIndex = mq.IndexInTest }, new AjaxOptions { UpdateTargetId = "questionfield" })
+            }
+        }
+    </div>
+
+    <br />
+    <div>
+        @Html.DisplayNameFor(model => model.Text) № @(Model.IndexInTest + 1)
+    </div>
+    <div>
+        @Html.DisplayFor(model => model.Text)
+    </div>
+    
+    <br />
+        for (int i = 0; i < Model.Variants.Count; i++)
+            {
+                <div>
+                    @Html.RadioButton("answers", i, false) 
+                    @Model.Variants[i].TrimStart(new char[]{'@'})            
+                </div>
+            }    
+    <br />
+    <input type="submit" value="Ответить" />
+    
+    <div>
+        @Ajax.ActionLink("Пропустить", "GoNext", Model, new AjaxOptions{ UpdateTargetId="questionfield" })
+    </div>
+}

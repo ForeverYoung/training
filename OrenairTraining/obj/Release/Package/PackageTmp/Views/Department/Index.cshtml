@@ -1,0 +1,45 @@
+﻿@model IEnumerable<OrenairTraining.Models.department>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Подразделения</h2>
+
+<p>
+    @Html.ActionLink("Добавить новое", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.department_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.department_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.deleted)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.department_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.department_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.deleted)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.department_id },  new { @class="edit" })
+            @Html.ActionLink("Details", "Details", new { id=item.department_id },  new { @class="details" })
+            @Html.ActionLink("Delete", "Delete", new {  id=item.department_id  },  new { @class="delete" })
+        </td>
+    </tr>
+}
+
+</table>

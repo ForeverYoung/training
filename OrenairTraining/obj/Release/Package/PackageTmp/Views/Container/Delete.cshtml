@@ -1,0 +1,54 @@
+﻿@model OrenairTraining.Models.container
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Удаление</h2>
+
+<h3>Вы уверены, что хотите удалить?</h3>
+<fieldset>
+    <legend>container</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.container_id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.container_id)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.container_name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.container_name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ancestor_id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ancestor_id)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.type_id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.type_id)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.deleted)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.deleted)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Удалить" /> |
+        @Html.ActionLink("Вернуться к списку", "Index")
+    </p>
+}

@@ -1,0 +1,81 @@
+﻿@model OrenairTraining.Models.testconfig
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Редактирование</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Тест</legend>
+
+        <div class="editor-label">
+            @Html.HiddenFor(model => model.testconf_id)
+        </div>
+        <div class="editor-field">
+            @Html.HiddenFor(model => model.testconf_id)
+            @Html.ValidationMessageFor(model => model.testconf_id)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.testconf_name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.testconf_name)
+            @Html.ValidationMessageFor(model => model.testconf_name)
+        </div>
+        <br />
+
+        @helper PrintConfig(List<string> themes, List<string> questions, int length){
+            for (int i = 0; i < length; i++)
+            {
+                <div>                    
+                    Тема: @themes[i]
+                </div>
+                <div>
+                    Вопросы
+                    @Html.TextBox("questions", questions[i])
+                    @Html.ValidationMessageFor(model => model.questions)
+                </div>
+                <div>
+                    сменить на @Html.DropDownList("themes", ViewBag.SThemes as SelectList)                    
+                </div>
+                <br />
+            }
+        }
+
+        @PrintConfig(ViewBag.Themes, ViewBag.Questions, ViewBag.Themescount)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.time)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.time)
+            @Html.ValidationMessageFor(model => model.time)
+        </div>
+
+        <div class="editor-label">
+            @Html.HiddenFor(model => model.deleted)
+        </div>
+        <div class="editor-field">
+            @Html.HiddenFor(model => model.deleted)
+            @Html.ValidationMessageFor(model => model.deleted)
+        </div>
+
+        <p>
+            <input type="submit" value="Сохранить" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Вернуться к списку", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

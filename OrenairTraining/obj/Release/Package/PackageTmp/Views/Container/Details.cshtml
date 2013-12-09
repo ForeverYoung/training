@@ -1,0 +1,50 @@
+﻿@model OrenairTraining.Models.container
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Подробно</h2>
+
+<fieldset>
+    <legend>container</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.container_id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.container_id)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.container_name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.container_name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ancestor_id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ancestor_id)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.type_id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.type_id)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.deleted)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.deleted)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Редактировать", "Edit", new {  id=Model.container_id}) |
+    @Html.ActionLink("Вернуться к списку", "Index")
+</p>

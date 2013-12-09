@@ -1,0 +1,70 @@
+﻿@model OrenairTraining.Models.TestToUserModel
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<script language="javascript" type="text/javascript">
+
+    $(document).ready(function () {
+
+        $("#Departments").change(function () {
+
+            $.get('/TestToUser/GetUsersForDepartment/' + $(this).val(), function (response) {
+
+                var users = $.parseJSON(response); 
+                var ddlSelectedProduct = $("#user_ids");
+
+                // clear all previous options 
+                //$("#user_ids > option").remove();
+                $("#user_ids").empty();
+
+                // populate the products 
+                for (i = 0; i < users.length; i++) {
+                    ddlSelectedProduct.append($("<option />").val(users[i].Value).text(users[i].Text));
+                }
+            });
+        });
+
+    });
+</script>
+
+<h2>Тесты</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Назначение</legend>
+        
+        <div class="editor-label">
+            @Html.Label("Тесты")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.testconf_id, ViewBag.Configs as SelectList)
+            @Html.ValidationMessageFor(model => model.testconf_id)
+        </div>
+
+        <div class="editor-label">
+            @Html.Label("Выберите подразделение")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("Departments", ViewBag.Departments as SelectList,"Все подразделения...")
+        </div>
+
+        <div class="editor-label">
+            @Html.Label("Выберите пользователей")
+        </div>
+        <div class="editor-field">
+            @Html.ListBoxFor(model => model.user_ids, ViewBag.Users as MultiSelectList, new { size = 15 })
+        </div>
+
+        <p>
+            <input type="submit" value="Назначить" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("К списку непройденных", "Index")
+</div>

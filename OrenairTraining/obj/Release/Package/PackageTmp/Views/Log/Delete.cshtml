@@ -1,0 +1,67 @@
+﻿@model OrenairTraining.Models.log
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>log</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.note_id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.note_id)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.datetime)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.datetime)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.operation_code)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.operation_code)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.user_id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.user_id)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.objectcode_id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.objectcode_id)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.object_id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.object_id)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ip)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ip)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

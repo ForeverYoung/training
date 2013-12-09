@@ -1,0 +1,75 @@
+﻿@model OrenairTraining.Models.question
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Удаление</h2>
+
+<h3>Выдействительно хотите удалить?</h3>
+<fieldset>
+    <legend>вопрос</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.question_id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.question_id)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.text)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.text)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.answer)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.answer)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.type_id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.type_id)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.material_id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.material_id)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.deleted)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.deleted)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.time)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.time)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.container_id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.container_id)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Удалить" /> |
+        @Html.ActionLink("Вернуться к списку", "Index")
+    </p>
+}

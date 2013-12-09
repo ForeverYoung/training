@@ -1,0 +1,69 @@
+﻿@model IEnumerable<OrenairTraining.Models.log>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.note_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datetime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.operation_code)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.user_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.objectcode_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.object_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ip)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.note_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datetime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.operation_code)
+        </td>
+        <td>    
+            @Html.Label((ViewBag.Users as List<OrenairTraining.Models.user>).FirstOrDefault(u => u.user_id == item.user_id).user_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.objectcode_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.object_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ip)
+        </td>
+        @*<td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>*@
+    </tr>
+}
+
+</table>

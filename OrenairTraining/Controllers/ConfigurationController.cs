@@ -82,7 +82,10 @@ namespace OrenairTraining.Controllers
                 if (questions[i] != "")
                 {
                     testconfig.themes += themes[i] + "|";
-                    testconfig.questions += questions[i] + "|";
+                    //testconfig.questions += questions[i] + "|";
+                    // Нулевые позиции забронированы под другие типы вопросов
+                    // 
+                    testconfig.questions += questions[i] + "-0-0-0-0|";
                 }
             }
             if (ModelState.IsValid)

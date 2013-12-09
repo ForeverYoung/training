@@ -1,0 +1,47 @@
+﻿@model OrenairTraining.Models.MQuestion
+
+@{
+    ViewBag.Title = "RenderQuestionPage";
+}
+
+
+<script type="text/javascript">
+    $(function () {
+          var endDate = new Date($("#mydate").html());
+
+          $('.countdown.styled').countdown({
+          date: endDate,
+          render: function(data) {
+            $(this.el).html("<div>" + this.leadingZeros(data.hours, 2) + " <span>hrs</span></div><div>" + this.leadingZeros(data.min, 2) + " <span>min</span></div><div>" + this.leadingZeros(data.sec, 2) + " <span>sec</span></div>");
+          },
+              //<div>" + this.leadingZeros(data.years, 4) + " <span>years</span></div><div>" + this.leadingZeros(data.days, 3) + " <span>days</span></div>
+          onEnd: function() {
+            $(this.el).addClass('ended');
+          }
+        });
+      });
+</script>
+
+<h2>RenderQuestionPage</h2>
+
+<div id="time">
+    <div id="mydate" style="display:none">@ViewBag.CountdownTime</div>    
+    <div class="countdown styled"></div>
+</div>
+<br />
+<div>
+    @if (Model!=null)
+    {
+        <fieldset>
+            <legend>Вопрос</legend>
+
+            <div id="questionfield">
+                @Html.Partial("QuestionContent", Model)
+            </div>
+        </fieldset>
+    }
+    else
+    {
+        <h3>Вопросов не найдено</h3>
+    }
+</div>

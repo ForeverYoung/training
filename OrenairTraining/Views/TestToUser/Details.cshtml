@@ -1,0 +1,36 @@
+﻿@model OrenairTraining.Models.testtouser
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>testtouser</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.user_id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.user_id)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.config_id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.config_id)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.is_completed)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.is_completed)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

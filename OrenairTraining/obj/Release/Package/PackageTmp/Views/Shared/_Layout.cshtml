@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    <script type="text/javascript" src="~/Scripts/jquery-1.8.2.js"></script>
+    <script type="text/javascript" src="~/Scripts/modernizr-2.6.2.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.validate.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.countdown.js"></script>
+    <link rel="stylesheet" type="text/css" href="~/Content/countdownstyle.css" media="screen">
+    @*@Scripts.Render("~/bundles/jqueryval")*@
+    @RenderSection("scripts", required: false)
+</head>
+<body class="center">
+
+    <header>
+
+        <div class="container margin">        
+            <div class="box">         
+                <div style="vertical-align:central; margin-right:10px; float:left">
+                    <img src="~/Images/logo.png" alt="Логотип ORENAIR"/>
+                    <h1 class="title">TRAINING</h1>                 
+                </div>
+                <div class="loginout">
+                    @if (User.Identity.IsAuthenticated)
+                    {   <h3>@User.Identity.Name @Html.ActionLink("Выйти", "Logoff", "Account", routeValues: null, htmlAttributes: new { @class = "logout" })</h3>}
+                    else
+                    {@Html.ActionLink("Войти", "Login", "Account", routeValues: null, htmlAttributes: new { @class = "login" })}
+                </div>
+            </div>
+        </div>
+        
+        <div id='cssmenu'>
+            <ul>
+                @if (ViewBag.IsTesting != true)
+                {
+                    <li><a href='~/Home/Index'><span>Домашняя</span></a></li>
+                             
+                    if (User.IsInRole("user") || User.IsInRole("moderator") || User.IsInRole("admin"))
+                    {
+                        <li>@Html.ActionLink("Обучение", "Index", "Learning", routeValues: null, htmlAttributes: new { id = "learningIndexLink" })</li>
+                        <li>@Html.ActionLink("Мои тесты", "Index", "Testing", routeValues: null, htmlAttributes: new { id = "testIndexLink" })</li>
+                    }
+
+                    if (User.IsInRole("moderator") || User.IsInRole("admin"))
+                    {
+                        <li class="has-sub">@Html.ActionLink("Наполнение", "Index", "Filling", routeValues: null, htmlAttributes: new { id = "fillingIndexLink" })
+                            <ul>
+                                <li>@Html.ActionLink("Материалы", "Index", "Material", routeValues: null, htmlAttributes: new { id = "materialIndexLink" })</li>
+                                <li>@Html.ActionLink("Вопросы", "Index", "Question", routeValues: null, htmlAttributes: new { id = "questionIndexLink" })</li>
+                                <li>@Html.ActionLink("Контейнеры", "Index", "Container", routeValues: null, htmlAttributes: new { id = "containerIndexLink" })</li>
+                            </ul>
+                        </li>
+                        <li class="has-sub">@Html.ActionLink("Конструктор", "Index", "Configuration", routeValues: null, htmlAttributes: new { id = "configIndexLink" })
+                            <ul>
+                                <li>@Html.ActionLink("Создать тест", "Index", "Configuration", routeValues: null, htmlAttributes: new { id = "configIndexLink" })</li>
+                                <li>@Html.ActionLink("Назначить тест", "Create", "TestToUser", routeValues: null, htmlAttributes: new { id = "testToUserLink" })</li>
+                            </ul>
+                        </li>
+                    }                              
+               
+                   if (User.IsInRole("admin"))
+                   {
+                       <li class="has-sub">@Html.ActionLink("Администрирование", "#", "#", routeValues: null, htmlAttributes: new { id = "adminLink" })
+                           <ul>
+                               <li>@Html.ActionLink("Пользователи", "Index", "User", routeValues: null, htmlAttributes: new { id = "userIndexLink" })</li>
+                               <li>@Html.ActionLink("Подразделения", "Index", "Department", routeValues: null, htmlAttributes: new { id = "departmentIndexLink" })</li>
+                               <li>@Html.ActionLink("Журнал", "Index", "Log", routeValues: null, htmlAttributes: new { id = "userIndexLink" })</li>
+                           </ul>
+                       </li>
+                   }
+                }               
+            </ul>
+        </div>
+        <script type="text/javascript">
+            try {
+                var el = document.getElementById('cssmenu').getElementsByTagName('a');
+                var url = document.location.href;
+                for (var i = 0; i < el.length; i++) {
+                    if (url == el[i].href) {
+                        el[i].className += ' act';
+                    };
+                };
+            } catch (e) { }
+        </script>
+
+    </header>
+
+    @RenderBody()
+
+    <footer>
+        @if (IsSectionDefined("Footer"))
+        {
+            RenderSection("Footer");
+        }
+        else
+        {
+            <br /><br />
+            <span>©2013 - All rights reserved. JSC "Orenair"</span>  
+        }
+    </footer>
+</body>
+</html>

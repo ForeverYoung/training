@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="OrenairTrainingModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="OrenairTrainingEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="answer" EntityType="OrenairTrainingModel.answer" />
+    <EntitySet Name="department" EntityType="OrenairTrainingModel.department" />
+    <EntitySet Name="folder" EntityType="OrenairTrainingModel.folder" />
+    <EntitySet Name="ipaddress" EntityType="OrenairTrainingModel.ipaddress" />
+    <EntitySet Name="material" EntityType="OrenairTrainingModel.material" />
+    <EntitySet Name="question" EntityType="OrenairTrainingModel.question" />
+    <EntitySet Name="questiontype" EntityType="OrenairTrainingModel.questiontype" />
+    <EntitySet Name="role" EntityType="OrenairTrainingModel.role" />
+    <EntitySet Name="session" EntityType="OrenairTrainingModel.session" />
+    <EntitySet Name="sysdiagrams" EntityType="OrenairTrainingModel.sysdiagrams" />
+    <EntitySet Name="testconfig" EntityType="OrenairTrainingModel.testconfig" />
+    <EntitySet Name="theme" EntityType="OrenairTrainingModel.theme" />
+    <EntitySet Name="themeintest" EntityType="OrenairTrainingModel.themeintest" />
+    <EntitySet Name="user" EntityType="OrenairTrainingModel.user" />
+  </EntityContainer>
+  <EntityType Name="answer">
+    <Key>
+      <PropertyRef Name="session_id" />
+    </Key>
+    <Property Name="session_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="question_id" Type="Int32" Nullable="false" />
+    <Property Name="useranswer" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="department">
+    <Key>
+      <PropertyRef Name="department_id" />
+    </Key>
+    <Property Name="department_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="department_name" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="deleted" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="folder">
+    <Key>
+      <PropertyRef Name="folder_id" />
+    </Key>
+    <Property Name="folder_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="folder_name" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="ancestor_id" Type="Int32" Nullable="false" />
+    <Property Name="department_id" Type="Int32" />
+    <Property Name="deleted" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="ipaddress">
+    <Key>
+      <PropertyRef Name="ipaddress_id" />
+    </Key>
+    <Property Name="ipaddress_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="ipaddress1" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
+    <Property Name="deleted" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="material">
+    <Key>
+      <PropertyRef Name="material_id" />
+    </Key>
+    <Property Name="material_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="material_name" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="theme_id" Type="Int32" Nullable="false" />
+    <Property Name="deleted" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="question">
+    <Key>
+      <PropertyRef Name="question_id" />
+    </Key>
+    <Property Name="question_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="text" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="image" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="answer" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="type_id" Type="Int32" Nullable="false" />
+    <Property Name="theme_id" Type="Int32" Nullable="false" />
+    <Property Name="material_id" Type="Int32" />
+    <Property Name="deleted" Type="Int32" />
+  </EntityType>
+  <EntityType Name="questiontype">
+    <Key>
+      <PropertyRef Name="questiontype_id" />
+    </Key>
+    <Property Name="questiontype_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="questiontype_name" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="deleted" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="role">
+    <Key>
+      <PropertyRef Name="role_id" />
+    </Key>
+    <Property Name="role_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="role_name" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="deleted" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="session">
+    <Key>
+      <PropertyRef Name="session_id" />
+    </Key>
+    <Property Name="session_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="datetime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="user_id" Type="Int32" Nullable="false" />
+    <Property Name="testconfig_id" Type="Int32" Nullable="false" />
+    <Property Name="ipaddress" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="deleted" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="testconfig">
+    <Key>
+      <PropertyRef Name="testconf_id" />
+    </Key>
+    <Property Name="testconf_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="testconf_name" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="time" Type="Time" Precision="7" />
+    <Property Name="deleted" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="theme">
+    <Key>
+      <PropertyRef Name="theme_id" />
+    </Key>
+    <Property Name="theme_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="theme_name" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="folder_id" Type="Int32" />
+    <Property Name="deleted" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="themeintest">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="testconf_id" Type="Int32" Nullable="false" />
+    <Property Name="theme_id" Type="Int32" Nullable="false" />
+    <Property Name="questions" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="user">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="user_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="login" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="password" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="firstname" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="surname" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="patronymic" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="birthdate" Type="DateTime" Precision="0" />
+    <Property Name="role_id" Type="Int32" Nullable="false" />
+    <Property Name="department_id" Type="Int32" />
+    <Property Name="regdate" Type="DateTime" Precision="0" />
+    <Property Name="loggedon" Type="DateTime" Precision="3" />
+    <Property Name="deleted" Type="Boolean" />
+  </EntityType>
+</Schema>

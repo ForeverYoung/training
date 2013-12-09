@@ -1,0 +1,83 @@
+﻿@model OrenairTraining.Models.log
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>log</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.note_id)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.note_id)
+            @Html.ValidationMessageFor(model => model.note_id)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.datetime)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.datetime)
+            @Html.ValidationMessageFor(model => model.datetime)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.operation_code)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.operation_code)
+            @Html.ValidationMessageFor(model => model.operation_code)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.user_id)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.user_id)
+            @Html.ValidationMessageFor(model => model.user_id)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.objectcode_id)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.objectcode_id)
+            @Html.ValidationMessageFor(model => model.objectcode_id)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.object_id)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.object_id)
+            @Html.ValidationMessageFor(model => model.object_id)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ip)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ip)
+            @Html.ValidationMessageFor(model => model.ip)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
