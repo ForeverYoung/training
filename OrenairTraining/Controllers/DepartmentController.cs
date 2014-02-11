@@ -19,7 +19,7 @@ namespace OrenairTraining.Controllers
         [Authorize (Roles="admin")]
         public ActionResult Index()
         {
-            return View(db.department.ToList());
+            return View(db.department.Where(d=>d.deleted!=true).ToList());
         }
 
         //

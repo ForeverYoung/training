@@ -4,103 +4,12 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище OrenairTrainingModel" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityContainer Name="Хранилище OrenairTrainingModelContainer">
-          <EntitySet Name="answer" EntityType="Хранилище OrenairTrainingModel.answer" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="container" EntityType="Хранилище OrenairTrainingModel.container" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="containertodepartment" EntityType="Хранилище OrenairTrainingModel.containertodepartment" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="containertype" EntityType="Хранилище OrenairTrainingModel.containertype" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="department" EntityType="Хранилище OrenairTrainingModel.department" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="ipaddress" EntityType="Хранилище OrenairTrainingModel.ipaddress" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="log" EntityType="Хранилище OrenairTrainingModel.log" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="material" EntityType="Хранилище OrenairTrainingModel.material" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="objectcode" EntityType="Хранилище OrenairTrainingModel.objectcode" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="question" EntityType="Хранилище OrenairTrainingModel.question" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="questiontype" EntityType="Хранилище OrenairTrainingModel.questiontype" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="role" EntityType="Хранилище OrenairTrainingModel.role" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="session" EntityType="Хранилище OrenairTrainingModel.session" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="sysdiagrams" EntityType="Хранилище OrenairTrainingModel.sysdiagrams" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="testconfig" EntityType="Хранилище OrenairTrainingModel.testconfig" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="testtouser" EntityType="Хранилище OrenairTrainingModel.testtouser" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="user" EntityType="Хранилище OrenairTrainingModel.user" store:Type="Tables" Schema="dbo" />
-          <AssociationSet Name="FK_answer_question" Association="Хранилище OrenairTrainingModel.FK_answer_question">
-            <End Role="question" EntitySet="question" />
-            <End Role="answer" EntitySet="answer" />
-          </AssociationSet>
-          <AssociationSet Name="FK_answer_session" Association="Хранилище OrenairTrainingModel.FK_answer_session">
-            <End Role="session" EntitySet="session" />
-            <End Role="answer" EntitySet="answer" />
-          </AssociationSet>
-          <AssociationSet Name="FK_container_container" Association="Хранилище OrenairTrainingModel.FK_container_container">
-            <End Role="container" EntitySet="container" />
-            <End Role="container1" EntitySet="container" />
-          </AssociationSet>
-          <AssociationSet Name="FK_container_containertype" Association="Хранилище OrenairTrainingModel.FK_container_containertype">
-            <End Role="containertype" EntitySet="containertype" />
-            <End Role="container" EntitySet="container" />
-          </AssociationSet>
-          <AssociationSet Name="FK_containertodepartment_container" Association="Хранилище OrenairTrainingModel.FK_containertodepartment_container">
-            <End Role="container" EntitySet="container" />
-            <End Role="containertodepartment" EntitySet="containertodepartment" />
-          </AssociationSet>
-          <AssociationSet Name="FK_containertodepartment_department" Association="Хранилище OrenairTrainingModel.FK_containertodepartment_department">
-            <End Role="department" EntitySet="department" />
-            <End Role="containertodepartment" EntitySet="containertodepartment" />
-          </AssociationSet>
-          <AssociationSet Name="FK_log_objectcode" Association="Хранилище OrenairTrainingModel.FK_log_objectcode">
-            <End Role="objectcode" EntitySet="objectcode" />
-            <End Role="log" EntitySet="log" />
-          </AssociationSet>
-          <AssociationSet Name="FK_log_user" Association="Хранилище OrenairTrainingModel.FK_log_user">
-            <End Role="user" EntitySet="user" />
-            <End Role="log" EntitySet="log" />
-          </AssociationSet>
-          <AssociationSet Name="FK_material_container" Association="Хранилище OrenairTrainingModel.FK_material_container">
-            <End Role="container" EntitySet="container" />
-            <End Role="material" EntitySet="material" />
-          </AssociationSet>
-          <AssociationSet Name="FK_question_container" Association="Хранилище OrenairTrainingModel.FK_question_container">
-            <End Role="container" EntitySet="container" />
-            <End Role="question" EntitySet="question" />
-          </AssociationSet>
-          <AssociationSet Name="FK_question_material" Association="Хранилище OrenairTrainingModel.FK_question_material">
-            <End Role="material" EntitySet="material" />
-            <End Role="question" EntitySet="question" />
-          </AssociationSet>
-          <AssociationSet Name="FK_question_questiontype" Association="Хранилище OrenairTrainingModel.FK_question_questiontype">
-            <End Role="questiontype" EntitySet="questiontype" />
-            <End Role="question" EntitySet="question" />
-          </AssociationSet>
-          <AssociationSet Name="FK_session_testconfig" Association="Хранилище OrenairTrainingModel.FK_session_testconfig">
-            <End Role="testconfig" EntitySet="testconfig" />
-            <End Role="session" EntitySet="session" />
-          </AssociationSet>
-          <AssociationSet Name="FK_session_user" Association="Хранилище OrenairTrainingModel.FK_session_user">
-            <End Role="user" EntitySet="user" />
-            <End Role="session" EntitySet="session" />
-          </AssociationSet>
-          <AssociationSet Name="FK_testtouser_testconfig" Association="Хранилище OrenairTrainingModel.FK_testtouser_testconfig">
-            <End Role="testconfig" EntitySet="testconfig" />
-            <End Role="testtouser" EntitySet="testtouser" />
-          </AssociationSet>
-          <AssociationSet Name="FK_testtouser_user" Association="Хранилище OrenairTrainingModel.FK_testtouser_user">
-            <End Role="user" EntitySet="user" />
-            <End Role="testtouser" EntitySet="testtouser" />
-          </AssociationSet>
-          <AssociationSet Name="FK_user_department" Association="Хранилище OrenairTrainingModel.FK_user_department">
-            <End Role="department" EntitySet="department" />
-            <End Role="user" EntitySet="user" />
-          </AssociationSet>
-          <AssociationSet Name="FK_user_role" Association="Хранилище OrenairTrainingModel.FK_user_role">
-            <End Role="role" EntitySet="role" />
-            <End Role="user" EntitySet="user" />
-          </AssociationSet>
-        </EntityContainer>
+      <Schema Namespace="Хранилище OrenairTrainingModel" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="answer">
           <Key>
             <PropertyRef Name="answer_id" />
           </Key>
-          <Property Name="answer_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="answer_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="session_id" Type="int" Nullable="false" />
           <Property Name="question_id" Type="int" Nullable="false" />
           <Property Name="useranswer" Type="nvarchar(max)" Nullable="false" />
@@ -109,8 +18,8 @@
           <Key>
             <PropertyRef Name="container_id" />
           </Key>
-          <Property Name="container_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="container_name" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="container_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="container_name" Type="nvarchar" MaxLength="255" Nullable="false" />
           <Property Name="ancestor_id" Type="int" />
           <Property Name="type_id" Type="int" Nullable="false" />
           <Property Name="deleted" Type="bit" />
@@ -119,7 +28,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="container_id" Type="int" Nullable="false" />
           <Property Name="department_id" Type="int" Nullable="false" />
           <Property Name="deleted" Type="bit" Nullable="false" />
@@ -128,32 +37,32 @@
           <Key>
             <PropertyRef Name="containertype_id" />
           </Key>
-          <Property Name="containertype_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="containertype_name" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="containertype_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="containertype_name" Type="nvarchar" MaxLength="255" Nullable="false" />
         </EntityType>
         <EntityType Name="department">
           <Key>
             <PropertyRef Name="department_id" />
           </Key>
-          <Property Name="department_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="department_name" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="department_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="department_name" Type="nvarchar" MaxLength="255" Nullable="false" />
           <Property Name="deleted" Type="bit" />
         </EntityType>
         <EntityType Name="ipaddress">
           <Key>
             <PropertyRef Name="ipaddress_id" />
           </Key>
-          <Property Name="ipaddress_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="ipaddress_name" Type="nchar" Nullable="false" MaxLength="10" />
+          <Property Name="ipaddress_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ipaddress_name" Type="nchar" MaxLength="10" Nullable="false" />
           <Property Name="deleted" Type="bit" />
         </EntityType>
         <EntityType Name="log">
           <Key>
             <PropertyRef Name="note_id" />
           </Key>
-          <Property Name="note_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="note_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="datetime" Type="datetime" Nullable="false" />
-          <Property Name="operation_code" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="operation_code" Type="nvarchar" MaxLength="10" Nullable="false" />
           <Property Name="user_id" Type="int" />
           <Property Name="objectcode_id" Type="int" />
           <Property Name="object_id" Type="int" />
@@ -163,8 +72,8 @@
           <Key>
             <PropertyRef Name="material_id" />
           </Key>
-          <Property Name="material_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="material_name" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="material_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="material_name" Type="nvarchar" MaxLength="255" Nullable="false" />
           <Property Name="container_id" Type="int" Nullable="false" />
           <Property Name="deleted" Type="bit" />
           <Property Name="material_content" Type="varbinary(max)" Nullable="false" />
@@ -175,44 +84,46 @@
           <Key>
             <PropertyRef Name="objectcode_id" />
           </Key>
-          <Property Name="objectcode_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="objectcode_name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="objectcode_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="objectcode_name" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="question">
           <Key>
             <PropertyRef Name="question_id" />
           </Key>
-          <Property Name="question_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="question_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="text" Type="nvarchar(max)" Nullable="false" />
           <Property Name="image" Type="varbinary(max)" />
           <Property Name="answer" Type="nvarchar(max)" Nullable="false" />
           <Property Name="type_id" Type="int" Nullable="false" />
           <Property Name="container_id" Type="int" Nullable="false" />
           <Property Name="material_id" Type="int" />
-          <Property Name="time" Type="time" />
+          <Property Name="time" Type="time" Precision="7" />
           <Property Name="deleted" Type="bit" />
+          <Property Name="explanation_text" Type="nvarchar(max)" />
+          <Property Name="explanation_img" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="questiontype">
           <Key>
             <PropertyRef Name="questiontype_id" />
           </Key>
-          <Property Name="questiontype_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="questiontype_name" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="questiontype_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="questiontype_name" Type="nvarchar" MaxLength="255" Nullable="false" />
           <Property Name="deleted" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="role">
           <Key>
             <PropertyRef Name="role_id" />
           </Key>
-          <Property Name="role_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="role_name" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="role_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="role_name" Type="nvarchar" MaxLength="255" Nullable="false" />
           <Property Name="deleted" Type="bit" />
         </EntityType>
         <EntityType Name="session">
           <Key>
             <PropertyRef Name="session_id" />
           </Key>
-          <Property Name="session_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="session_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="datetime" Type="datetime" Nullable="false" />
           <Property Name="user_id" Type="int" Nullable="false" />
           <Property Name="testconfig_id" Type="int" Nullable="false" />
@@ -224,9 +135,9 @@
           <Key>
             <PropertyRef Name="diagram_id" />
           </Key>
-          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
           <Property Name="principal_id" Type="int" Nullable="false" />
-          <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
@@ -234,9 +145,9 @@
           <Key>
             <PropertyRef Name="testconf_id" />
           </Key>
-          <Property Name="testconf_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="testconf_name" Type="nvarchar" Nullable="false" MaxLength="255" />
-          <Property Name="time" Type="time" />
+          <Property Name="testconf_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="testconf_name" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="time" Type="time" Precision="7" />
           <Property Name="deleted" Type="bit" />
           <Property Name="themes" Type="nvarchar" MaxLength="255" />
           <Property Name="questions" Type="nvarchar(max)" />
@@ -246,7 +157,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="user_id" Type="int" Nullable="false" />
           <Property Name="testconf_id" Type="int" Nullable="false" />
           <Property Name="is_completed" Type="bit" />
@@ -257,13 +168,14 @@
           <Key>
             <PropertyRef Name="user_id" />
           </Key>
-          <Property Name="user_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="user_name" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="user_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="user_name" Type="nvarchar" MaxLength="255" Nullable="false" />
           <Property Name="tab_num" Type="int" />
           <Property Name="password" Type="nvarchar" MaxLength="255" />
-          <Property Name="firstname" Type="nvarchar" Nullable="false" MaxLength="255" />
-          <Property Name="surname" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="firstname" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="surname" Type="nvarchar" MaxLength="255" Nullable="false" />
           <Property Name="patronymic" Type="nvarchar" MaxLength="255" />
+          <Property Name="fio" Type="nvarchar" MaxLength="255" />
           <Property Name="birthdate" Type="date" />
           <Property Name="department_id" Type="int" />
           <Property Name="regdate" Type="date" />
@@ -271,11 +183,10 @@
           <Property Name="deleted" Type="bit" />
           <Property Name="last_activity_date" Type="date" />
           <Property Name="role_id" Type="int" Nullable="false" />
-          <Property Name="fio" Type="nvarchar" MaxLength="255" />
         </EntityType>
         <Association Name="FK_answer_question">
-          <End Role="question" Type="Хранилище OrenairTrainingModel.question" Multiplicity="1" />
-          <End Role="answer" Type="Хранилище OrenairTrainingModel.answer" Multiplicity="*" />
+          <End Role="question" Type="Self.question" Multiplicity="1" />
+          <End Role="answer" Type="Self.answer" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="question">
               <PropertyRef Name="question_id" />
@@ -286,8 +197,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_answer_session">
-          <End Role="session" Type="Хранилище OrenairTrainingModel.session" Multiplicity="1" />
-          <End Role="answer" Type="Хранилище OrenairTrainingModel.answer" Multiplicity="*" />
+          <End Role="session" Type="Self.session" Multiplicity="1" />
+          <End Role="answer" Type="Self.answer" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="session">
               <PropertyRef Name="session_id" />
@@ -298,8 +209,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_container_container">
-          <End Role="container" Type="Хранилище OrenairTrainingModel.container" Multiplicity="0..1" />
-          <End Role="container1" Type="Хранилище OrenairTrainingModel.container" Multiplicity="*" />
+          <End Role="container" Type="Self.container" Multiplicity="0..1" />
+          <End Role="container1" Type="Self.container" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="container">
               <PropertyRef Name="container_id" />
@@ -310,8 +221,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_container_containertype">
-          <End Role="containertype" Type="Хранилище OrenairTrainingModel.containertype" Multiplicity="1" />
-          <End Role="container" Type="Хранилище OrenairTrainingModel.container" Multiplicity="*" />
+          <End Role="containertype" Type="Self.containertype" Multiplicity="1" />
+          <End Role="container" Type="Self.container" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="containertype">
               <PropertyRef Name="containertype_id" />
@@ -322,8 +233,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_containertodepartment_container">
-          <End Role="container" Type="Хранилище OrenairTrainingModel.container" Multiplicity="1" />
-          <End Role="containertodepartment" Type="Хранилище OrenairTrainingModel.containertodepartment" Multiplicity="*" />
+          <End Role="container" Type="Self.container" Multiplicity="1" />
+          <End Role="containertodepartment" Type="Self.containertodepartment" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="container">
               <PropertyRef Name="container_id" />
@@ -334,8 +245,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_containertodepartment_department">
-          <End Role="department" Type="Хранилище OrenairTrainingModel.department" Multiplicity="1" />
-          <End Role="containertodepartment" Type="Хранилище OrenairTrainingModel.containertodepartment" Multiplicity="*" />
+          <End Role="department" Type="Self.department" Multiplicity="1" />
+          <End Role="containertodepartment" Type="Self.containertodepartment" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="department">
               <PropertyRef Name="department_id" />
@@ -346,8 +257,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_log_objectcode">
-          <End Role="objectcode" Type="Хранилище OrenairTrainingModel.objectcode" Multiplicity="0..1" />
-          <End Role="log" Type="Хранилище OrenairTrainingModel.log" Multiplicity="*" />
+          <End Role="objectcode" Type="Self.objectcode" Multiplicity="0..1" />
+          <End Role="log" Type="Self.log" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="objectcode">
               <PropertyRef Name="objectcode_id" />
@@ -358,8 +269,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_log_user">
-          <End Role="user" Type="Хранилище OrenairTrainingModel.user" Multiplicity="0..1" />
-          <End Role="log" Type="Хранилище OrenairTrainingModel.log" Multiplicity="*" />
+          <End Role="user" Type="Self.user" Multiplicity="0..1" />
+          <End Role="log" Type="Self.log" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="user">
               <PropertyRef Name="user_id" />
@@ -370,8 +281,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_material_container">
-          <End Role="container" Type="Хранилище OrenairTrainingModel.container" Multiplicity="1" />
-          <End Role="material" Type="Хранилище OrenairTrainingModel.material" Multiplicity="*" />
+          <End Role="container" Type="Self.container" Multiplicity="1" />
+          <End Role="material" Type="Self.material" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="container">
               <PropertyRef Name="container_id" />
@@ -382,8 +293,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_question_container">
-          <End Role="container" Type="Хранилище OrenairTrainingModel.container" Multiplicity="1" />
-          <End Role="question" Type="Хранилище OrenairTrainingModel.question" Multiplicity="*" />
+          <End Role="container" Type="Self.container" Multiplicity="1" />
+          <End Role="question" Type="Self.question" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="container">
               <PropertyRef Name="container_id" />
@@ -394,8 +305,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_question_material">
-          <End Role="material" Type="Хранилище OrenairTrainingModel.material" Multiplicity="0..1" />
-          <End Role="question" Type="Хранилище OrenairTrainingModel.question" Multiplicity="*" />
+          <End Role="material" Type="Self.material" Multiplicity="0..1" />
+          <End Role="question" Type="Self.question" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="material">
               <PropertyRef Name="material_id" />
@@ -406,8 +317,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_question_questiontype">
-          <End Role="questiontype" Type="Хранилище OrenairTrainingModel.questiontype" Multiplicity="1" />
-          <End Role="question" Type="Хранилище OrenairTrainingModel.question" Multiplicity="*" />
+          <End Role="questiontype" Type="Self.questiontype" Multiplicity="1" />
+          <End Role="question" Type="Self.question" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="questiontype">
               <PropertyRef Name="questiontype_id" />
@@ -418,8 +329,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_session_testconfig">
-          <End Role="testconfig" Type="Хранилище OrenairTrainingModel.testconfig" Multiplicity="1" />
-          <End Role="session" Type="Хранилище OrenairTrainingModel.session" Multiplicity="*" />
+          <End Role="testconfig" Type="Self.testconfig" Multiplicity="1" />
+          <End Role="session" Type="Self.session" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="testconfig">
               <PropertyRef Name="testconf_id" />
@@ -430,8 +341,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_session_user">
-          <End Role="user" Type="Хранилище OrenairTrainingModel.user" Multiplicity="1" />
-          <End Role="session" Type="Хранилище OrenairTrainingModel.session" Multiplicity="*" />
+          <End Role="user" Type="Self.user" Multiplicity="1" />
+          <End Role="session" Type="Self.session" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="user">
               <PropertyRef Name="user_id" />
@@ -442,8 +353,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_testtouser_testconfig">
-          <End Role="testconfig" Type="Хранилище OrenairTrainingModel.testconfig" Multiplicity="1" />
-          <End Role="testtouser" Type="Хранилище OrenairTrainingModel.testtouser" Multiplicity="*" />
+          <End Role="testconfig" Type="Self.testconfig" Multiplicity="1" />
+          <End Role="testtouser" Type="Self.testtouser" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="testconfig">
               <PropertyRef Name="testconf_id" />
@@ -454,8 +365,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_testtouser_user">
-          <End Role="user" Type="Хранилище OrenairTrainingModel.user" Multiplicity="1" />
-          <End Role="testtouser" Type="Хранилище OrenairTrainingModel.testtouser" Multiplicity="*" />
+          <End Role="user" Type="Self.user" Multiplicity="1" />
+          <End Role="testtouser" Type="Self.testtouser" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="user">
               <PropertyRef Name="user_id" />
@@ -466,8 +377,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_user_department">
-          <End Role="department" Type="Хранилище OrenairTrainingModel.department" Multiplicity="0..1" />
-          <End Role="user" Type="Хранилище OrenairTrainingModel.user" Multiplicity="*" />
+          <End Role="department" Type="Self.department" Multiplicity="0..1" />
+          <End Role="user" Type="Self.user" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="department">
               <PropertyRef Name="department_id" />
@@ -478,8 +389,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_user_role">
-          <End Role="role" Type="Хранилище OrenairTrainingModel.role" Multiplicity="1" />
-          <End Role="user" Type="Хранилище OrenairTrainingModel.user" Multiplicity="*" />
+          <End Role="role" Type="Self.role" Multiplicity="1" />
+          <End Role="user" Type="Self.user" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="role">
               <PropertyRef Name="role_id" />
@@ -489,260 +400,262 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityContainer Name="Хранилище OrenairTrainingModelContainer">
+          <EntitySet Name="answer" EntityType="Self.answer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="container" EntityType="Self.container" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="containertodepartment" EntityType="Self.containertodepartment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="containertype" EntityType="Self.containertype" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="department" EntityType="Self.department" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ipaddress" EntityType="Self.ipaddress" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="log" EntityType="Self.log" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="material" EntityType="Self.material" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="objectcode" EntityType="Self.objectcode" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="question" EntityType="Self.question" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="questiontype" EntityType="Self.questiontype" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="role" EntityType="Self.role" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="session" EntityType="Self.session" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="testconfig" EntityType="Self.testconfig" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="testtouser" EntityType="Self.testtouser" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="user" EntityType="Self.user" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_answer_question" Association="Self.FK_answer_question">
+            <End Role="question" EntitySet="question" />
+            <End Role="answer" EntitySet="answer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_answer_session" Association="Self.FK_answer_session">
+            <End Role="session" EntitySet="session" />
+            <End Role="answer" EntitySet="answer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_container_container" Association="Self.FK_container_container">
+            <End Role="container" EntitySet="container" />
+            <End Role="container1" EntitySet="container" />
+          </AssociationSet>
+          <AssociationSet Name="FK_container_containertype" Association="Self.FK_container_containertype">
+            <End Role="containertype" EntitySet="containertype" />
+            <End Role="container" EntitySet="container" />
+          </AssociationSet>
+          <AssociationSet Name="FK_containertodepartment_container" Association="Self.FK_containertodepartment_container">
+            <End Role="container" EntitySet="container" />
+            <End Role="containertodepartment" EntitySet="containertodepartment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_containertodepartment_department" Association="Self.FK_containertodepartment_department">
+            <End Role="department" EntitySet="department" />
+            <End Role="containertodepartment" EntitySet="containertodepartment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_log_objectcode" Association="Self.FK_log_objectcode">
+            <End Role="objectcode" EntitySet="objectcode" />
+            <End Role="log" EntitySet="log" />
+          </AssociationSet>
+          <AssociationSet Name="FK_log_user" Association="Self.FK_log_user">
+            <End Role="user" EntitySet="user" />
+            <End Role="log" EntitySet="log" />
+          </AssociationSet>
+          <AssociationSet Name="FK_material_container" Association="Self.FK_material_container">
+            <End Role="container" EntitySet="container" />
+            <End Role="material" EntitySet="material" />
+          </AssociationSet>
+          <AssociationSet Name="FK_question_container" Association="Self.FK_question_container">
+            <End Role="container" EntitySet="container" />
+            <End Role="question" EntitySet="question" />
+          </AssociationSet>
+          <AssociationSet Name="FK_question_material" Association="Self.FK_question_material">
+            <End Role="material" EntitySet="material" />
+            <End Role="question" EntitySet="question" />
+          </AssociationSet>
+          <AssociationSet Name="FK_question_questiontype" Association="Self.FK_question_questiontype">
+            <End Role="questiontype" EntitySet="questiontype" />
+            <End Role="question" EntitySet="question" />
+          </AssociationSet>
+          <AssociationSet Name="FK_session_testconfig" Association="Self.FK_session_testconfig">
+            <End Role="testconfig" EntitySet="testconfig" />
+            <End Role="session" EntitySet="session" />
+          </AssociationSet>
+          <AssociationSet Name="FK_session_user" Association="Self.FK_session_user">
+            <End Role="user" EntitySet="user" />
+            <End Role="session" EntitySet="session" />
+          </AssociationSet>
+          <AssociationSet Name="FK_testtouser_testconfig" Association="Self.FK_testtouser_testconfig">
+            <End Role="testconfig" EntitySet="testconfig" />
+            <End Role="testtouser" EntitySet="testtouser" />
+          </AssociationSet>
+          <AssociationSet Name="FK_testtouser_user" Association="Self.FK_testtouser_user">
+            <End Role="user" EntitySet="user" />
+            <End Role="testtouser" EntitySet="testtouser" />
+          </AssociationSet>
+          <AssociationSet Name="FK_user_department" Association="Self.FK_user_department">
+            <End Role="department" EntitySet="department" />
+            <End Role="user" EntitySet="user" />
+          </AssociationSet>
+          <AssociationSet Name="FK_user_role" Association="Self.FK_user_role">
+            <End Role="role" EntitySet="role" />
+            <End Role="user" EntitySet="user" />
+          </AssociationSet>
+        </EntityContainer>
       </Schema>
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="OrenairTrainingModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityContainer Name="OrenairTrainingEntities" p1:LazyLoadingEnabled="true">
-          <EntitySet Name="answer" EntityType="OrenairTrainingModel.answer" />
-          <EntitySet Name="container" EntityType="OrenairTrainingModel.container" />
-          <EntitySet Name="containertodepartment" EntityType="OrenairTrainingModel.containertodepartment" />
-          <EntitySet Name="containertype" EntityType="OrenairTrainingModel.containertype" />
-          <EntitySet Name="department" EntityType="OrenairTrainingModel.department" />
-          <EntitySet Name="ipaddress" EntityType="OrenairTrainingModel.ipaddress" />
-          <EntitySet Name="log" EntityType="OrenairTrainingModel.log" />
-          <EntitySet Name="material" EntityType="OrenairTrainingModel.material" />
-          <EntitySet Name="objectcode" EntityType="OrenairTrainingModel.objectcode" />
-          <EntitySet Name="question" EntityType="OrenairTrainingModel.question" />
-          <EntitySet Name="questiontype" EntityType="OrenairTrainingModel.questiontype" />
-          <EntitySet Name="role" EntityType="OrenairTrainingModel.role" />
-          <EntitySet Name="session" EntityType="OrenairTrainingModel.session" />
-          <EntitySet Name="sysdiagrams" EntityType="OrenairTrainingModel.sysdiagrams" />
-          <EntitySet Name="testconfig" EntityType="OrenairTrainingModel.testconfig" />
-          <EntitySet Name="testtouser" EntityType="OrenairTrainingModel.testtouser" />
-          <EntitySet Name="user" EntityType="OrenairTrainingModel.user" />
-          <AssociationSet Name="FK_answer_question" Association="OrenairTrainingModel.FK_answer_question">
-            <End Role="question" EntitySet="question" />
-            <End Role="answer" EntitySet="answer" />
-          </AssociationSet>
-          <AssociationSet Name="FK_answer_session" Association="OrenairTrainingModel.FK_answer_session">
-            <End Role="session" EntitySet="session" />
-            <End Role="answer" EntitySet="answer" />
-          </AssociationSet>
-          <AssociationSet Name="FK_container_container" Association="OrenairTrainingModel.FK_container_container">
-            <End Role="container" EntitySet="container" />
-            <End Role="container1" EntitySet="container" />
-          </AssociationSet>
-          <AssociationSet Name="FK_container_containertype" Association="OrenairTrainingModel.FK_container_containertype">
-            <End Role="containertype" EntitySet="containertype" />
-            <End Role="container" EntitySet="container" />
-          </AssociationSet>
-          <AssociationSet Name="FK_containertodepartment_container" Association="OrenairTrainingModel.FK_containertodepartment_container">
-            <End Role="container" EntitySet="container" />
-            <End Role="containertodepartment" EntitySet="containertodepartment" />
-          </AssociationSet>
-          <AssociationSet Name="FK_material_container" Association="OrenairTrainingModel.FK_material_container">
-            <End Role="container" EntitySet="container" />
-            <End Role="material" EntitySet="material" />
-          </AssociationSet>
-          <AssociationSet Name="FK_question_container" Association="OrenairTrainingModel.FK_question_container">
-            <End Role="container" EntitySet="container" />
-            <End Role="question" EntitySet="question" />
-          </AssociationSet>
-          <AssociationSet Name="FK_containertodepartment_department" Association="OrenairTrainingModel.FK_containertodepartment_department">
-            <End Role="department" EntitySet="department" />
-            <End Role="containertodepartment" EntitySet="containertodepartment" />
-          </AssociationSet>
-          <AssociationSet Name="FK_user_department" Association="OrenairTrainingModel.FK_user_department">
-            <End Role="department" EntitySet="department" />
-            <End Role="user" EntitySet="user" />
-          </AssociationSet>
-          <AssociationSet Name="FK_log_objectcode" Association="OrenairTrainingModel.FK_log_objectcode">
-            <End Role="objectcode" EntitySet="objectcode" />
-            <End Role="log" EntitySet="log" />
-          </AssociationSet>
-          <AssociationSet Name="FK_log_user" Association="OrenairTrainingModel.FK_log_user">
-            <End Role="user" EntitySet="user" />
-            <End Role="log" EntitySet="log" />
-          </AssociationSet>
-          <AssociationSet Name="FK_question_material" Association="OrenairTrainingModel.FK_question_material">
-            <End Role="material" EntitySet="material" />
-            <End Role="question" EntitySet="question" />
-          </AssociationSet>
-          <AssociationSet Name="FK_question_questiontype" Association="OrenairTrainingModel.FK_question_questiontype">
-            <End Role="questiontype" EntitySet="questiontype" />
-            <End Role="question" EntitySet="question" />
-          </AssociationSet>
-          <AssociationSet Name="FK_user_role" Association="OrenairTrainingModel.FK_user_role">
-            <End Role="role" EntitySet="role" />
-            <End Role="user" EntitySet="user" />
-          </AssociationSet>
-          <AssociationSet Name="FK_session_testconfig" Association="OrenairTrainingModel.FK_session_testconfig">
-            <End Role="testconfig" EntitySet="testconfig" />
-            <End Role="session" EntitySet="session" />
-          </AssociationSet>
-          <AssociationSet Name="FK_session_user" Association="OrenairTrainingModel.FK_session_user">
-            <End Role="user" EntitySet="user" />
-            <End Role="session" EntitySet="session" />
-          </AssociationSet>
-          <AssociationSet Name="FK_testtouser_testconfig" Association="OrenairTrainingModel.FK_testtouser_testconfig">
-            <End Role="testconfig" EntitySet="testconfig" />
-            <End Role="testtouser" EntitySet="testtouser" />
-          </AssociationSet>
-          <AssociationSet Name="FK_testtouser_user" Association="OrenairTrainingModel.FK_testtouser_user">
-            <End Role="user" EntitySet="user" />
-            <End Role="testtouser" EntitySet="testtouser" />
-          </AssociationSet>
-        </EntityContainer>
+      <Schema Namespace="OrenairTrainingModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="answer">
           <Key>
             <PropertyRef Name="answer_id" />
           </Key>
-          <Property Name="answer_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="answer_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="session_id" Type="Int32" Nullable="false" />
           <Property Name="question_id" Type="Int32" Nullable="false" />
-          <Property Name="useranswer" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <NavigationProperty Name="question" Relationship="OrenairTrainingModel.FK_answer_question" FromRole="answer" ToRole="question" />
-          <NavigationProperty Name="session" Relationship="OrenairTrainingModel.FK_answer_session" FromRole="answer" ToRole="session" />
+          <Property Name="useranswer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="question" Relationship="Self.FK_answer_question" FromRole="answer" ToRole="question" />
+          <NavigationProperty Name="session" Relationship="Self.FK_answer_session" FromRole="answer" ToRole="session" />
         </EntityType>
         <EntityType Name="container">
           <Key>
             <PropertyRef Name="container_id" />
           </Key>
-          <Property Name="container_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="container_name" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="container_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="container_name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="ancestor_id" Type="Int32" />
           <Property Name="type_id" Type="Int32" Nullable="false" />
           <Property Name="deleted" Type="Boolean" />
-          <NavigationProperty Name="container1" Relationship="OrenairTrainingModel.FK_container_container" FromRole="container" ToRole="container1" />
-          <NavigationProperty Name="container2" Relationship="OrenairTrainingModel.FK_container_container" FromRole="container1" ToRole="container" />
-          <NavigationProperty Name="containertype" Relationship="OrenairTrainingModel.FK_container_containertype" FromRole="container" ToRole="containertype" />
-          <NavigationProperty Name="containertodepartment" Relationship="OrenairTrainingModel.FK_containertodepartment_container" FromRole="container" ToRole="containertodepartment" />
-          <NavigationProperty Name="material" Relationship="OrenairTrainingModel.FK_material_container" FromRole="container" ToRole="material" />
-          <NavigationProperty Name="question" Relationship="OrenairTrainingModel.FK_question_container" FromRole="container" ToRole="question" />
+          <NavigationProperty Name="container1" Relationship="Self.FK_container_container" FromRole="container" ToRole="container1" />
+          <NavigationProperty Name="container2" Relationship="Self.FK_container_container" FromRole="container1" ToRole="container" />
+          <NavigationProperty Name="containertype" Relationship="Self.FK_container_containertype" FromRole="container" ToRole="containertype" />
+          <NavigationProperty Name="containertodepartment" Relationship="Self.FK_containertodepartment_container" FromRole="container" ToRole="containertodepartment" />
+          <NavigationProperty Name="material" Relationship="Self.FK_material_container" FromRole="container" ToRole="material" />
+          <NavigationProperty Name="question" Relationship="Self.FK_question_container" FromRole="container" ToRole="question" />
         </EntityType>
         <EntityType Name="containertodepartment">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="container_id" Type="Int32" Nullable="false" />
           <Property Name="department_id" Type="Int32" Nullable="false" />
           <Property Name="deleted" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="container" Relationship="OrenairTrainingModel.FK_containertodepartment_container" FromRole="containertodepartment" ToRole="container" />
-          <NavigationProperty Name="department" Relationship="OrenairTrainingModel.FK_containertodepartment_department" FromRole="containertodepartment" ToRole="department" />
+          <NavigationProperty Name="container" Relationship="Self.FK_containertodepartment_container" FromRole="containertodepartment" ToRole="container" />
+          <NavigationProperty Name="department" Relationship="Self.FK_containertodepartment_department" FromRole="containertodepartment" ToRole="department" />
         </EntityType>
         <EntityType Name="containertype">
           <Key>
             <PropertyRef Name="containertype_id" />
           </Key>
-          <Property Name="containertype_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="containertype_name" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
-          <NavigationProperty Name="container" Relationship="OrenairTrainingModel.FK_container_containertype" FromRole="containertype" ToRole="container" />
+          <Property Name="containertype_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="containertype_name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="container" Relationship="Self.FK_container_containertype" FromRole="containertype" ToRole="container" />
         </EntityType>
         <EntityType Name="department">
           <Key>
             <PropertyRef Name="department_id" />
           </Key>
-          <Property Name="department_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="department_name" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="department_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="department_name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="deleted" Type="Boolean" />
-          <NavigationProperty Name="containertodepartment" Relationship="OrenairTrainingModel.FK_containertodepartment_department" FromRole="department" ToRole="containertodepartment" />
-          <NavigationProperty Name="user" Relationship="OrenairTrainingModel.FK_user_department" FromRole="department" ToRole="user" />
+          <NavigationProperty Name="containertodepartment" Relationship="Self.FK_containertodepartment_department" FromRole="department" ToRole="containertodepartment" />
+          <NavigationProperty Name="user" Relationship="Self.FK_user_department" FromRole="department" ToRole="user" />
         </EntityType>
         <EntityType Name="ipaddress">
           <Key>
             <PropertyRef Name="ipaddress_id" />
           </Key>
-          <Property Name="ipaddress_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="ipaddress_name" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="ipaddress_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ipaddress_name" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
           <Property Name="deleted" Type="Boolean" />
         </EntityType>
         <EntityType Name="log">
           <Key>
             <PropertyRef Name="note_id" />
           </Key>
-          <Property Name="note_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="note_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="datetime" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="operation_code" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="operation_code" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="user_id" Type="Int32" />
           <Property Name="objectcode_id" Type="Int32" />
           <Property Name="object_id" Type="Int32" />
-          <Property Name="ip" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-          <NavigationProperty Name="objectcode" Relationship="OrenairTrainingModel.FK_log_objectcode" FromRole="log" ToRole="objectcode" />
-          <NavigationProperty Name="user" Relationship="OrenairTrainingModel.FK_log_user" FromRole="log" ToRole="user" />
+          <Property Name="ip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="objectcode" Relationship="Self.FK_log_objectcode" FromRole="log" ToRole="objectcode" />
+          <NavigationProperty Name="user" Relationship="Self.FK_log_user" FromRole="log" ToRole="user" />
         </EntityType>
         <EntityType Name="material">
           <Key>
             <PropertyRef Name="material_id" />
           </Key>
-          <Property Name="material_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="material_name" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="material_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="material_name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="container_id" Type="Int32" Nullable="false" />
           <Property Name="deleted" Type="Boolean" />
-          <Property Name="material_content" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
-          <Property Name="file_name" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="material_content" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="file_name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="file_size" Type="Double" />
-          <NavigationProperty Name="container" Relationship="OrenairTrainingModel.FK_material_container" FromRole="material" ToRole="container" />
-          <NavigationProperty Name="question" Relationship="OrenairTrainingModel.FK_question_material" FromRole="material" ToRole="question" />
+          <NavigationProperty Name="container" Relationship="Self.FK_material_container" FromRole="material" ToRole="container" />
+          <NavigationProperty Name="question" Relationship="Self.FK_question_material" FromRole="material" ToRole="question" />
         </EntityType>
         <EntityType Name="objectcode">
           <Key>
             <PropertyRef Name="objectcode_id" />
           </Key>
-          <Property Name="objectcode_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="objectcode_name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
-          <NavigationProperty Name="log" Relationship="OrenairTrainingModel.FK_log_objectcode" FromRole="objectcode" ToRole="log" />
+          <Property Name="objectcode_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="objectcode_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="log" Relationship="Self.FK_log_objectcode" FromRole="objectcode" ToRole="log" />
         </EntityType>
         <EntityType Name="question">
           <Key>
             <PropertyRef Name="question_id" />
           </Key>
-          <Property Name="question_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="text" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="question_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="image" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <Property Name="answer" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="answer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="type_id" Type="Int32" Nullable="false" />
           <Property Name="container_id" Type="Int32" Nullable="false" />
           <Property Name="material_id" Type="Int32" />
           <Property Name="time" Type="Time" Precision="7" />
           <Property Name="deleted" Type="Boolean" />
-          <NavigationProperty Name="answer1" Relationship="OrenairTrainingModel.FK_answer_question" FromRole="question" ToRole="answer" />
-          <NavigationProperty Name="container" Relationship="OrenairTrainingModel.FK_question_container" FromRole="question" ToRole="container" />
-          <NavigationProperty Name="material" Relationship="OrenairTrainingModel.FK_question_material" FromRole="question" ToRole="material" />
-          <NavigationProperty Name="questiontype" Relationship="OrenairTrainingModel.FK_question_questiontype" FromRole="question" ToRole="questiontype" />
+          <Property Name="explanation_text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="explanation_img" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="answer1" Relationship="Self.FK_answer_question" FromRole="question" ToRole="answer" />
+          <NavigationProperty Name="container" Relationship="Self.FK_question_container" FromRole="question" ToRole="container" />
+          <NavigationProperty Name="material" Relationship="Self.FK_question_material" FromRole="question" ToRole="material" />
+          <NavigationProperty Name="questiontype" Relationship="Self.FK_question_questiontype" FromRole="question" ToRole="questiontype" />
         </EntityType>
         <EntityType Name="questiontype">
           <Key>
             <PropertyRef Name="questiontype_id" />
           </Key>
-          <Property Name="questiontype_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="questiontype_name" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="questiontype_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="questiontype_name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="deleted" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="question" Relationship="OrenairTrainingModel.FK_question_questiontype" FromRole="questiontype" ToRole="question" />
+          <NavigationProperty Name="question" Relationship="Self.FK_question_questiontype" FromRole="questiontype" ToRole="question" />
         </EntityType>
         <EntityType Name="role">
           <Key>
             <PropertyRef Name="role_id" />
           </Key>
-          <Property Name="role_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="role_name" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="role_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="role_name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="deleted" Type="Boolean" />
-          <NavigationProperty Name="user" Relationship="OrenairTrainingModel.FK_user_role" FromRole="role" ToRole="user" />
+          <NavigationProperty Name="user" Relationship="Self.FK_user_role" FromRole="role" ToRole="user" />
         </EntityType>
         <EntityType Name="session">
           <Key>
             <PropertyRef Name="session_id" />
           </Key>
-          <Property Name="session_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="session_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="datetime" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="user_id" Type="Int32" Nullable="false" />
           <Property Name="testconfig_id" Type="Int32" Nullable="false" />
-          <Property Name="ipaddress" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="ipaddress" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="deleted" Type="Boolean" />
           <Property Name="result" Type="Int32" />
-          <NavigationProperty Name="answer" Relationship="OrenairTrainingModel.FK_answer_session" FromRole="session" ToRole="answer" />
-          <NavigationProperty Name="testconfig" Relationship="OrenairTrainingModel.FK_session_testconfig" FromRole="session" ToRole="testconfig" />
-          <NavigationProperty Name="user" Relationship="OrenairTrainingModel.FK_session_user" FromRole="session" ToRole="user" />
+          <NavigationProperty Name="answer" Relationship="Self.FK_answer_session" FromRole="session" ToRole="answer" />
+          <NavigationProperty Name="testconfig" Relationship="Self.FK_session_testconfig" FromRole="session" ToRole="testconfig" />
+          <NavigationProperty Name="user" Relationship="Self.FK_session_user" FromRole="session" ToRole="user" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
             <PropertyRef Name="diagram_id" />
           </Key>
-          <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="principal_id" Type="Int32" Nullable="false" />
-          <Property Name="diagram_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="version" Type="Int32" />
           <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
@@ -750,40 +663,41 @@
           <Key>
             <PropertyRef Name="testconf_id" />
           </Key>
-          <Property Name="testconf_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="testconf_name" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="testconf_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="testconf_name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="time" Type="Time" Precision="7" />
           <Property Name="deleted" Type="Boolean" />
-          <Property Name="themes" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
-          <Property Name="questions" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="themes" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="questions" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="criterion" Type="Int32" />
-          <NavigationProperty Name="session" Relationship="OrenairTrainingModel.FK_session_testconfig" FromRole="testconfig" ToRole="session" />
-          <NavigationProperty Name="testtouser" Relationship="OrenairTrainingModel.FK_testtouser_testconfig" FromRole="testconfig" ToRole="testtouser" />
+          <NavigationProperty Name="session" Relationship="Self.FK_session_testconfig" FromRole="testconfig" ToRole="session" />
+          <NavigationProperty Name="testtouser" Relationship="Self.FK_testtouser_testconfig" FromRole="testconfig" ToRole="testtouser" />
         </EntityType>
         <EntityType Name="testtouser">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="user_id" Type="Int32" Nullable="false" />
           <Property Name="testconf_id" Type="Int32" Nullable="false" />
           <Property Name="is_completed" Type="Boolean" />
           <Property Name="date_of_assignment" Type="DateTime" Precision="3" />
           <Property Name="deleted" Type="Boolean" />
-          <NavigationProperty Name="testconfig" Relationship="OrenairTrainingModel.FK_testtouser_testconfig" FromRole="testtouser" ToRole="testconfig" />
-          <NavigationProperty Name="user" Relationship="OrenairTrainingModel.FK_testtouser_user" FromRole="testtouser" ToRole="user" />
+          <NavigationProperty Name="testconfig" Relationship="Self.FK_testtouser_testconfig" FromRole="testtouser" ToRole="testconfig" />
+          <NavigationProperty Name="user" Relationship="Self.FK_testtouser_user" FromRole="testtouser" ToRole="user" />
         </EntityType>
         <EntityType Name="user">
           <Key>
             <PropertyRef Name="user_id" />
           </Key>
-          <Property Name="user_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="user_name" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="user_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="user_name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="tab_num" Type="Int32" />
-          <Property Name="password" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
-          <Property Name="firstname" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
-          <Property Name="surname" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
-          <Property Name="patronymic" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="password" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="firstname" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="surname" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="patronymic" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="fio" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="birthdate" Type="DateTime" Precision="0" />
           <Property Name="department_id" Type="Int32" />
           <Property Name="regdate" Type="DateTime" Precision="0" />
@@ -791,16 +705,15 @@
           <Property Name="deleted" Type="Boolean" />
           <Property Name="last_activity_date" Type="DateTime" Precision="0" />
           <Property Name="role_id" Type="Int32" Nullable="false" />
-          <Property Name="fio" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
-          <NavigationProperty Name="department" Relationship="OrenairTrainingModel.FK_user_department" FromRole="user" ToRole="department" />
-          <NavigationProperty Name="log" Relationship="OrenairTrainingModel.FK_log_user" FromRole="user" ToRole="log" />
-          <NavigationProperty Name="role" Relationship="OrenairTrainingModel.FK_user_role" FromRole="user" ToRole="role" />
-          <NavigationProperty Name="session" Relationship="OrenairTrainingModel.FK_session_user" FromRole="user" ToRole="session" />
-          <NavigationProperty Name="testtouser" Relationship="OrenairTrainingModel.FK_testtouser_user" FromRole="user" ToRole="testtouser" />
+          <NavigationProperty Name="department" Relationship="Self.FK_user_department" FromRole="user" ToRole="department" />
+          <NavigationProperty Name="log" Relationship="Self.FK_log_user" FromRole="user" ToRole="log" />
+          <NavigationProperty Name="role" Relationship="Self.FK_user_role" FromRole="user" ToRole="role" />
+          <NavigationProperty Name="session" Relationship="Self.FK_session_user" FromRole="user" ToRole="session" />
+          <NavigationProperty Name="testtouser" Relationship="Self.FK_testtouser_user" FromRole="user" ToRole="testtouser" />
         </EntityType>
         <Association Name="FK_answer_question">
-          <End Role="question" Type="OrenairTrainingModel.question" Multiplicity="1" />
-          <End Role="answer" Type="OrenairTrainingModel.answer" Multiplicity="*" />
+          <End Role="question" Type="Self.question" Multiplicity="1" />
+          <End Role="answer" Type="Self.answer" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="question">
               <PropertyRef Name="question_id" />
@@ -811,8 +724,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_answer_session">
-          <End Role="session" Type="OrenairTrainingModel.session" Multiplicity="1" />
-          <End Role="answer" Type="OrenairTrainingModel.answer" Multiplicity="*" />
+          <End Role="session" Type="Self.session" Multiplicity="1" />
+          <End Role="answer" Type="Self.answer" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="session">
               <PropertyRef Name="session_id" />
@@ -823,8 +736,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_container_container">
-          <End Role="container" Type="OrenairTrainingModel.container" Multiplicity="0..1" />
-          <End Role="container1" Type="OrenairTrainingModel.container" Multiplicity="*" />
+          <End Role="container" Type="Self.container" Multiplicity="0..1" />
+          <End Role="container1" Type="Self.container" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="container">
               <PropertyRef Name="container_id" />
@@ -835,8 +748,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_container_containertype">
-          <End Role="containertype" Type="OrenairTrainingModel.containertype" Multiplicity="1" />
-          <End Role="container" Type="OrenairTrainingModel.container" Multiplicity="*" />
+          <End Role="containertype" Type="Self.containertype" Multiplicity="1" />
+          <End Role="container" Type="Self.container" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="containertype">
               <PropertyRef Name="containertype_id" />
@@ -847,8 +760,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_containertodepartment_container">
-          <End Role="container" Type="OrenairTrainingModel.container" Multiplicity="1" />
-          <End Role="containertodepartment" Type="OrenairTrainingModel.containertodepartment" Multiplicity="*" />
+          <End Role="container" Type="Self.container" Multiplicity="1" />
+          <End Role="containertodepartment" Type="Self.containertodepartment" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="container">
               <PropertyRef Name="container_id" />
@@ -859,8 +772,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_material_container">
-          <End Role="container" Type="OrenairTrainingModel.container" Multiplicity="1" />
-          <End Role="material" Type="OrenairTrainingModel.material" Multiplicity="*" />
+          <End Role="container" Type="Self.container" Multiplicity="1" />
+          <End Role="material" Type="Self.material" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="container">
               <PropertyRef Name="container_id" />
@@ -871,8 +784,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_question_container">
-          <End Role="container" Type="OrenairTrainingModel.container" Multiplicity="1" />
-          <End Role="question" Type="OrenairTrainingModel.question" Multiplicity="*" />
+          <End Role="container" Type="Self.container" Multiplicity="1" />
+          <End Role="question" Type="Self.question" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="container">
               <PropertyRef Name="container_id" />
@@ -883,8 +796,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_containertodepartment_department">
-          <End Role="department" Type="OrenairTrainingModel.department" Multiplicity="1" />
-          <End Role="containertodepartment" Type="OrenairTrainingModel.containertodepartment" Multiplicity="*" />
+          <End Role="department" Type="Self.department" Multiplicity="1" />
+          <End Role="containertodepartment" Type="Self.containertodepartment" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="department">
               <PropertyRef Name="department_id" />
@@ -895,8 +808,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_user_department">
-          <End Role="department" Type="OrenairTrainingModel.department" Multiplicity="0..1" />
-          <End Role="user" Type="OrenairTrainingModel.user" Multiplicity="*" />
+          <End Role="department" Type="Self.department" Multiplicity="0..1" />
+          <End Role="user" Type="Self.user" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="department">
               <PropertyRef Name="department_id" />
@@ -907,8 +820,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_log_objectcode">
-          <End Role="objectcode" Type="OrenairTrainingModel.objectcode" Multiplicity="0..1" />
-          <End Role="log" Type="OrenairTrainingModel.log" Multiplicity="*" />
+          <End Role="objectcode" Type="Self.objectcode" Multiplicity="0..1" />
+          <End Role="log" Type="Self.log" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="objectcode">
               <PropertyRef Name="objectcode_id" />
@@ -919,8 +832,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_log_user">
-          <End Role="user" Type="OrenairTrainingModel.user" Multiplicity="0..1" />
-          <End Role="log" Type="OrenairTrainingModel.log" Multiplicity="*" />
+          <End Role="user" Type="Self.user" Multiplicity="0..1" />
+          <End Role="log" Type="Self.log" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="user">
               <PropertyRef Name="user_id" />
@@ -931,8 +844,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_question_material">
-          <End Role="material" Type="OrenairTrainingModel.material" Multiplicity="0..1" />
-          <End Role="question" Type="OrenairTrainingModel.question" Multiplicity="*" />
+          <End Role="material" Type="Self.material" Multiplicity="0..1" />
+          <End Role="question" Type="Self.question" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="material">
               <PropertyRef Name="material_id" />
@@ -943,8 +856,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_question_questiontype">
-          <End Role="questiontype" Type="OrenairTrainingModel.questiontype" Multiplicity="1" />
-          <End Role="question" Type="OrenairTrainingModel.question" Multiplicity="*" />
+          <End Role="questiontype" Type="Self.questiontype" Multiplicity="1" />
+          <End Role="question" Type="Self.question" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="questiontype">
               <PropertyRef Name="questiontype_id" />
@@ -955,8 +868,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_user_role">
-          <End Role="role" Type="OrenairTrainingModel.role" Multiplicity="1" />
-          <End Role="user" Type="OrenairTrainingModel.user" Multiplicity="*" />
+          <End Role="role" Type="Self.role" Multiplicity="1" />
+          <End Role="user" Type="Self.user" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="role">
               <PropertyRef Name="role_id" />
@@ -967,8 +880,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_session_testconfig">
-          <End Role="testconfig" Type="OrenairTrainingModel.testconfig" Multiplicity="1" />
-          <End Role="session" Type="OrenairTrainingModel.session" Multiplicity="*" />
+          <End Role="testconfig" Type="Self.testconfig" Multiplicity="1" />
+          <End Role="session" Type="Self.session" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="testconfig">
               <PropertyRef Name="testconf_id" />
@@ -979,8 +892,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_session_user">
-          <End Role="user" Type="OrenairTrainingModel.user" Multiplicity="1" />
-          <End Role="session" Type="OrenairTrainingModel.session" Multiplicity="*" />
+          <End Role="user" Type="Self.user" Multiplicity="1" />
+          <End Role="session" Type="Self.session" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="user">
               <PropertyRef Name="user_id" />
@@ -991,8 +904,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_testtouser_testconfig">
-          <End Role="testconfig" Type="OrenairTrainingModel.testconfig" Multiplicity="1" />
-          <End Role="testtouser" Type="OrenairTrainingModel.testtouser" Multiplicity="*" />
+          <End Role="testconfig" Type="Self.testconfig" Multiplicity="1" />
+          <End Role="testtouser" Type="Self.testtouser" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="testconfig">
               <PropertyRef Name="testconf_id" />
@@ -1003,8 +916,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_testtouser_user">
-          <End Role="user" Type="OrenairTrainingModel.user" Multiplicity="1" />
-          <End Role="testtouser" Type="OrenairTrainingModel.testtouser" Multiplicity="*" />
+          <End Role="user" Type="Self.user" Multiplicity="1" />
+          <End Role="testtouser" Type="Self.testtouser" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="user">
               <PropertyRef Name="user_id" />
@@ -1014,6 +927,97 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityContainer Name="OrenairTrainingEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="answer" EntityType="Self.answer" />
+          <EntitySet Name="container" EntityType="Self.container" />
+          <EntitySet Name="containertodepartment" EntityType="Self.containertodepartment" />
+          <EntitySet Name="containertype" EntityType="Self.containertype" />
+          <EntitySet Name="department" EntityType="Self.department" />
+          <EntitySet Name="ipaddress" EntityType="Self.ipaddress" />
+          <EntitySet Name="log" EntityType="Self.log" />
+          <EntitySet Name="material" EntityType="Self.material" />
+          <EntitySet Name="objectcode" EntityType="Self.objectcode" />
+          <EntitySet Name="question" EntityType="Self.question" />
+          <EntitySet Name="questiontype" EntityType="Self.questiontype" />
+          <EntitySet Name="role" EntityType="Self.role" />
+          <EntitySet Name="session" EntityType="Self.session" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="testconfig" EntityType="Self.testconfig" />
+          <EntitySet Name="testtouser" EntityType="Self.testtouser" />
+          <EntitySet Name="user" EntityType="Self.user" />
+          <AssociationSet Name="FK_answer_question" Association="Self.FK_answer_question">
+            <End Role="question" EntitySet="question" />
+            <End Role="answer" EntitySet="answer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_answer_session" Association="Self.FK_answer_session">
+            <End Role="session" EntitySet="session" />
+            <End Role="answer" EntitySet="answer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_container_container" Association="Self.FK_container_container">
+            <End Role="container" EntitySet="container" />
+            <End Role="container1" EntitySet="container" />
+          </AssociationSet>
+          <AssociationSet Name="FK_container_containertype" Association="Self.FK_container_containertype">
+            <End Role="containertype" EntitySet="containertype" />
+            <End Role="container" EntitySet="container" />
+          </AssociationSet>
+          <AssociationSet Name="FK_containertodepartment_container" Association="Self.FK_containertodepartment_container">
+            <End Role="container" EntitySet="container" />
+            <End Role="containertodepartment" EntitySet="containertodepartment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_material_container" Association="Self.FK_material_container">
+            <End Role="container" EntitySet="container" />
+            <End Role="material" EntitySet="material" />
+          </AssociationSet>
+          <AssociationSet Name="FK_question_container" Association="Self.FK_question_container">
+            <End Role="container" EntitySet="container" />
+            <End Role="question" EntitySet="question" />
+          </AssociationSet>
+          <AssociationSet Name="FK_containertodepartment_department" Association="Self.FK_containertodepartment_department">
+            <End Role="department" EntitySet="department" />
+            <End Role="containertodepartment" EntitySet="containertodepartment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_user_department" Association="Self.FK_user_department">
+            <End Role="department" EntitySet="department" />
+            <End Role="user" EntitySet="user" />
+          </AssociationSet>
+          <AssociationSet Name="FK_log_objectcode" Association="Self.FK_log_objectcode">
+            <End Role="objectcode" EntitySet="objectcode" />
+            <End Role="log" EntitySet="log" />
+          </AssociationSet>
+          <AssociationSet Name="FK_log_user" Association="Self.FK_log_user">
+            <End Role="user" EntitySet="user" />
+            <End Role="log" EntitySet="log" />
+          </AssociationSet>
+          <AssociationSet Name="FK_question_material" Association="Self.FK_question_material">
+            <End Role="material" EntitySet="material" />
+            <End Role="question" EntitySet="question" />
+          </AssociationSet>
+          <AssociationSet Name="FK_question_questiontype" Association="Self.FK_question_questiontype">
+            <End Role="questiontype" EntitySet="questiontype" />
+            <End Role="question" EntitySet="question" />
+          </AssociationSet>
+          <AssociationSet Name="FK_user_role" Association="Self.FK_user_role">
+            <End Role="role" EntitySet="role" />
+            <End Role="user" EntitySet="user" />
+          </AssociationSet>
+          <AssociationSet Name="FK_session_testconfig" Association="Self.FK_session_testconfig">
+            <End Role="testconfig" EntitySet="testconfig" />
+            <End Role="session" EntitySet="session" />
+          </AssociationSet>
+          <AssociationSet Name="FK_session_user" Association="Self.FK_session_user">
+            <End Role="user" EntitySet="user" />
+            <End Role="session" EntitySet="session" />
+          </AssociationSet>
+          <AssociationSet Name="FK_testtouser_testconfig" Association="Self.FK_testtouser_testconfig">
+            <End Role="testconfig" EntitySet="testconfig" />
+            <End Role="testtouser" EntitySet="testtouser" />
+          </AssociationSet>
+          <AssociationSet Name="FK_testtouser_user" Association="Self.FK_testtouser_user">
+            <End Role="user" EntitySet="user" />
+            <End Role="testtouser" EntitySet="testtouser" />
+          </AssociationSet>
+        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1123,6 +1127,8 @@
                 <ScalarProperty Name="material_id" ColumnName="material_id" />
                 <ScalarProperty Name="time" ColumnName="time" />
                 <ScalarProperty Name="deleted" ColumnName="deleted" />
+                <ScalarProperty Name="explanation_text" ColumnName="explanation_text" />
+                <ScalarProperty Name="explanation_img" ColumnName="explanation_img" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1203,6 +1209,7 @@
                 <ScalarProperty Name="firstname" ColumnName="firstname" />
                 <ScalarProperty Name="surname" ColumnName="surname" />
                 <ScalarProperty Name="patronymic" ColumnName="patronymic" />
+                <ScalarProperty Name="fio" ColumnName="fio" />
                 <ScalarProperty Name="birthdate" ColumnName="birthdate" />
                 <ScalarProperty Name="department_id" ColumnName="department_id" />
                 <ScalarProperty Name="regdate" ColumnName="regdate" />
@@ -1210,7 +1217,6 @@
                 <ScalarProperty Name="deleted" ColumnName="deleted" />
                 <ScalarProperty Name="last_activity_date" ColumnName="last_activity_date" />
                 <ScalarProperty Name="role_id" ColumnName="role_id" />
-                <ScalarProperty Name="fio" ColumnName="fio" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1228,8 +1234,9 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="False" />
-        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
       </DesignerInfoPropertySet>
     </Options>

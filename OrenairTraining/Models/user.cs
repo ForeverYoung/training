@@ -28,6 +28,7 @@ namespace OrenairTraining.Models
         public string firstname { get; set; }
         public string surname { get; set; }
         public string patronymic { get; set; }
+        public string fio { get; set; }
         public Nullable<System.DateTime> birthdate { get; set; }
         public Nullable<int> department_id { get; set; }
         public Nullable<System.DateTime> regdate { get; set; }
@@ -35,7 +36,6 @@ namespace OrenairTraining.Models
         public Nullable<bool> deleted { get; set; }
         public Nullable<System.DateTime> last_activity_date { get; set; }
         public int role_id { get; set; }
-        public string fio { get; set; }
     
         public virtual department department { get; set; }
         public virtual ICollection<log> log { get; set; }

@@ -1,9 +1,5 @@
 ﻿@model OrenairTraining.Models.testconfig
 
-<script src="~/Scripts/jquery-1.8.2.min.js"></script>
-<script src="~/Scripts/jquery.validate.min.js"></script>
-<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
-
     <fieldset>
         
         <legend>Темы и вопросы</legend>
@@ -15,7 +11,8 @@
                 @Html.DropDownList("themes", ViewBag.Themes as SelectList)   
             
                 @Html.Label("Вопросы")
-                @Html.TextBox("questions")
+                @Html.DropDownList("questions",ViewBag.Questions as SelectList) 
+                @*.TextBox("questions")*@
                 @Html.ValidationMessageFor(model => model.questions)
             </div>
         }

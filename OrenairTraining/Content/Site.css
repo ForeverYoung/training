@@ -3,20 +3,37 @@
     font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
     color: #232323;
     background-color: #fff;
+    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+    /*clear: both;*/
+    overflow: scroll;
+    padding: 0 5px;
+    width: 70%;
+}
+
+.header {
+    width: 70%;
+    position: fixed;
+    background-color: #fff;
+    color: #fff;
+    padding-top: 10px;
+}
+
+.content {
+    padding-top: 180px;
 }
 
 header, footer, nav, section {
     display: block;
 }
 
-.mytable
-{
+.mytable {
     border-width: 1px;
 }
 
-.mytd
-{
-    vertical-align:top;
+.mytd {
+    vertical-align: top;
 }
 
 /* Styles for basic forms
@@ -69,137 +86,152 @@ textarea {
 }
 
 /*--------------------------------------------------------------*/
-.center { margin-left: auto; margin-right: auto; clear: both; overflow: scroll; padding: 0 5px; width: 70%;}
+/*.center { margin-left: auto; margin-right: auto; clear: both; overflow: scroll; padding: 0 5px; width: 70%;}*/
 
-.loginout
-{    
-    float: right
+.loginout {
+    float: right;
 }
 
-.login
-{
+.login {
     background: url(../Images/Logos/sign-in.png) no-repeat left;
-    background-size:cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -webkit-background-size: cover;
+    background-size: cover;
     display: block;
     width: 40px;
     height: 40px;
     text-indent: -9999px;
 }
 
-.logout
-{
+.logout {
     background: url(../Images/Logos/sign-out.png) no-repeat left;
-    background-size:cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -webkit-background-size: cover;
+    background-size: cover;
     display: block;
     width: 40px;
     height: 40px;
     text-indent: -9999px;
 }
 
-div.margin
-{
-    margin-bottom:10px;
-    margin-top:10px;
+div.margin {
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
 
-h1.title
-{
-    margin:auto;
-    margin-right:11px;
+h1.title {
+    margin: auto;
+    margin-right: 11px;
     color: #F26A00;
     font-family: Arial;
-    font-style:italic;
-    font-stretch:expanded;
-    font-size:medium;
-    text-align:right;
+    font-style: italic;
+    font-stretch: expanded;
+    font-size: medium;
+    text-align: right;
 }
 
-img.tclass
-{
+img.tclass {
     width: 80px;
     height: 80px;
 }
 
-.container{overflow:hidden}
-.box{white-space:nowrap}
-.box div{display:inline-block;/*border:1px solid black*/}
+.container {
+    overflow: hidden;
+}
 
-a
-{
+.box {
+    white-space: nowrap;
+}
+
+    .box div {
+        display: inline-block; /*border:1px solid black*/
+    }
+
+a {
     color: #0061AE;
 }
 
-.edit
-{
+.edit {
     background: url(../Images/Logos/edit.png) no-repeat;
-    background-size:cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -webkit-background-size: cover;
+    background-size: cover;
     display: inline-block;
-    margin-left:10px;
+    margin-left: 10px;
     width: 20px;
     height: 20px;
     text-indent: -9999px;
-    float:left;
+    float: left;
 }
 
-.details
-{
-    margin-left: 10px;
+.details {
     background: url(../Images/Logos/attibutes.png) no-repeat;
-    background-size:cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -webkit-background-size: cover;
+    background-size: cover;
     display: block;
+    margin-left: 10px;
     width: 20px;
     height: 20px;
     text-indent: -9999px;
-    float:left;
+    float: left;
 }
 
-.delete
-{
-    margin-left: 10px;
+.delete {
     background: url(../Images/Logos/delete.png) no-repeat;
-    background-size:cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -webkit-background-size: cover;
+    background-size: cover;
     display: block;
+    margin-left: 10px;
     width: 20px;
     height: 20px;
     text-indent: -9999px;
-    float:left;
+    float: left;
 }
 
-.open
-{
-    margin-left: 10px;
-    margin-right:10px;
+.open {
     background: url(../Images/Logos/folder.png) no-repeat;
-    background-size:cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -webkit-background-size: cover;
+    background-size: cover;
     display: block;
+    margin-left: 10px;
+    margin-right: 10px;
     width: 20px;
     height: 20px;
     text-indent: -9999px;
-    float:left;
+    float: left;
 }
 
-.starttest
-{
+.starttest {
     margin-left: 10px;
-    margin-right:10px;
+    margin-right: 10px;
     background: url(../Images/Logos/brainstorming.png) no-repeat;
-    background-size:cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -webkit-background-size: cover;
+    background-size: cover;
     display: block;
     width: 20px;
     height: 20px;
     text-indent: -9999px;
-    float:left;
+    float: left;
 }
 /*--------------------------------------------------------------*/
 
-.imgCenter
-{
+.imgCenter {
     padding-top: 40px;
-    text-align:center;
+    text-align: center;
 }
 
-.focus
-{
+.focus {
     background: #feffff;
     background: -moz-radial-gradient(center, ellipse cover, #feffff 0%, #d2ebf9 100%);
     background: -webkit-radial-gradient(center, ellipse cover, #feffff 0%,#d2ebf9 100%);
@@ -208,3 +240,72 @@ a
     background: radial-gradient(center, ellipse cover, #feffff 0%,#d2ebf9 100%);
     padding: 5px;
 }
+
+/*------------------------------таблица Оформление--------------------*/
+
+.features-table {
+    width: 100%;
+    margin: 0 auto;
+    border-collapse: separate;
+    border-spacing: 0;
+    -webkit-text-shadow: 0 1px 0 #fff;
+    text-shadow: 0 1px 0 #fff;
+    color: #2a2a2a;
+    background: #fafafa;
+    background-image: -moz-linear-gradient(top, #fff, #eaeaea, #fff); /* Firefox 3.6 */
+    background-image: -webkit-gradient(linear,center bottom,center top,from(#fff),color-stop(0.5, #eaeaea),to(#fff));
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+    .features-table td {
+        height: 50px;
+        padding: 0 20px;
+        border-bottom: 1px solid #cdcdcd;
+        /*-moz-box-shadow: 0 1px 0 white;
+        -webkit-box-shadow: 0 1px 0 white;*/
+        box-shadow: 0 1px 0 white;
+        text-align: center;
+        vertical-align: middle;
+        display: table-cell;
+    }
+
+    .features-table tbody td {
+        text-align: center;
+        width: 150px;
+    }
+
+    .features-table td.grey {
+        background: #efefef;
+        background: rgba(144,144,144,0.15);
+        border-right: 1px solid white;
+    }
+
+    .features-table td.green {
+        background: #e7f3d4;
+        background: rgba(184,243,85,0.3);
+    }
+
+    .features-table td:nowrap {
+        white-space: nowrap;
+    }
+
+    .features-table thead td {
+        font-size: 120%;
+        font-weight: bold;
+        /*-moz-border-radius-topright: 10px;
+  -moz-border-radius-topleft: 10px;*/
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+        border-top: 1px solid #eaeaea;
+    }
+
+    .features-table tfoot td {
+        font-size: 120%;
+        font-weight: bold;
+        /*-moz-border-radius-bottomright: 10px;
+  -moz-border-radius-bottomleft: 10px;*/
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+        border-bottom: 1px solid #dadada;
+    }

@@ -7,7 +7,7 @@
         {
             if (mq.IsAnswered!=true)
             {
-                @Ajax.ActionLink((mq.IndexInTest + 1).ToString(), "GoTo", new { questionIndex = mq.IndexInTest }, new AjaxOptions { UpdateTargetId = "questionfield" })
+                @Ajax.ActionLink((mq.IndexInTest + 1).ToString(), "GoTo", new { questionIndex = mq.IndexInTest }, new AjaxOptions { UpdateTargetId = "questionfield" }, InsertionMode.Replace)
             }
         }
     </div>

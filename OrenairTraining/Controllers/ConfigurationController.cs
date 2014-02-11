@@ -61,8 +61,10 @@ namespace OrenairTraining.Controllers
 
         public ActionResult Create(int themescount)
         {
-            SelectList themes = new SelectList(db.container.Where(c => c.type_id == 2).ToList(), "container_id", "container_name");
+            SelectList themes = new SelectList(db.container.Where(c => c.type_id == 2 && c.deleted!=true).ToList(), "container_id", "container_name");
             ViewBag.Themes = themes;
+            SelectList questions = new SelectList(new List<int>() { 0,1,2,3,4,5,6,7,8,9,10});
+            ViewBag.Questions = questions;
             ViewBag.Themescount = themescount;
             return View();
         }
@@ -77,9 +79,10 @@ namespace OrenairTraining.Controllers
             int themescount = themes.Count;
             testconfig.themes = testconfig.questions = "";
             testconfig.deleted = false;
+            if (testconfig.time == null) testconfig.time = TimeSpan.Parse("1:00:00");
             for (int i = 0; i < themescount; i++)
             {
-                if (questions[i] != "")
+                if (questions[i] != "0")
                 {
                     testconfig.themes += themes[i] + "|";
                     //testconfig.questions += questions[i] + "|";

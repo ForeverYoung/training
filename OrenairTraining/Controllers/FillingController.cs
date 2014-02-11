@@ -109,12 +109,12 @@ namespace OrenairTraining.Controllers
 
         public ActionResult RenderQuestionsInRightSide(int id)
         {
-            return PartialView("ContentQuestions", db.question.ToList().Where(q => q.container_id == id));
+            return PartialView("ContentQuestions", db.question.ToList().Where(q => q.container_id == id && q.deleted != true));
         }
 
         public ActionResult RenderMaterialsInRightSide(int id)
         {
-            return PartialView("ContentMaterials", db.material.ToList().Where(m => m.container_id == id));
+            return PartialView("ContentMaterials", db.material.ToList().Where(m => m.container_id == id && m.deleted!=true));
         }
     }
 }

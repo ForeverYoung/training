@@ -6,41 +6,36 @@
 
 <h2>Тесты</h2>
 
-<table>
+<table class="features-table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.testconf_id)
+            @Html.DisplayName("№")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.testconf_name)
+            @Html.DisplayName("Название теста")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.time)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.deleted)
+            @Html.DisplayName("Время прохождения")
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.testconf_id)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.testconf_name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.time)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.deleted)
-        </td>
-        <td>
-            @Html.ActionLink("Start", "StartTest", new { config_id = item.testconf_id }, new { @class="starttest" })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.testconf_id)
+            </td>
+            <td>
+                @Html.ActionLink(Html.DisplayFor(modelItem => item.testconf_name).ToString(), "StartTest", new { config_id = item.testconf_id })
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.time)
+            </td>
+            <td>
+                @Html.ActionLink("Start", "StartTest", new { config_id = item.testconf_id }, new { @class = "starttest" })
+            </td>
+        </tr>
+    }
 
 </table>

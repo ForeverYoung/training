@@ -18,7 +18,7 @@ namespace OrenairTraining.My_Classes
             List<Node> list = new List<Node>();
             using(OrenairTrainingEntities _db=new OrenairTrainingEntities())
             {
-                foreach (var container in _db.container)
+                foreach (var container in _db.container.Where(c=>c.deleted!=true))
                 {
                     if (list.Any(item => item.Id == container.ancestor_id))
                     {

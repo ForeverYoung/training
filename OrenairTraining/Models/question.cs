@@ -28,6 +28,8 @@ namespace OrenairTraining.Models
         public Nullable<int> material_id { get; set; }
         public Nullable<System.TimeSpan> time { get; set; }
         public Nullable<bool> deleted { get; set; }
+        public string explanation_text { get; set; }
+        public byte[] explanation_img { get; set; }
     
         public virtual ICollection<answer> answer1 { get; set; }
         public virtual container container { get; set; }

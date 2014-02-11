@@ -4,21 +4,21 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="a3350f3c4a5742b99cb1a6ad6aa540ff" Name="Диаграмма1">
+      <Diagram DiagramId="9d4d5aae19a345a1bcfa266f6ec94bd4" Name="Diagram1">
         <EntityTypeShape EntityType="OrenairTrainingModel.answer" Width="1.5" PointX="9.75" PointY="6" IsExpanded="true" />
         <EntityTypeShape EntityType="OrenairTrainingModel.container" Width="1.5" PointX="3" PointY="4.125" IsExpanded="true" />
         <EntityTypeShape EntityType="OrenairTrainingModel.containertodepartment" Width="1.5" PointX="5.25" PointY="3.625" IsExpanded="true" />
         <EntityTypeShape EntityType="OrenairTrainingModel.containertype" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
         <EntityTypeShape EntityType="OrenairTrainingModel.department" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="OrenairTrainingModel.ipaddress" Width="1.5" PointX="0.75" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="OrenairTrainingModel.ipaddress" Width="1.5" PointX="7.75" PointY="1.875" IsExpanded="true" />
         <EntityTypeShape EntityType="OrenairTrainingModel.log" Width="1.5" PointX="7.5" PointY="20.5" IsExpanded="true" />
         <EntityTypeShape EntityType="OrenairTrainingModel.material" Width="1.5" PointX="5.25" PointY="7.25" IsExpanded="true" />
         <EntityTypeShape EntityType="OrenairTrainingModel.objectcode" Width="1.5" PointX="5.25" PointY="23" IsExpanded="true" />
-        <EntityTypeShape EntityType="OrenairTrainingModel.question" Width="1.5" PointX="7.5" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="OrenairTrainingModel.question" Width="1.5" PointX="7.5" PointY="5.125" IsExpanded="true" />
         <EntityTypeShape EntityType="OrenairTrainingModel.questiontype" Width="1.5" PointX="5.25" PointY="11.25" IsExpanded="true" />
         <EntityTypeShape EntityType="OrenairTrainingModel.role" Width="1.5" PointX="3" PointY="19" IsExpanded="true" />
         <EntityTypeShape EntityType="OrenairTrainingModel.session" Width="1.5" PointX="7.5" PointY="16.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="OrenairTrainingModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="OrenairTrainingModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="8.875" IsExpanded="true" />
         <EntityTypeShape EntityType="OrenairTrainingModel.testconfig" Width="1.5" PointX="5.25" PointY="13.875" IsExpanded="true" />
         <EntityTypeShape EntityType="OrenairTrainingModel.testtouser" Width="1.5" PointX="10.5" PointY="16.875" IsExpanded="true" />
         <EntityTypeShape EntityType="OrenairTrainingModel.user" Width="1.5" PointX="5.25" PointY="17.375" IsExpanded="true" />

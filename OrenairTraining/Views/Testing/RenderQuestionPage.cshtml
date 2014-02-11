@@ -3,24 +3,26 @@
 @{
     ViewBag.Title = "RenderQuestionPage";
 }
-
-
-<script type="text/javascript">
+<link rel="stylesheet" type="text/css" href="~/Content/countdownstyle.css" media="screen">
+<script type="text/javascript" src="~/Scripts/jquery.countdown.js">
     $(function () {
-          var endDate = new Date($("#mydate").html());
-
-          $('.countdown.styled').countdown({
-          date: endDate,
-          render: function(data) {
-            $(this.el).html("<div>" + this.leadingZeros(data.hours, 2) + " <span>hrs</span></div><div>" + this.leadingZeros(data.min, 2) + " <span>min</span></div><div>" + this.leadingZeros(data.sec, 2) + " <span>sec</span></div>");
-          },
-              //<div>" + this.leadingZeros(data.years, 4) + " <span>years</span></div><div>" + this.leadingZeros(data.days, 3) + " <span>days</span></div>
-          onEnd: function() {
-            $(this.el).addClass('ended');
-          }
+        var endDate = new Date($("#mydate").html());
+        $('.countdown.styled').countdown({
+            date: endDate,
+            render: function (data) {
+                $(this.el).html("<div>" + this.leadingZeros(data.hours, 2) + " <span>hrs</span></div><div>" + this.leadingZeros(data.min, 2) + " <span>min</span></div><div>" + this.leadingZeros(data.sec, 2) + " <span>sec</span></div>");
+            },
+            //<div>" + this.leadingZeros(data.years, 4) + " <span>years</span></div><div>" + this.leadingZeros(data.days, 3) + " <span>days</span></div>
+            onEnd: function () {
+                $(this.el).addClass('ended');
+            }
         });
-      });
+    });
 </script>
+
+@*<script type="text/javascript">
+    
+</script>*@
 
 <h2>RenderQuestionPage</h2>
 

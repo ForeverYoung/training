@@ -1,0 +1,76 @@
+﻿@model IEnumerable<OrenairTraining.Models.session>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="features-table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.session_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datetime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.user.user_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.testconfig.testconf_name)
+        </th>
+        @if (User.IsInRole("admin"))
+        {
+            <th>
+                @Html.DisplayNameFor(model => model.ipaddress)
+            </th>
+        }        
+        <th>
+            @Html.DisplayNameFor(model => model.deleted)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.result)
+            (%)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.session_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datetime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.user.user_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.testconfig.testconf_name)
+        </td>
+        @if (User.IsInRole("admin"))
+        {
+            <td>
+                @Html.DisplayFor(modelItem => item.ipaddress)
+            </td>
+        }
+        <td>
+            @Html.DisplayFor(modelItem => item.deleted)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.result)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>
