@@ -30,6 +30,17 @@
         @Html.DisplayFor(model => model.answer)
     </div>
 
+    <br />
+    <div class="display-label">
+        @Html.Label("Пояснение")
+        <br />
+    </div>
+    <div class="display-field">
+        <img src=@Url.Action( "ShowImage", "Question", new { id = Model.question_id } ) />
+        <br />
+        @Html.DisplayFor(model => model.explanation_text)
+    </div>
+
     <div class="display-label">
          @Html.DisplayNameFor(model => model.type_id)
     </div>

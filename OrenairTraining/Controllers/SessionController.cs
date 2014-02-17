@@ -22,6 +22,16 @@ namespace OrenairTraining.Controllers
             return View(session.ToList());
         }
 
+        /// <summary>
+        /// Для просмотра своей статистики
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult MyResults()
+        {
+            var session = db.session.Include(s => s.testconfig).Include(s => s.user);
+            return View(session.Where(s => s.user.user_name == User.Identity.Name).ToList());
+        }
+
         //
         // GET: /Session/Details/5
 

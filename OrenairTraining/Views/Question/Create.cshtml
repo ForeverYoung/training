@@ -6,7 +6,8 @@
 
 <h2>Добавление нового вопроса</h2>
 
-@using (Html.BeginForm()) {
+@using (Html.BeginForm("Create", "Question", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
 
@@ -40,6 +41,16 @@
             @Html.DropDownListFor(model=>model.material_id,ViewBag.Materials as SelectList)
             @Html.ValidationMessageFor(model => model.material_id)
         </div>*@
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.explanation_text)
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.explanation_text)
+            @Html.ValidationMessageFor(model => model.explanation_text)
+        </div>
+
+        <input type="file" id="fileUp" name="fileUpload" />
 
         <div class="editor-label">
             @Html.LabelFor(model => model.time)

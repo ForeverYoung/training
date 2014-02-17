@@ -1,0 +1,54 @@
+﻿@model IEnumerable<OrenairTraining.Models.question>
+
+<h2>Вопросы</h2>
+
+@*<p>
+    @Html.ActionLink("Create New", "Create", "Question", new { id = ViewBag.ContainerId }, htmlAttributes: null)
+</p>*@
+<table class="features-table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.text)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.type_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.material_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.time)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.container_id)
+        </th>
+        <th width="120"></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.text)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.type_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.material_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.time)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.container_id)
+            </td>
+            <td>
+                @*@Html.ActionLink("Edit", "Edit", "Question", new { id = item.question_id }, htmlAttributes: new { @class = "edit" })*@
+                @Html.ActionLink("Details", "Details", "Question", new { id = item.question_id }, new { @class = "details" })
+                @*@Html.ActionLink("Delete", "Delete", "Question", new { id = item.question_id }, new { @class = "delete" })*@
+            </td>
+        </tr>
+    }
+
+</table>

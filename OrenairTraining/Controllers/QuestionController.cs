@@ -6,6 +6,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using OrenairTraining.Models;
+using Microsoft.Win32;
+using System.IO;
 
 namespace OrenairTraining.Controllers
 {
@@ -35,6 +37,13 @@ namespace OrenairTraining.Controllers
             return View(question);
         }
 
+        public ActionResult ShowImage(int id)
+        {
+            var q = db.question.Find(id);
+            var imageData = q.explanation_img;
+            return File(imageData, "image/jpg");
+        }
+
         //
         // GET: /Question/Create
 
@@ -55,7 +64,7 @@ namespace OrenairTraining.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(question question, List<string> answers, List<object> ichecked)
+        public ActionResult Create(question question, List<string> answers, List<object> ichecked, HttpPostedFileBase fileUpload)
         {
             question.answer = "";
             int i = 0;
@@ -69,6 +78,15 @@ namespace OrenairTraining.Controllers
                 }
                 question.answer = question.answer.TrimEnd(new[] { '|'});
             }
+
+            if (fileUpload!=null)
+            {
+                question.explanation_img = new byte[fileUpload.ContentLength];
+                fileUpload.InputStream.Read(question.explanation_img, 0, fileUpload.ContentLength);
+            }
+            //material.deleted = false;
+
+
             if (ModelState.IsValid)
             {
                 question.deleted = false;
@@ -104,8 +122,14 @@ namespace OrenairTraining.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(question question)
+        public ActionResult Edit(question question, HttpPostedFileBase fileUpload)
         {
+            if (fileUpload != null)
+            {
+                question.explanation_img = new byte[fileUpload.ContentLength];
+                fileUpload.InputStream.Read(question.explanation_img, 0, fileUpload.ContentLength);
+            }
+
             if (ModelState.IsValid)
             {
                 db.Entry(question).State = EntityState.Modified;
@@ -146,5 +170,36 @@ namespace OrenairTraining.Controllers
             db.Dispose();
             base.Dispose(disposing);
         }
+
+        public ActionResult OpenFile(int id)
+        {
+            byte[] theData = db.material.Find(id).material_content;
+            string filename = db.material.Find(id).file_name;
+            string contentType = "";
+            try
+            {
+                // get the registry classes root
+                RegistryKey classes = Registry.ClassesRoot;
+
+                // find the sub key based on the file extension
+                RegistryKey fileClass = classes.OpenSubKey(Path.GetExtension(filename));
+                contentType = fileClass.GetValue("Content Type").ToString();
+            }
+            catch { }
+
+            Response.Buffer = true;
+            Response.Charset = "";
+            Response.Cache.SetCacheability(HttpCacheability.NoCache);
+            Response.ContentType = contentType;
+            Response.AddHeader("content-length", theData.Length.ToString());
+            Response.AddHeader("content-disposition", "inline; filename=" + filename + "");
+            Response.BinaryWrite(theData);
+            Response.Flush();
+            Response.End();
+
+            return File(theData, contentType, filename);
+        }
+
+
     }
 }

@@ -309,3 +309,27 @@ a {
         border-bottom-left-radius: 10px;
         border-bottom: 1px solid #dadada;
     }
+
+
+.testBox-progress {
+    border: 1px solid #E7E7E7;
+    /*display: inline;*/
+    float: right;
+    font-size: 12px;
+    height: 17px;
+    line-height: 17px;
+    margin: 0 1px 3px 0;
+    text-align: center;
+    width: 17px;
+}
+
+.pass-button {
+    float: right;
+    text-align: center;
+    margin: 0 1px 3px 0;
+    border: 1px solid #E7E7E7;
+    /*display: inline;*/
+    font-size: 14px;
+    height: 17px;
+    line-height: 17px;
+}

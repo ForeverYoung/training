@@ -1,0 +1,40 @@
+﻿@model IEnumerable<OrenairTraining.Models.material>
+
+<h2>Материалы</h2>
+
+<table class="features-table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.material_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.container_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.deleted)
+        </th>
+        <th width="150"></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.material_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.container_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.deleted)
+            </td>
+            <td>
+                @*@Html.ActionLink("Edit", "Edit", "Material", new { id = item.material_id }, new { @class = "edit" })*@
+                @Html.ActionLink("Details", "Details", "Material", new { id = item.material_id }, new { @class = "details" })
+                @*@Html.ActionLink("Delete", "Delete", "Material", new { id = item.material_id }, new { @class = "delete" })*@
+                @Html.ActionLink("Open", "OpenFile", "Material", new { id = item.material_id }, new { @class = "open" })
+            </td>
+        </tr>
+    }
+
+</table>

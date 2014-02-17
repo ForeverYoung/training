@@ -3,19 +3,21 @@
 @using (Ajax.BeginForm("AnswerOnQuestion", Model ,new AjaxOptions { UpdateTargetId = "questionfield"}))//, InsertionMode = InsertionMode.Replace 
 {
     <div>
+        
         @foreach (var mq in Session["mQuestions"] as List<OrenairTraining.Models.MQuestion>)
         {
             if (mq.IsAnswered!=true)
             {
-                @Ajax.ActionLink((mq.IndexInTest + 1).ToString(), "GoTo", new { questionIndex = mq.IndexInTest }, new AjaxOptions { UpdateTargetId = "questionfield" }, InsertionMode.Replace)
+                @Ajax.ActionLink((mq.IndexInTest + 1).ToString(), "GoTo", "Testing", new { questionIndex = mq.IndexInTest }, new AjaxOptions { UpdateTargetId = "questionfield" }, new { @class = "testBox-progress" } @*InsertionMode.Replace*@)
             }
         }
     </div>
 
     <br />
     <div>
-        @Html.DisplayNameFor(model => model.Text) № @(Model.IndexInTest + 1)
+        @*@Html.DisplayNameFor(model => model.Text)*@ № @(Model.IndexInTest + 1)
     </div>
+    <br />
     <div>
         @Html.DisplayFor(model => model.Text)
     </div>
@@ -32,6 +34,6 @@
     <input type="submit" value="Ответить" />
     
     <div>
-        @Ajax.ActionLink("Пропустить", "GoNext", Model, new AjaxOptions{ UpdateTargetId="questionfield" })
+        @Ajax.ActionLink("Пропустить", "GoNext", Model, new AjaxOptions { UpdateTargetId = "questionfield" }, new { @class = "pass-button",  })
     </div>
 }

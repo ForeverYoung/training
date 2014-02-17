@@ -447,6 +447,9 @@
     <Content Include="Views\Session\Create.cshtml" />
     <Content Include="Views\Session\Edit.cshtml" />
     <Content Include="Views\Session\Delete.cshtml" />
+    <Content Include="Views\Learning\ContentMaterials.cshtml" />
+    <Content Include="Views\Learning\ContentQuestions.cshtml" />
+    <Content Include="Views\Session\MyResults.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

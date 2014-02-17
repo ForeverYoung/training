@@ -12,13 +12,13 @@
   </PropertyGroup>
   <ItemGroup>
     <File Include="App_Readme/Elmah.txt">
-      <publishTime>05/12/2013 15:00:18</publishTime>
+      <publishTime>12/05/2013 15:00:18</publishTime>
     </File>
     <File Include="bin/Antlr3.Runtime.dll">
       <publishTime>09/17/2013 10:25:26</publishTime>
     </File>
     <File Include="bin/Elmah.dll">
-      <publishTime>05/12/2013 15:00:15</publishTime>
+      <publishTime>12/05/2013 15:00:15</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>09/17/2013 10:25:16</publishTime>
@@ -33,7 +33,7 @@
       <publishTime>09/17/2013 10:25:22</publishTime>
     </File>
     <File Include="bin/OrenairTraining.dll">
-      <publishTime>02/10/2014 15:26:21</publishTime>
+      <publishTime>02/17/2014 15:28:45</publishTime>
     </File>
     <File Include="bin/ru/EntityFramework.resources.dll">
       <publishTime>09/17/2013 10:25:31</publishTime>
@@ -111,10 +111,10 @@
       <publishTime>09/21/2013 10:13:05</publishTime>
     </File>
     <File Include="Content/MenuStyle.css">
-      <publishTime>02/10/2014 15:44:02</publishTime>
+      <publishTime>02/11/2014 14:23:56</publishTime>
     </File>
     <File Include="Content/Site.css">
-      <publishTime>02/10/2014 15:58:05</publishTime>
+      <publishTime>02/12/2014 09:31:21</publishTime>
     </File>
     <File Include="Content/themes/base/images/ui-bg_flat_0_aaaaaa_40x100.png">
       <publishTime>09/17/2013 10:25:21</publishTime>
@@ -291,61 +291,61 @@
       <publishTime>09/17/2013 12:28:54</publishTime>
     </File>
     <File Include="Images/Logos/attibutes.png">
-      <publishTime>03/10/2013 13:19:18</publishTime>
+      <publishTime>10/03/2013 13:19:18</publishTime>
     </File>
     <File Include="Images/Logos/basket.png">
-      <publishTime>04/10/2013 07:55:17</publishTime>
+      <publishTime>10/04/2013 07:55:17</publishTime>
     </File>
     <File Include="Images/Logos/brainstorming.png">
-      <publishTime>08/10/2013 12:37:40</publishTime>
+      <publishTime>10/08/2013 12:37:40</publishTime>
     </File>
     <File Include="Images/Logos/category.png">
-      <publishTime>03/10/2013 13:19:18</publishTime>
+      <publishTime>10/03/2013 13:19:18</publishTime>
     </File>
     <File Include="Images/Logos/comment.png">
-      <publishTime>03/10/2013 13:19:18</publishTime>
+      <publishTime>10/03/2013 13:19:18</publishTime>
     </File>
     <File Include="Images/Logos/config.png">
-      <publishTime>03/10/2013 13:19:18</publishTime>
+      <publishTime>10/03/2013 13:19:18</publishTime>
     </File>
     <File Include="Images/Logos/database.png">
-      <publishTime>03/10/2013 13:19:18</publishTime>
+      <publishTime>10/03/2013 13:19:18</publishTime>
     </File>
     <File Include="Images/Logos/delete.png">
       <publishTime>01/22/2014 08:13:57</publishTime>
     </File>
     <File Include="Images/Logos/edit.png">
-      <publishTime>03/10/2013 13:19:18</publishTime>
+      <publishTime>10/03/2013 13:19:18</publishTime>
     </File>
     <File Include="Images/Logos/folder.png">
-      <publishTime>03/10/2013 13:19:18</publishTime>
+      <publishTime>10/03/2013 13:19:18</publishTime>
     </File>
     <File Include="Images/Logos/home.png">
-      <publishTime>03/10/2013 13:19:18</publishTime>
+      <publishTime>10/03/2013 13:19:18</publishTime>
     </File>
     <File Include="Images/Logos/login.png">
-      <publishTime>03/10/2013 13:19:18</publishTime>
+      <publishTime>10/03/2013 13:19:18</publishTime>
     </File>
     <File Include="Images/Logos/logout.png">
-      <publishTime>03/10/2013 13:19:18</publishTime>
+      <publishTime>10/03/2013 13:19:18</publishTime>
     </File>
     <File Include="Images/Logos/plus.png">
-      <publishTime>03/10/2013 13:19:18</publishTime>
+      <publishTime>10/03/2013 13:19:18</publishTime>
     </File>
     <File Include="Images/Logos/settings.png">
-      <publishTime>03/10/2013 13:19:18</publishTime>
+      <publishTime>10/03/2013 13:19:18</publishTime>
     </File>
     <File Include="Images/Logos/sign-in.png">
-      <publishTime>04/10/2013 07:55:17</publishTime>
+      <publishTime>10/04/2013 07:55:17</publishTime>
     </File>
     <File Include="Images/Logos/sign-out.png">
-      <publishTime>04/10/2013 07:55:17</publishTime>
+      <publishTime>10/04/2013 07:55:17</publishTime>
     </File>
     <File Include="Images/Logos/T.PNG">
-      <publishTime>03/10/2013 14:13:33</publishTime>
+      <publishTime>10/03/2013 14:13:33</publishTime>
     </File>
     <File Include="Images/Logos/user.png">
-      <publishTime>03/10/2013 13:19:18</publishTime>
+      <publishTime>10/03/2013 13:19:18</publishTime>
     </File>
     <File Include="Images/Tree_images/ajax-loader.gif">
       <publishTime>09/21/2013 08:05:28</publishTime>
@@ -408,16 +408,16 @@
       <publishTime>11/29/2013 14:49:08</publishTime>
     </File>
     <File Include="Models/Model1.edmx.diagram">
-      <publishTime>11/29/2013 15:20:35</publishTime>
+      <publishTime>02/11/2014 08:12:46</publishTime>
     </File>
     <File Include="Models/Model1.tt">
       <publishTime>11/29/2013 14:49:08</publishTime>
     </File>
     <File Include="packages.config">
-      <publishTime>05/12/2013 15:00:18</publishTime>
+      <publishTime>12/05/2013 15:00:18</publishTime>
     </File>
     <File Include="Scripts/demo.js">
-      <publishTime>12/11/2013 12:59:01</publishTime>
+      <publishTime>11/12/2013 12:59:01</publishTime>
     </File>
     <File Include="Scripts/jquery-1.8.2.js">
       <publishTime>09/17/2013 10:25:19</publishTime>
@@ -486,37 +486,37 @@
       <publishTime>09/20/2013 10:42:06</publishTime>
     </File>
     <File Include="Views/Configuration/Create.cshtml">
-      <publishTime>12/09/2013 14:26:23</publishTime>
+      <publishTime>09/12/2013 14:26:23</publishTime>
     </File>
     <File Include="Views/Configuration/Delete.cshtml">
-      <publishTime>07/10/2013 09:09:26</publishTime>
+      <publishTime>10/07/2013 09:09:26</publishTime>
     </File>
     <File Include="Views/Configuration/Details.cshtml">
-      <publishTime>07/10/2013 10:11:17</publishTime>
+      <publishTime>10/07/2013 10:11:17</publishTime>
     </File>
     <File Include="Views/Configuration/Edit.cshtml">
       <publishTime>10/28/2013 12:57:14</publishTime>
     </File>
     <File Include="Views/Configuration/Index.cshtml">
-      <publishTime>07/10/2013 10:15:13</publishTime>
+      <publishTime>10/07/2013 10:15:13</publishTime>
     </File>
     <File Include="Views/Configuration/Tests.cshtml">
-      <publishTime>09/10/2013 09:00:53</publishTime>
+      <publishTime>10/09/2013 09:00:53</publishTime>
     </File>
     <File Include="Views/Configuration/ThemeInTest.cshtml">
-      <publishTime>12/09/2013 13:58:51</publishTime>
+      <publishTime>09/12/2013 13:58:51</publishTime>
     </File>
     <File Include="Views/Container/Create.cshtml">
       <publishTime>10/24/2013 15:23:40</publishTime>
     </File>
     <File Include="Views/Container/Delete.cshtml">
-      <publishTime>07/10/2013 10:23:50</publishTime>
+      <publishTime>10/07/2013 10:23:50</publishTime>
     </File>
     <File Include="Views/Container/Details.cshtml">
-      <publishTime>07/10/2013 10:24:49</publishTime>
+      <publishTime>10/07/2013 10:24:49</publishTime>
     </File>
     <File Include="Views/Container/Edit.cshtml">
-      <publishTime>07/10/2013 10:25:24</publishTime>
+      <publishTime>10/07/2013 10:25:24</publishTime>
     </File>
     <File Include="Views/Container/Index.cshtml">
       <publishTime>01/21/2014 10:42:03</publishTime>
@@ -525,16 +525,16 @@
       <publishTime>11/25/2013 13:56:49</publishTime>
     </File>
     <File Include="Views/Department/Delete.cshtml">
-      <publishTime>07/10/2013 10:32:46</publishTime>
+      <publishTime>10/07/2013 10:32:46</publishTime>
     </File>
     <File Include="Views/Department/Details.cshtml">
-      <publishTime>07/10/2013 10:33:51</publishTime>
+      <publishTime>10/07/2013 10:33:51</publishTime>
     </File>
     <File Include="Views/Department/Edit.cshtml">
-      <publishTime>07/10/2013 10:32:19</publishTime>
+      <publishTime>10/07/2013 10:32:19</publishTime>
     </File>
     <File Include="Views/Department/Index.cshtml">
-      <publishTime>07/10/2013 10:34:41</publishTime>
+      <publishTime>10/07/2013 10:34:41</publishTime>
     </File>
     <File Include="Views/Filling/ContentMaterials.cshtml">
       <publishTime>01/21/2014 12:36:41</publishTime>
@@ -548,8 +548,14 @@
     <File Include="Views/Home/Index.cshtml">
       <publishTime>11/28/2013 09:53:26</publishTime>
     </File>
+    <File Include="Views/Learning/ContentMaterials.cshtml">
+      <publishTime>02/17/2014 15:04:05</publishTime>
+    </File>
+    <File Include="Views/Learning/ContentQuestions.cshtml">
+      <publishTime>02/17/2014 15:05:02</publishTime>
+    </File>
     <File Include="Views/Learning/Index.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>02/17/2014 14:52:49</publishTime>
     </File>
     <File Include="Views/Learning/Partial.cshtml">
       <publishTime>09/23/2013 12:25:55</publishTime>
@@ -570,16 +576,16 @@
       <publishTime>10/25/2013 10:45:31</publishTime>
     </File>
     <File Include="Views/Material/Create.cshtml">
-      <publishTime>07/10/2013 12:38:02</publishTime>
+      <publishTime>10/07/2013 12:38:02</publishTime>
     </File>
     <File Include="Views/Material/Delete.cshtml">
-      <publishTime>07/10/2013 12:36:51</publishTime>
+      <publishTime>10/07/2013 12:36:51</publishTime>
     </File>
     <File Include="Views/Material/Details.cshtml">
-      <publishTime>07/10/2013 12:34:58</publishTime>
+      <publishTime>10/07/2013 12:34:58</publishTime>
     </File>
     <File Include="Views/Material/Edit.cshtml">
-      <publishTime>07/10/2013 12:28:25</publishTime>
+      <publishTime>10/07/2013 12:28:25</publishTime>
     </File>
     <File Include="Views/Material/Index.cshtml">
       <publishTime>10/10/2013 13:51:52</publishTime>
@@ -588,16 +594,16 @@
       <publishTime>09/27/2013 07:50:52</publishTime>
     </File>
     <File Include="Views/Question/Create.cshtml">
-      <publishTime>10/24/2013 10:05:27</publishTime>
+      <publishTime>02/11/2014 12:58:02</publishTime>
     </File>
     <File Include="Views/Question/Delete.cshtml">
-      <publishTime>07/10/2013 12:40:58</publishTime>
+      <publishTime>10/07/2013 12:40:58</publishTime>
     </File>
     <File Include="Views/Question/Details.cshtml">
-      <publishTime>07/10/2013 12:40:19</publishTime>
+      <publishTime>02/17/2014 13:49:34</publishTime>
     </File>
     <File Include="Views/Question/Edit.cshtml">
-      <publishTime>10/28/2013 09:53:35</publishTime>
+      <publishTime>02/11/2014 13:09:29</publishTime>
     </File>
     <File Include="Views/Question/Index.cshtml">
       <publishTime>01/21/2014 12:18:15</publishTime>
@@ -609,13 +615,16 @@
       <publishTime>01/22/2014 13:27:58</publishTime>
     </File>
     <File Include="Views/Session/Details.cshtml">
-      <publishTime>01/22/2014 13:27:56</publishTime>
+      <publishTime>02/17/2014 15:22:12</publishTime>
     </File>
     <File Include="Views/Session/Edit.cshtml">
       <publishTime>01/22/2014 13:27:57</publishTime>
     </File>
     <File Include="Views/Session/Index.cshtml">
-      <publishTime>01/22/2014 13:39:37</publishTime>
+      <publishTime>02/17/2014 15:20:44</publishTime>
+    </File>
+    <File Include="Views/Session/MyResults.cshtml">
+      <publishTime>02/17/2014 15:23:47</publishTime>
     </File>
     <File Include="Views/Shared/Error.cshtml">
       <publishTime>09/17/2013 10:25:14</publishTime>
@@ -624,16 +633,16 @@
       <publishTime>10/22/2013 08:53:05</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>01/24/2014 09:56:33</publishTime>
+      <publishTime>02/17/2014 15:09:44</publishTime>
     </File>
     <File Include="Views/Testing/Index.cshtml">
       <publishTime>01/21/2014 10:16:43</publishTime>
     </File>
     <File Include="Views/Testing/QuestionContent.cshtml">
-      <publishTime>12/11/2013 10:15:54</publishTime>
+      <publishTime>02/12/2014 09:55:43</publishTime>
     </File>
     <File Include="Views/Testing/RenderQuestionPage.cshtml">
-      <publishTime>01/21/2014 09:36:22</publishTime>
+      <publishTime>02/12/2014 09:16:53</publishTime>
     </File>
     <File Include="Views/Testing/StartTest.cshtml">
       <publishTime>10/29/2013 08:32:52</publishTime>
@@ -654,13 +663,13 @@
       <publishTime>10/31/2013 08:45:15</publishTime>
     </File>
     <File Include="Views/TestToUser/Index.cshtml">
-      <publishTime>12/09/2013 14:11:25</publishTime>
+      <publishTime>09/12/2013 14:11:25</publishTime>
     </File>
     <File Include="Views/User/Create.cshtml">
       <publishTime>11/29/2013 09:52:49</publishTime>
     </File>
     <File Include="Views/User/Details.cshtml">
-      <publishTime>07/10/2013 08:52:51</publishTime>
+      <publishTime>10/07/2013 08:52:51</publishTime>
     </File>
     <File Include="Views/User/Edit.cshtml">
       <publishTime>11/28/2013 10:01:02</publishTime>
@@ -675,7 +684,7 @@
       <publishTime>09/17/2013 14:52:01</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>05/12/2013 15:14:25</publishTime>
+      <publishTime>02/11/2014 14:39:10</publishTime>
     </File>
   </ItemGroup>
 </Project>
